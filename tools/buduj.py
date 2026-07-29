@@ -49,8 +49,30 @@ MINIMUM_DOTYCZY = ["chrzciny", "komunia", "urodziny", "firmowka", "wigilia", "pa
 # ══════════════════════════════════════════════════════════════════
 
 def gen_chooser(wyd):
+    """Karty selektora okazji. Wydarzenie z polem "chooser_tlo" (lista 2-3
+    nazw plikow z assets/img/) dostaje pelnoszerokosc, zdjecia w tle jako
+    auto-slider bez JS i plakietke z tagline - odznacza sie od reszty siatki
+    zamiast byc jedna z rownych kart. Zobacz .ch-card--feature w goscie.css.
+    """
     out = []
     for i, w in enumerate(wyd, 1):
+        tlo = w.get("chooser_tlo")
+        if tlo:
+            slajdy = "\n".join(
+                '            <img class="ch-slide" src="assets/img/%s.webp" alt="">' % f
+                for f in tlo)
+            plakietka = ('<span class="ch-badge">%s</span>' % w["tagline"]) if w.get("tagline") else ""
+            out.append(
+                '        <button class="ch-card ch-card--feature" data-pick="%(id)s">\n'
+                '          <div class="ch-slides">\n%(slajdy)s\n          </div>\n'
+                '          %(plakietka)s\n'
+                '          <span class="ch-n">%(nr)02d</span>\n'
+                '          <div class="ch-t">%(label)s</div>\n'
+                '          <div class="ch-d">%(haczyk)s</div>\n'
+                '        </button>'
+                % dict(id=w["id"], slajdy=slajdy, plakietka=plakietka, nr=i,
+                       label=w["label"], haczyk=w["haczyk"]))
+            continue
         tagline = ('<div class="ch-tag">%s</div>' % w["tagline"]) if w.get("tagline") else ""
         out.append(
             '        <button class="ch-card" data-pick="%s">\n'

@@ -292,19 +292,58 @@ footer p{font-size:.76rem;color:var(--mute);line-height:1.8}
 .ch-in h2 em{font-style:italic;color:var(--terra)}
 .ch-sub{font-size:.98rem;color:var(--ink2);max-width:48ch;margin:0 auto clamp(2.2rem,5vw,3.4rem);line-height:1.85}
 .ch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.7rem,1.6vw,1.1rem);text-align:left}
-.ch-card{border:1px solid var(--line);background:transparent;padding:1.7rem 1.5rem 1.5rem;
-  transition:all .45s var(--e);position:relative;overflow:hidden;cursor:pointer}
+.ch-card{border:1px solid var(--line);border-radius:14px;background:var(--paper);
+  padding:1.8rem 1.6rem 1.6rem;transition:transform .45s var(--e),box-shadow .45s var(--e),
+  border-color .35s var(--e),background .35s var(--e);position:relative;overflow:hidden;
+  cursor:pointer;box-shadow:0 1px 2px rgba(31,35,24,.05)}
 .ch-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
   background:var(--terra);transform:scaleY(0);transform-origin:top;transition:transform .45s var(--e)}
-.ch-card:hover{border-color:var(--terra);background:var(--paper2);transform:translateY(-3px)}
+.ch-card:hover{border-color:var(--terra);background:var(--paper2);transform:translateY(-5px);
+  box-shadow:0 22px 40px -22px rgba(184,92,56,.4)}
 .ch-card:hover::before{transform:scaleY(1)}
-.ch-n{font-family:var(--serif);font-size:.85rem;color:var(--terra);margin-bottom:.7rem;display:block}
+.ch-n{font-family:var(--serif);font-size:.85rem;color:var(--terra);margin-bottom:1rem;
+  display:inline-flex;align-items:center;justify-content:center;width:2.2rem;height:2.2rem;
+  border-radius:50%;background:var(--paper2);border:1px solid var(--line);
+  transition:all .35s var(--e)}
+.ch-card:hover .ch-n{background:var(--terra);border-color:var(--terra);color:#fff}
 .ch-t{font-family:var(--serif);font-size:clamp(1.3rem,2vw,1.65rem);line-height:1.15;
   margin-bottom:.45rem;color:var(--ink)}
 .ch-d{font-size:.79rem;color:var(--mute);line-height:1.6}
 .ch-foot{margin-top:clamp(2rem,4vw,3rem);font-size:.8rem;color:var(--mute)}
 .ch-foot button{color:var(--terra);border-bottom:1px solid currentColor;padding-bottom:1px}
 .ch-foot button:hover{color:var(--ink)}
+
+/* karta wyroznionego wydarzenia - zdjecia w tle jako auto-slider (bez JS).
+   Selektor .ch-card.ch-card--feature (nie sam --feature) celowo - lift.css
+   laduje sie po tym arkuszu i przy tej samej swoistosci wygralby swoj
+   .ch-card (np. min-height:44px na dotyku, padding na 600px). Podwojna
+   klasa podnosi swoistosc, wiec ta karta zostaje wyzsza niz pozostale. */
+.ch-card.ch-card--feature{grid-column:1/-1;min-height:clamp(280px,32vw,360px);border:none;
+  color:#fff;padding:2.2rem clamp(1.6rem,3vw,2.6rem) 2rem;display:flex;flex-direction:column;
+  justify-content:flex-end;box-shadow:0 1px 2px rgba(31,35,24,.05)}
+.ch-card--feature::before{content:none}
+.ch-card--feature:hover{transform:translateY(-5px);box-shadow:0 28px 54px -22px rgba(15,18,10,.5)}
+.ch-slides{position:absolute;inset:0;z-index:0}
+.ch-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;
+  animation:chFade 12s var(--e) infinite}
+.ch-slide:nth-child(1){animation-delay:0s}
+.ch-slide:nth-child(2){animation-delay:-4s}
+.ch-slide:nth-child(3){animation-delay:-8s}
+.ch-card--feature::after{content:'';position:absolute;inset:0;z-index:1;
+  background:linear-gradient(190deg,rgba(15,18,10,.12) 0%,rgba(15,18,10,.5) 60%,rgba(15,18,10,.88) 100%)}
+.ch-card--feature .ch-n,.ch-card--feature .ch-t,.ch-card--feature .ch-d{position:relative;z-index:2}
+.ch-card--feature .ch-n{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.3);color:#fff}
+.ch-card--feature:hover .ch-n{background:var(--terra);border-color:var(--terra)}
+.ch-card--feature .ch-t{color:#fff;font-size:clamp(1.55rem,2.6vw,2.15rem)}
+.ch-card--feature .ch-d{color:rgba(255,255,255,.86)}
+.ch-badge{position:absolute;z-index:2;top:1.3rem;right:1.3rem;background:var(--terra);
+  color:#fff;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:.42rem .85rem;border-radius:999px}
+@keyframes chFade{0%{opacity:0}8%{opacity:1}28%{opacity:1}36%{opacity:0}100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){
+  .ch-slide{animation:none;opacity:0}
+  .ch-slide:first-child{opacity:1}
+}
 
 /* przełącznik okazji w nawigacji */
 .ev-chip{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--line);
@@ -343,6 +382,7 @@ footer p{font-size:.76rem;color:var(--mute);line-height:1.8}
 @media(max-width:600px){
   .ch-grid{grid-template-columns:1fr}
   .ch-card{padding:1.2rem 1.1rem}
+  .ch-card.ch-card--feature{min-height:260px;padding:1.6rem 1.3rem}
 }
 
 

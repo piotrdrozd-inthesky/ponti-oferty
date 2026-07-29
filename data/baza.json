@@ -530,7 +530,12 @@
     "Jedna osoba prowadzi całość od pierwszego maila"
    ],
    "sala": "Cały kompleks: restauracja, Onda, Wellness, apartamenty",
-   "bez_typowego": "Wycena po rozmowie o planie i liczbie pokoi"
+   "bez_typowego": "Wycena po rozmowie o planie i liczbie pokoi",
+   "chooser_tlo": [
+    "dlugi-stol",
+    "jacuzzi-wieczor",
+    "taras-wieczorem"
+   ]
   }
  ],
  "minimum": {
