@@ -29,14 +29,25 @@ NOINDEX = ('<meta name="robots" content="noindex,nofollow">\n'
 
 def konfiguracja():
     if os.path.exists(KONF):
-        return json.load(open(KONF, encoding="utf-8"))
-    k = {
-        "_o_pliku": "Nazwy plikow na GitHub Pages. Dopisek przy ofercie partnerskiej "
-                    "jest losowy, zeby klient koncowy nie trafil na nia przypadkiem. "
-                    "Nie zmieniaj go po wyslaniu linkow partnerom.",
-        "partnerska": "wspolpraca-" + secrets.token_hex(4) + ".html",
-    }
-    json.dump(k, open(KONF, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+        k = json.load(open(KONF, encoding="utf-8"))
+    else:
+        k = {}
+    zmieniono = False
+    if "partnerska" not in k:
+        k["partnerska"] = "wspolpraca-" + secrets.token_hex(4) + ".html"
+        zmieniono = True
+    if "_o_pliku" not in k:
+        k["_o_pliku"] = ("Nazwy plikow na GitHub Pages. Dopisek przy ofercie partnerskiej "
+                        "jest losowy, zeby klient koncowy nie trafil na nia przypadkiem. "
+                        "Nie zmieniaj go po wyslaniu linkow partnerom. Pole 'domena' to "
+                        "wlasna domena spod ktorej dziala GitHub Pages (docs/CNAME) - "
+                        "puste jeśli uzywasz domyslnego adresu *.github.io.")
+        zmieniono = True
+    if "domena" not in k:
+        k["domena"] = ""
+        zmieniono = True
+    if zmieniono:
+        json.dump(k, open(KONF, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     return k
 
 
@@ -67,6 +78,9 @@ def main():
 
     shutil.copytree(os.path.join(REPO, "assets"), os.path.join(DOCS, "assets"),
                     ignore=shutil.ignore_patterns(".DS_Store", "*.jpeg", "*.jpg"))
+
+    if k.get("domena"):
+        open(os.path.join(DOCS, "CNAME"), "w", encoding="utf-8").write(k["domena"] + "\n")
 
     # Pages nie przepuszcza katalogow z podkreslnikiem bez tego pliku
     open(os.path.join(DOCS, ".nojekyll"), "w").close()

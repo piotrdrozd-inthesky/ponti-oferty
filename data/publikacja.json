@@ -1,4 +1,5 @@
 {
-  "_o_pliku": "Nazwy plikow na GitHub Pages. Dopisek przy ofercie partnerskiej jest losowy, zeby klient koncowy nie trafil na nia przypadkiem. Nie zmieniaj go po wyslaniu linkow partnerom.",
-  "partnerska": "wspolpraca-35909f52.html"
+  "_o_pliku": "Nazwy plikow na GitHub Pages. Dopisek przy ofercie partnerskiej jest losowy, zeby klient koncowy nie trafil na nia przypadkiem. Nie zmieniaj go po wyslaniu linkow partnerom. Pole 'domena' to wlasna domena spod ktorej dziala GitHub Pages (docs/CNAME) - puste jesli uzywasz domyslnego adresu *.github.io.",
+  "partnerska": "wspolpraca-35909f52.html",
+  "domena": "oferty.ponti.restaurant"
 }
