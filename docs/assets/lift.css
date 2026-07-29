@@ -139,7 +139,9 @@ img{max-width:100%;height:auto}
   .ch-mark{margin-bottom:1.2rem}
   .ch-sub{font-size:.88rem;margin-bottom:1.6rem}
 }
-@media(max-width:380px){.ch-grid{grid-template-columns:1fr}}
+/* Dwie kolumny trzymamy tak dlugo, jak da sie czytac. Przy dziewieciu kartach
+   jedna kolumna to ekran i pol przewijania, zanim gosc zobaczy ostatnia opcje. */
+@media(max-width:339px){.ch-grid{grid-template-columns:1fr}}
 
 /* Ceny: na telefonie kwota nad opisem, nie obok */
 @media(max-width:560px){
@@ -246,10 +248,12 @@ img{max-width:100%;height:auto}
 .prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--terra);
   z-index:950;transition:width .12s linear}
 
-/* Pasek akcji na telefonie: zadzwon / napisz zawsze pod reka */
-.abar{position:fixed;left:0;right:0;bottom:0;z-index:880;display:none;
-  gap:1px;background:var(--line);
-  padding-bottom:env(safe-area-inset-bottom);
+/* Pasek akcji na telefonie: zadzwon / napisz zawsze pod reka.
+   Jest znacznikiem <nav>, a arkusze stron ustawiaja wszystkim <nav> top:0 -
+   bez top:auto pasek rozciagalby sie na cala wysokosc ekranu. */
+.abar{position:fixed;top:auto;left:0;right:0;bottom:0;z-index:880;display:none;
+  gap:1px;background:var(--line);height:auto;
+  padding:0 0 env(safe-area-inset-bottom);
   box-shadow:0 -8px 30px rgba(20,24,15,.12)}
 .abar a{flex:1;background:var(--paper);color:var(--ink);text-align:center;
   padding:.95rem .5rem;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
