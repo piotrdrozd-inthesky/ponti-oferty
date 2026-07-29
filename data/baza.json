@@ -532,9 +532,35 @@
    "sala": "Cały kompleks: restauracja, Onda, Wellness, apartamenty",
    "bez_typowego": "Wycena po rozmowie o planie i liczbie pokoi",
    "chooser_tlo": [
-    "dlugi-stol",
+    "apart-salon",
     "jacuzzi-wieczor",
-    "taras-wieczorem"
+    "sala-glowna"
+   ],
+   "mozna_dolozyc": [
+    [
+     "Nocleg w apartamencie dla całej ekipy",
+     "organizujemy pod grupę"
+    ],
+    [
+     "Strefa Wellness na wyłączność zamiast dzielonej",
+     "od 350 zł / os."
+    ],
+    [
+     "Masaże i rytuały PONTI dla grupy",
+     "od 200 zł"
+    ],
+    [
+     "Stacja koktajlowa z barmanem",
+     "1 600 zł"
+    ],
+    [
+     "Muzyka na żywo albo DJ na wieczór",
+     "od 1 800 zł"
+    ],
+    [
+     "Przekąski nocne po zabawie",
+     "39 zł / os."
+    ]
    ]
   }
  ],

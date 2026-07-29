@@ -112,17 +112,44 @@ nav.solid{background:rgba(251,248,242,.94);backdrop-filter:blur(18px) saturate(1
 .d4{transition-delay:.36s}.d5{transition-delay:.45s}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
 
-/* ── Manifest ── */
+/* ── Wideo "zza kulis" - zaraz po hero, ma zrobic wrazenie ── */
+.reel-sec{background:var(--forest);color:var(--paper);text-align:center;
+  padding:clamp(3.5rem,7vw,6rem) 0}
+.reel-kick{font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--terra-lt);margin-bottom:.9rem}
+.reel-h{font-family:var(--serif);font-weight:400;font-style:italic;
+  font-size:clamp(1.9rem,3.6vw,2.9rem);color:#fff;margin-bottom:clamp(2rem,5vw,3rem)}
+.reel-card{position:relative;width:min(380px,80vw);aspect-ratio:9/16;margin:0 auto;
+  overflow:hidden;box-shadow:0 30px 70px -24px rgba(0,0,0,.55)}
+.reel-card video{width:100%;height:100%;object-fit:cover;display:block;background:#111}
+.reel-sound{position:absolute;left:50%;bottom:1.1rem;transform:translateX(-50%);
+  display:inline-flex;align-items:center;gap:.4rem;background:rgba(15,18,10,.5);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;
+  padding:.55rem 1.1rem;border-radius:999px;font-size:.72rem;letter-spacing:.04em;
+  cursor:pointer;border:1px solid rgba(255,255,255,.28);transition:background .3s var(--e)}
+.reel-sound:hover{background:rgba(184,92,56,.85);border-color:var(--terra)}
+
+/* ── Manifest + Kuchnia - jedna sekcja (byly dwie, ten sam bohater) ── */
 .manifest{background:var(--paper2)}
 .mf{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2.5rem,7vw,7rem);align-items:start}
 .mf-q{font-family:var(--serif);font-style:italic;font-size:clamp(1.9rem,3.6vw,3.1rem);
   line-height:1.28;color:var(--ink)}
 .mf-q span{color:var(--terra)}
 .mf-b p+p{margin-top:1.4rem}
+.mf-chef{display:flex;gap:1.4rem;align-items:flex-start;margin:1.8rem 0 1.5rem}
+.mf-chef-i{flex:0 0 128px;width:128px;height:128px;border-radius:50%;overflow:hidden;
+  background:var(--paper3)}
+.mf-chef-i img{width:100%;height:100%;object-fit:cover}
+.mf-chef-t h3{font-size:clamp(1.15rem,1.8vw,1.4rem);margin-bottom:.5rem}
+.mf-chef-t p{font-size:.92rem;line-height:1.75;color:var(--ink2)}
 .mf-sign{margin-top:2.2rem;padding-top:1.6rem;border-top:1px solid var(--line);
   display:flex;align-items:center;gap:1rem}
 .mf-sign .nm{font-family:var(--serif);font-size:1.5rem}
 .mf-sign .rl{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--terra)}
+@media(max-width:560px){
+  .mf-chef{flex-direction:column;align-items:center;text-align:center}
+  .mf-chef-i{flex:0 0 104px;width:104px;height:104px}
+}
 
 /* ── Zaufanie / 4,7 ── */
 .trust{background:var(--forest);color:var(--paper);text-align:center}
@@ -279,7 +306,13 @@ footer p{font-size:.76rem;color:var(--mute);line-height:1.8}
 }
 
 /* ═══ SELEKTOR OKAZJI ═══ */
-.chooser{position:fixed;inset:0;z-index:1200;background:var(--paper);
+/* Sala restauracyjna w tle calego ekranu wyboru - przygaszona kremowym
+   welonem, zeby tekst i karty (ktore maja wlasne, kryjace tlo) zostaly
+   czytelne. Zdjecie tylko "przegląda się" w wolnej przestrzeni wokol nich. */
+.chooser{position:fixed;inset:0;z-index:1200;
+  background:
+    linear-gradient(rgba(251,248,242,.92),rgba(251,248,242,.86) 45%,rgba(251,248,242,.94)),
+    url('img/dlugi-stol.webp') center 32%/cover no-repeat;
   display:flex;align-items:center;justify-content:center;padding:clamp(1.5rem,5vw,4rem);
   overflow-y:auto;transition:opacity .7s var(--e),visibility .7s var(--e)}
 .chooser.gone{opacity:0;visibility:hidden;pointer-events:none}
@@ -416,6 +449,15 @@ footer p{font-size:.76rem;color:var(--mute);line-height:1.8}
 .pr-ex{margin-top:1.8rem;padding:1.1rem 1.3rem;background:var(--paper2);border-left:2px solid var(--terra);
   font-size:.9rem;color:var(--ink2)}
 .pr-ex b{color:var(--terra);font-weight:500}
+
+/* opcjonalny blok "co mozna dolozyc" - tylko przy wydarzeniach z danymi
+   mozna_dolozyc w baza.json (na razie: kompleks). Wiersze recykluja styl
+   .pk-name/.pk-dots/.pk-price z sekcji Pakiety, wiec wygladaja spojnie. */
+.pr-addons{margin-top:1.8rem;padding-top:1.6rem;border-top:1px solid var(--line)}
+.pr-addons h4{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);
+  margin-bottom:1.1rem}
+.pr-addons .pk-line{margin-bottom:.9rem}
+.pr-addons .pk-name{font-size:1rem}
 
 .pr-tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.4rem;
   margin-bottom:2.6rem}

@@ -67,9 +67,9 @@
         </button>
         <button class="ch-card ch-card--feature" data-pick="kompleks">
           <div class="ch-slides">
-            <img class="ch-slide" src="assets/img/dlugi-stol.webp" alt="">
+            <img class="ch-slide" src="assets/img/apart-salon.webp" alt="">
             <img class="ch-slide" src="assets/img/jacuzzi-wieczor.webp" alt="">
-            <img class="ch-slide" src="assets/img/taras-wieczorem.webp" alt="">
+            <img class="ch-slide" src="assets/img/sala-glowna.webp" alt="">
           </div>
           <span class="ch-badge">ALL DAY IN PONTI</span>
           <span class="ch-n">08</span>
@@ -125,7 +125,32 @@
   </div>
 </header>
 
-<!-- ═══ MANIFEST ═══ -->
+<!-- ═══ WIDEO - zza kulis, zaraz po hero ═══ -->
+<section class="reel-sec">
+  <div class="wrap">
+    <div class="reel-kick rv">Zza kulis</div>
+    <h3 class="reel-h rv">Robimy wszystko sami</h3>
+    <div class="reel-card rv d1">
+      <video id="reelVideo" src="assets/video/wlasnymi-rekami.mp4" poster="assets/img/wlasnymi-rekami-poster.webp"
+        autoplay muted loop playsinline preload="metadata"></video>
+      <button class="reel-sound" id="reelSound" type="button" aria-label="Włącz dźwięk">
+        <span>&#128264; Włącz dźwięk</span>
+      </button>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var v = document.getElementById('reelVideo'), b = document.getElementById('reelSound');
+  if (!v || !b) return;
+  b.addEventListener('click', function(){
+    v.muted = !v.muted;
+    b.querySelector('span').innerHTML = v.muted ? '&#128264; Włącz dźwięk' : '&#128266; Wycisz';
+  });
+})();
+</script>
+
+<!-- ═══ MANIFEST + KUCHNIA - jedna sekcja, nie dwie ═══ -->
 <section class="pad manifest" id="historia">
   <div class="wrap mf">
     <div class="rv">
@@ -134,32 +159,24 @@
     </div>
     <div class="mf-b rv d2">
       <p class="lede">Makaron wyrabiamy na miejscu. Kiełbaskę robimy sami. Sery bierzemy od zaprzyjaźnionych rzemieślników. Zamiast sprowadzać składniki z Włoch, szukamy ich u polskich dostawców - i właśnie z tego napięcia rodzi się nasza kuchnia.</p>
-      <p class="lede">Ravioli z kiszonym czosnkiem niedźwiedzim. Spaghetti w rakowym sosie bisque z olejem z rokitnika. Carpaccio z serem „Morowa Owca" i majonezem z wędzoną szprotką. To dania, których nie zamówicie nigdzie indziej - i o których goście opowiadają jeszcze długo po wyjściu.</p>
+      <div class="mf-chef">
+        <div class="mf-chef-i"><img src="assets/img/szef-kuchni.webp" alt="Aleksander Struś w kuchni PONTI" loading="lazy" decoding="async"></div>
+        <div class="mf-chef-t">
+          <h3>Wszystko powstaje na miejscu</h3>
+          <p>Świeży makaron, własne wędliny, sosy gotowane od podstaw. Przy rezerwacjach grupowych szef układa menu indywidualnie - pod liczbę gości, charakter wydarzenia i budżet.</p>
+        </div>
+      </div>
+      <ul class="bl">
+        <li>Makaron wyrabiany codziennie w restauracji</li>
+        <li>Kiełbaska wieprzowa własnej produkcji</li>
+        <li>Sery od polskich rzemieślników, dojrzewające do 18 miesięcy</li>
+        <li>Karta zmieniana sezonowo</li>
+      </ul>
       <div class="mf-sign">
         <div>
           <div class="nm">Aleksander Struś</div>
           <div class="rl">Szef kuchni</div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ SZEF - pełnowymiarowy pas ═══ -->
-<section class="pad-s">
-  <div class="wrap">
-    <div class="band">
-      <div class="band-i rv"><img src="assets/img/szef-kuchni.webp" alt="Aleksander Struś w kuchni PONTI" loading="lazy" decoding="async"></div>
-      <div class="band-t rv d2">
-        <div class="mark"><span class="n">02</span><span class="r"></span><span class="t">Kuchnia</span></div>
-        <h3>Wszystko powstaje na miejscu</h3>
-        <p>Świeży makaron, własne wędliny, sosy gotowane od podstaw. Przy rezerwacjach grupowych szef układa menu indywidualnie - pod liczbę gości, charakter wydarzenia i budżet.</p>
-        <ul class="bl">
-          <li>Makaron wyrabiany codziennie w restauracji</li>
-          <li>Kiełbaska wieprzowa własnej produkcji</li>
-          <li>Sery od polskich rzemieślników, dojrzewające do 18 miesięcy</li>
-          <li>Karta zmieniana sezonowo</li>
-        </ul>
       </div>
     </div>
   </div>
@@ -680,6 +697,15 @@
           </ul></div>
         </div>
         <div class="pr-ex">Nie podajemy tu gotowej sumy, bo byłaby nieprawdziwa. <b>Wycena po rozmowie o planie i liczbie pokoi</b> - napiszcie, co planujecie, a policzymy to na konkretach.</div>
+        <div class="pr-addons">
+          <h4>Czym powiększycie budżet, jeśli chcecie więcej</h4>
+              <div class="pk-line"><span class="pk-name">Nocleg w apartamencie dla całej ekipy</span><span class="pk-dots"></span><span class="pk-price">organizujemy pod grupę</span></div>
+              <div class="pk-line"><span class="pk-name">Strefa Wellness na wyłączność zamiast dzielonej</span><span class="pk-dots"></span><span class="pk-price">od 350 zł / os.</span></div>
+              <div class="pk-line"><span class="pk-name">Masaże i rytuały PONTI dla grupy</span><span class="pk-dots"></span><span class="pk-price">od 200 zł</span></div>
+              <div class="pk-line"><span class="pk-name">Stacja koktajlowa z barmanem</span><span class="pk-dots"></span><span class="pk-price">1 600 zł</span></div>
+              <div class="pk-line"><span class="pk-name">Muzyka na żywo albo DJ na wieczór</span><span class="pk-dots"></span><span class="pk-price">od 1 800 zł</span></div>
+              <div class="pk-line"><span class="pk-name">Przekąski nocne po zabawie</span><span class="pk-dots"></span><span class="pk-price">39 zł / os.</span></div>
+        </div>
       </div>
 
     <div class="shead center rev" style="margin-top:3.4rem">

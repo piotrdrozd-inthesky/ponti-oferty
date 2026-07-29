@@ -48,15 +48,20 @@ MINIMUM_DOTYCZY = ["chrzciny", "komunia", "urodziny", "firmowka", "wigilia", "pa
 #  Generatory sekcji
 # ══════════════════════════════════════════════════════════════════
 
-def gen_chooser(wyd):
+def gen_chooser(wyd, feature=True):
     """Karty selektora okazji. Wydarzenie z polem "chooser_tlo" (lista 2-3
     nazw plikow z assets/img/) dostaje pelnoszerokosc, zdjecia w tle jako
     auto-slider bez JS i plakietke z tagline - odznacza sie od reszty siatki
     zamiast byc jedna z rownych kart. Zobacz .ch-card--feature w goscie.css.
+
+    `feature=False` wylacza to dla stron bez tego CSS (partnerska.html ma
+    wlasny arkusz partnerska.css, ktory nie zna klas .ch-card--feature/
+    .ch-slides/.ch-badge - bez tego przelacznika karta kompleksu wyszlaby
+    tam bez stylu).
     """
     out = []
     for i, w in enumerate(wyd, 1):
-        tlo = w.get("chooser_tlo")
+        tlo = w.get("chooser_tlo") if feature else None
         if tlo:
             slajdy = "\n".join(
                 '            <img class="ch-slide" src="assets/img/%s.webp" alt="">' % f
@@ -132,6 +137,23 @@ def gen_ceny_okazje(wyd):
             zaleznosc = "<li>Napoje i alkohol - przy wieczornych terminach robią połowę rachunku</li>"
 
         tagline = ('<span class="pr-tag">%s</span>' % w["tagline"]) if w.get("tagline") else ""
+
+        # niektore wydarzenia (np. kompleks) maja gotowa liste tego, co mozna
+        # dolozyc do koszyka - realne pozycje z dodatkow, wypisane wprost przy
+        # cenie, zeby gosc zobaczyl je od razu, bez szukania w sekcji Dodatki.
+        if w.get("mozna_dolozyc"):
+            pozycje = "\n".join(
+                '              <div class="pk-line"><span class="pk-name">%s</span>'
+                '<span class="pk-dots"></span><span class="pk-price">%s</span></div>'
+                % (nazwa, cena) for nazwa, cena in w["mozna_dolozyc"])
+            dolozyc = (
+                '        <div class="pr-addons">\n'
+                '          <h4>Czym powiększycie budżet, jeśli chcecie więcej</h4>\n'
+                '%s\n'
+                '        </div>\n' % pozycje)
+        else:
+            dolozyc = ""
+
         out.append(
             '      <div class="pr-hero rev" data-ev-price="%(id)s">\n'
             '        <div class="pr-top">\n'
@@ -161,8 +183,10 @@ def gen_ceny_okazje(wyd):
             '          </ul></div>\n'
             '        </div>\n'
             '%(przyklad)s'
+            '%(dolozyc)s'
             '      </div>'
-            % dict(w, dost=dost, typowo=typowo, przyklad=przyklad, zaleznosc=zaleznosc, tagline=tagline))
+            % dict(w, dost=dost, typowo=typowo, przyklad=przyklad, zaleznosc=zaleznosc,
+                   tagline=tagline, dolozyc=dolozyc))
     return "\n".join(out)
 
 
@@ -751,7 +775,7 @@ def zbuduj_partnerska(baza):
     stawka = baza["prowizja"]["stawka"]
 
     regiony = {
-        "CHOOSER": gen_chooser(wyd),
+        "CHOOSER": gen_chooser(wyd, feature=False),
         "TABS": gen_tabs(wyd),
         "PANES": gen_panes(wyd),
         "CENY_OKAZJE": gen_ceny_okazje_partner(wyd, stawka),
