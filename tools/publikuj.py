@@ -71,11 +71,9 @@ def main():
         "goscie.html": "goscie.html",
         "partnerska.html": k["partnerska"],
         "voucher.html": "voucher.html",
-        # strony B2B pod kampanie mailowa - kazdy segment widzi tylko swoja
-        # okazje, bez chrzcin i komunii (patrz STRONY_B2B w tools/buduj.py)
+        # strona B2B pod kampanie mailowa - integracja, wigilia, konferencja
+        # i kompleks razem, ale bez chrzcin i komunii (patrz STRONY_B2B w tools/buduj.py)
         "firmowa.html": "firmowa.html",
-        "wigilia.html": "wigilia.html",
-        "zespol.html": "zespol.html",
     }
     for zrodlo, cel in strony.items():
         html = open(os.path.join(REPO, zrodlo), encoding="utf-8").read()
@@ -142,7 +140,7 @@ footer{padding-top:1.4rem;border-top:1px solid var(--line);
 </div>
 
 <main class="w">
-  <p class="lead">Trzy strony, trzy rozne odbiorcy - dlatego stoja osobno, a nie
+  <p class="lead">Kazda strona ma innego odbiorce - dlatego stoja osobno, a nie
     na jednej wspolnej. Zanim wyslesz link, sprawdz, do kogo piszesz.</p>
 
   <a class="row" href="%(partner)s">
@@ -172,27 +170,13 @@ footer{padding-top:1.4rem;border-top:1px solid var(--line);
   </a>
 
   <a class="row" href="firmowa.html">
-    <div class="kto">Kampania B2B - maile o integracjach (firmy 20+)</div>
+    <div class="kto">Kampania B2B - wszystkie maile do firm (integracja, wigilia, konferencja)</div>
     <h2>Oferta firmowa</h2>
-    <p>Kolacja firmowa, konferencja i pelny kompleks - bez okazji rodzinnych.
-      Ten link idzie w mailach o jesiennych integracjach.</p>
+    <p>Kolacja firmowa, wigilia, konferencja i pelny kompleks razem, w jednym
+      pliku - bez okazji rodzinnych (chrzciny, komunia, wesele zostaja tylko
+      w goscie.html). Ten link idzie we wszystkich mailach kampanii firmowej,
+      od malych zespolow po duze korporacje.</p>
     <code>firmowa.html</code>
-  </a>
-
-  <a class="row" href="wigilia.html">
-    <div class="kto">Kampania B2B - maile wigilijne</div>
-    <h2>Wigilia firmowa</h2>
-    <p>Tylko wigilia: swiateczne menu, terminy 3-19 grudnia, zasada "nie doliczamy
-      niczego za to, ze okazja jest swiateczna".</p>
-    <code>wigilia.html</code>
-  </a>
-
-  <a class="row" href="zespol.html">
-    <div class="kto">Kampania B2B - male zespoly (do 20 osob)</div>
-    <h2>Kolacja zespolowa</h2>
-    <p>Sama kolacja firmowa w kameralnej skali - sala Onda na wylacznosc
-      od kilkunastu osob.</p>
-    <code>zespol.html</code>
   </a>
 
   <div class="uwaga">

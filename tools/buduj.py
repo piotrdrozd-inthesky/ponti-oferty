@@ -624,9 +624,10 @@ def zbuduj_goscie(baza, asy):
 
 
 STRONY_B2B = {
-    "firmowa.html": ["firmowka", "konferencja", "kompleks"],
-    "wigilia.html": ["wigilia"],
-    "zespol.html": ["firmowka"],
+    # Jedna strona dla calej kampanii firmowej - integracja, wigilia, konferencja
+    # i pelny kompleks razem. Firma widzi wszystkie swoje opcje na raz, ale nigdy
+    # okazje rodzinne (chrzciny, komunia, wesele) - te zostaja tylko w goscie.html.
+    "firmowa.html": ["firmowka", "wigilia", "konferencja", "kompleks"],
 }
 
 
