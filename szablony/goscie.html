@@ -436,6 +436,14 @@
     document.querySelectorAll('[data-ev-price]').forEach(function(el){
       el.style.display = el.getAttribute('data-ev-price') === ev ? '' : 'none';
     });
+
+    /* Minimum konsumpcyjne za wylacznosc ma sens tylko przy grupowych okazjach -
+       przy konferencji i pelnym kompleksie wycena jest indywidualna i pokazanie
+       tej samej tabeli sugerowaloby sztywny cennik tam, gdzie go celowo nie ma. */
+    document.querySelectorAll('[data-ev-minimum]').forEach(function(el){
+      var lista = el.getAttribute('data-ev-minimum').split(' ');
+      el.style.display = lista.indexOf(ev) >= 0 ? '' : 'none';
+    });
     window.__PONTI_EV__ = ev;
     document.querySelectorAll('[data-ev-pack]').forEach(function(el){
       var ok = el.getAttribute('data-ev-pack').split(' ').indexOf(ev) >= 0;

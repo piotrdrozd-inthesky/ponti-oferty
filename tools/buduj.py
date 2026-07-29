@@ -30,19 +30,35 @@ def zl(n):
     return "{:,}".format(n).replace(",", " ")
 
 
+def wyd_agencyjne(baza):
+    """Wydarzenia, ktore agencja/wedding planner moze nam polecic.
+
+    Wyklucza pozycje z kategoria != "wydarzenie" (np. "para" - kolacja i
+    Wellness dla dwojga to produkt indywidualny, nie cos, co bierze sie z
+    ulotki agencji eventowej. Ta lista karmi chooser, pasy okazji, sekcje
+    cenowe i kalkulator prowizji w goscie.html i partnerska.html.
+    """
+    return [w for w in baza["wydarzenia"] if w.get("kategoria", "wydarzenie") == "wydarzenie"]
+
+
+MINIMUM_DOTYCZY = ["chrzciny", "komunia", "urodziny", "firmowka", "panienskie", "wesele"]
+
+
 # ══════════════════════════════════════════════════════════════════
 #  Generatory sekcji
 # ══════════════════════════════════════════════════════════════════
 
 def gen_chooser(wyd):
     out = []
-    for w in wyd:
+    for i, w in enumerate(wyd, 1):
+        tagline = ('<div class="ch-tag">%s</div>' % w["tagline"]) if w.get("tagline") else ""
         out.append(
-            '        <button class="ch-card" data-pick="%(id)s">\n'
-            '          <span class="ch-n">%(nr)s</span>\n'
-            '          <div class="ch-t">%(label)s</div>\n'
-            '          <div class="ch-d">%(haczyk)s</div>\n'
-            '        </button>' % w)
+            '        <button class="ch-card" data-pick="%s">\n'
+            '          <span class="ch-n">%02d</span>\n'
+            '          <div class="ch-t">%s</div>\n'
+            '          <div class="ch-d">%s</div>\n'
+            '          %s\n'
+            '        </button>' % (w["id"], i, w["label"], w["haczyk"], tagline))
     return "\n".join(out)
 
 
@@ -51,18 +67,19 @@ def gen_okazje(wyd):
     for i, w in enumerate(wyd):
         flip = " flip" if i % 2 else ""
         lista = "\n".join('          <li>%s</li>' % x for x in w["band_lista"])
+        tagline = ('<span class="band-tag">%s</span>' % w["tagline"]) if w.get("tagline") else ""
         out.append(
             '    <div class="band rv%(flip)s" data-ev-band="%(id)s">\n'
             '      <div class="band-i"><img src="assets/img/%(foto)s.webp" '
-            'alt="%(label_dl)s w PONTI"><span class="bn">%(nr)s</span></div>\n'
+            'alt="%(label_dl)s w PONTI"><span class="bn">%(nr)02d</span></div>\n'
             '      <div class="band-t">\n'
-            '        <h3>%(label_dl)s</h3>\n'
+            '        <h3>%(label_dl)s</h3>%(tagline)s\n'
             '        <p>%(band_p)s</p>\n'
             '        <ul class="bl">\n%(lista)s\n'
             '        </ul>\n'
             '      </div>\n'
             '    </div>'
-            % dict(w, flip=flip, lista=lista))
+            % dict(w, flip=flip, lista=lista, tagline=tagline, nr=i + 1))
     return "\n".join(out)
 
 
@@ -92,6 +109,7 @@ def gen_ceny_okazje(wyd):
                 'to na konkretach.</div>\n' % w.get("bez_typowego", "Wycena indywidualna"))
             zaleznosc = "<li>Napoje i alkohol - przy wieczornych terminach robią połowę rachunku</li>"
 
+        tagline = ('<span class="pr-tag">%s</span>' % w["tagline"]) if w.get("tagline") else ""
         out.append(
             '      <div class="pr-hero rev" data-ev-price="%(id)s">\n'
             '        <div class="pr-top">\n'
@@ -100,6 +118,7 @@ def gen_ceny_okazje(wyd):
             '            <div class="pr-num">%(od)d zł<small>za osobę</small></div>\n'
             '          </div>\n'
             '          <div class="pr-side">\n'
+            '            %(tagline)s\n'
             '            <h3>%(naglowek_ceny)s</h3>\n'
             '            <p>%(dlaczego)s</p>\n'
             '            <div class="pr-meta">\n'
@@ -121,7 +140,7 @@ def gen_ceny_okazje(wyd):
             '        </div>\n'
             '%(przyklad)s'
             '      </div>'
-            % dict(w, dost=dost, typowo=typowo, przyklad=przyklad, zaleznosc=zaleznosc))
+            % dict(w, dost=dost, typowo=typowo, przyklad=przyklad, zaleznosc=zaleznosc, tagline=tagline))
     return "\n".join(out)
 
 
@@ -173,12 +192,18 @@ def gen_ceny_zaufanie():
 
 
 def gen_ceny_minimum(mini, poj):
+    """Sekcja minimum konsumpcyjnego - widoczna tylko dla okazji, przy ktorych
+    wykupienie calej restauracji na wylacznosc ma sens (MINIMUM_DOTYCZY).
+    Konferencja i pelny kompleks maja wlasna, indywidualna wycene - pokazanie
+    tu gotowej tabeli za wylacznosc myliloby, sugerujac sztywny cennik tam,
+    gdzie go celowo nie ma.
+    """
     wiersze = "\n".join(
         '        <tr><td class="w">%s</td><td class="k">%s</td>'
         '<td class="l">minimum konsumpcyjne</td></tr>' % (k, v)
         for k, v in mini["pozycje"])
     return (
-        '    <div class="pr-min rev">\n'
+        '    <div class="pr-min rev" data-ev-minimum="%s">\n'
         '      <div class="pr-min-h">\n'
         '        <h4>%s</h4>\n'
         '        <p>%s Sala Onda mieści do %d osób, cała restauracja z tarasem do %d, '
@@ -189,8 +214,8 @@ def gen_ceny_minimum(mini, poj):
         '        <p style="font-size:.86rem;color:var(--mute)">%s</p>\n'
         '      </div>\n'
         '    </div>'
-        % (mini["naglowek"], mini["opis"], poj["onda"], poj["restauracja"],
-           poj["wellness_wylacznosc"], wiersze, mini["rada"]))
+        % (" ".join(MINIMUM_DOTYCZY), mini["naglowek"], mini["opis"], poj["onda"],
+           poj["restauracja"], poj["wellness_wylacznosc"], wiersze, mini["rada"]))
 
 
 def gen_pakiety(dodatki):
@@ -352,6 +377,7 @@ def gen_ceny_okazje_partner(wyd, stawka):
                   % (w.get("bez_typowego", "Wycena indywidualna"), stawka))
             zaleznosc = "<li>Napoje i alkohol - przy wieczornych terminach robią połowę rachunku</li>"
 
+        tagline = ('<span class="pr-tag">%s</span>' % w["tagline"]) if w.get("tagline") else ""
         out.append(
             '      <div class="pr-hero rev" data-ev-price="%(id)s">\n'
             '        <div class="pr-top">\n'
@@ -360,6 +386,7 @@ def gen_ceny_okazje_partner(wyd, stawka):
             '            <div class="pr-num">%(od)d zł<small>za osobę</small></div>\n'
             '          </div>\n'
             '          <div class="pr-side">\n'
+            '            %(tagline)s\n'
             '            <h3>%(naglowek_ceny)s</h3>\n'
             '            <p>%(dlaczego)s</p>\n'
             '            <div class="pr-meta">\n'
@@ -381,7 +408,7 @@ def gen_ceny_okazje_partner(wyd, stawka):
             '        </div>\n'
             '%(ex)s'
             '      </div>'
-            % dict(w, dost=dost, typowo=typowo, ex=ex, zaleznosc=zaleznosc))
+            % dict(w, dost=dost, typowo=typowo, ex=ex, zaleznosc=zaleznosc, tagline=tagline))
     return "\n".join(out)
 
 
@@ -572,7 +599,7 @@ def leniwe_obrazki(html):
 
 def zbuduj_goscie(baza, asy):
     szablon = open(os.path.join(SZAB, "goscie.html"), encoding="utf-8").read()
-    wyd = baza["wydarzenia"]
+    wyd = wyd_agencyjne(baza)
     poj = baza["pojemnosc"]
 
     regiony = {
@@ -654,7 +681,7 @@ def zloz(szablon, regiony, nazwa):
 
 def zbuduj_partnerska(baza):
     szablon = open(os.path.join(SZAB, "partnerska.html"), encoding="utf-8").read()
-    wyd = baza["wydarzenia"]
+    wyd = wyd_agencyjne(baza)
     poj = baza["pojemnosc"]
     stawka = baza["prowizja"]["stawka"]
 

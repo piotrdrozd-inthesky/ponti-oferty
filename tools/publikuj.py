@@ -82,15 +82,21 @@ def main():
 <title>PONTI - linki do ofert (wewnetrzne)</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#FBF8F2;--ink:#1F2318;--ink2:#4A4F3E;--terra:#B85C38;--line:rgba(31,35,24,.14)}
+:root{--paper:#FBF8F2;--ink:#1F2318;--ink2:#4A4F3E;--terra:#B85C38;--line:rgba(31,35,24,.14);--forest:#1B2113}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Poppins',sans-serif;background:var(--paper);color:var(--ink);
-  font-weight:300;line-height:1.75;padding:clamp(2rem,7vw,5rem) clamp(1.2rem,5vw,2rem)}
-.w{max-width:760px;margin:0 auto}
+  font-weight:300;line-height:1.75}
+.w{max-width:760px;margin:0 auto;padding:0 clamp(1.2rem,5vw,2rem)}
+.hero{position:relative;min-height:clamp(220px,32vw,340px);display:flex;align-items:flex-end;
+  background:linear-gradient(180deg,rgba(27,33,19,.25),rgba(27,33,19,.82)),
+  url('assets/img/dlugi-stol.webp') center 38%%/cover no-repeat;margin-bottom:clamp(2rem,5vw,3rem)}
+.hero-in{max-width:760px;margin:0 auto;padding:clamp(2rem,6vw,3rem) clamp(1.2rem,5vw,2rem)
+  clamp(1.6rem,4vw,2.2rem);width:100%%;box-sizing:border-box}
 h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(2rem,5vw,3rem);
-  line-height:1.1;margin-bottom:.7rem}
-.kick{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--terra);
+  line-height:1.1;margin-bottom:.7rem;color:#fff}
+.kick{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:#D98A63;
   margin-bottom:1.1rem}
+main{padding-bottom:clamp(2rem,7vw,5rem)}
 .lead{color:var(--ink2);font-size:.95rem;margin-bottom:2.6rem;max-width:60ch}
 .row{display:block;border:1px solid var(--line);padding:1.3rem 1.4rem;margin-bottom:.9rem;
   text-decoration:none;color:inherit;transition:.3s}
@@ -103,38 +109,46 @@ h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(2rem,5vw
   word-break:break-all;display:block;margin-top:.55rem}
 .uwaga{border-left:2px solid var(--terra);padding:.9rem 1.1rem;background:#F3ECE0;
   font-size:.85rem;color:var(--ink2);margin:2.2rem 0 1rem}
-footer{margin-top:2.5rem;padding-top:1.4rem;border-top:1px solid var(--line);
+footer{padding-top:1.4rem;border-top:1px solid var(--line);
   font-size:.78rem;color:#8A8B79}
 </style>
 </head>
 <body>
-<div class="w">
-  <div class="kick">Do uzytku wewnetrznego</div>
-  <h1>Linki do ofert PONTI</h1>
-  <p class="lead">Trzy strony, trzech odbiorcow. Zanim wyslesz link, sprawdz,
-    do kogo piszesz.</p>
 
-  <a class="row" href="goscie.html">
-    <div class="kto">Dla klientow i gosci</div>
-    <h2>Prezentacja wydarzen</h2>
-    <p>Dziewiec typow wydarzen, ceny, dodatki, sale, strefa Wellness i asystent
-      czatu. Bez slowa o prowizji - to jest link, ktory wysylasz klientom.</p>
-    <code>goscie.html</code>
-  </a>
+<div class="hero">
+  <div class="hero-in">
+    <div class="kick">Do uzytku wewnetrznego</div>
+    <h1>Linki do ofert PONTI</h1>
+  </div>
+</div>
+
+<main class="w">
+  <p class="lead">Trzy strony, trzy rozne odbiorcy - dlatego stoja osobno, a nie
+    na jednej wspolnej. Zanim wyslesz link, sprawdz, do kogo piszesz.</p>
 
   <a class="row" href="%(partner)s">
-    <div class="kto">Tylko dla agencji i partnerow</div>
+    <div class="kto">Tylko dla agencji eventowych i wedding plannerow</div>
     <h2>Oferta partnerska - 10%% prowizji</h2>
-    <p>To samo, co widzi klient, plus przelicznik prowizji i zasady wspolpracy.
-      <b>Nigdy nie wysylaj tego linku klientowi koncowemu.</b></p>
+    <p>Osiem typow wydarzen, ktore agencja moze nam polecic - od chrzcin po
+      pelny kompleks z noclegiem (ALL DAY IN PONTI) - plus przelicznik prowizji
+      i zasady wspolpracy. <b>Nigdy nie wysylaj tego linku klientowi koncowemu.</b></p>
     <code>%(partner)s</code>
   </a>
 
+  <a class="row" href="goscie.html">
+    <div class="kto">Do przeslania dalej - agencja wysyla to swojemu klientowi</div>
+    <h2>Prezentacja wydarzen</h2>
+    <p>To samo osiem typow wydarzen, ceny, dodatki, sale, strefa Wellness i asystent
+      czatu - ale bez slowa o prowizji. Ten link agencja przekazuje swojemu klientowi
+      albo Ty wysylasz go bezposrednio osobie pytajacej o termin.</p>
+    <code>goscie.html</code>
+  </a>
+
   <a class="row" href="voucher.html">
-    <div class="kto">Publicznie</div>
+    <div class="kto">Publicznie - social media, newsletter</div>
     <h2>Landing voucherow</h2>
-    <p>Vouchery kwotowe i pakietowe, cennik strefy Wellness. Mozna wrzucac
-      w media spolecznosciowe i newsletter.</p>
+    <p>Produkty indywidualne, nie wydarzenia grupowe: vouchery kwotowe i pakietowe,
+      kolacja i Wellness dla dwojga, cennik strefy Wellness.</p>
     <code>voucher.html</code>
   </a>
 
@@ -145,7 +159,7 @@ footer{margin-top:2.5rem;padding-top:1.4rem;border-top:1px solid var(--line);
   </div>
 
   <footer>%(nazwa)s &middot; %(adres)s &middot; %(tel)s &middot; %(mail)s</footer>
-</div>
+</main>
 </body>
 </html>
 """ % dict(noindex=NOINDEX, partner=k["partnerska"], nazwa=firma["nazwa"],

@@ -70,6 +70,16 @@ html[data-mood="dzien"] body.p-goscie{--paper:#FCFAF5;--paper2:#F4EFE5;--paper3:
 html[data-mood="wieczor"] body.p-goscie{--paper:#FBF8F2;--paper2:#F3ECE0;--paper3:#EAE0D0}
 html[data-mood="noc"] body.p-goscie{--paper:#FAF6EE;--paper2:#F1E9DB;--paper3:#E6DAC7}
 
+/* Odznaka "ALL DAY IN PONTI" - tylko przy pelnym kompleksie z noclegiem,
+   pokazuje w skrocie ze to jedno wydarzenie od A do Z (wellness+kolacja+nocleg). */
+.ch-tag{margin-top:.6rem;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--terra,var(--brass));font-weight:500}
+.band-tag,.pr-tag{display:inline-block;font-size:.62rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--terra,var(--brass));
+  border:1px solid currentColor;padding:.28rem .7rem;border-radius:2px}
+.band-tag{margin:.5rem 0 .3rem}
+.pr-tag{margin-bottom:.7rem}
+
 /* Znacznik wybranej okazji w nawigacji dostaje kolor okazji */
 .ev-chip{min-height:36px}
 
