@@ -588,9 +588,16 @@ TEMATY = {
 }
 
 
-def gen_kb(asy, baza):
+def gen_kb(asy, baza, wyd=None):
+    """Wiedza asystenta czatu. Bez `wyd` (goscie.html) - zna wszystkie okazje.
+
+    Z `wyd` (strony B2B typu firmowa.html) - odcina intencje _q, tematy
+    i wgOkazji dla okazji spoza tej strony. Bez tego asystent na stronie
+    tylko dla firm odpowiadalby tresciwie na pytania o chrzciny czy wesele,
+    ktorych ta strona w ogole nie oferuje.
+    """
     firma = baza["firma"]
-    intencje = [{
+    intencje_all = [{
         "id": "powitanie",
         "kw": ["czesc", "hej", "dzien dobry", "witam", "halo", "siema", "dobry wieczor"],
         "a": asy["powitanie_baza"],
@@ -598,20 +605,40 @@ def gen_kb(asy, baza):
         "nast": ["cena_ogolna", "ile_osob", "wellness_strefa"],
     }] + asy["intencje"]
 
+    if wyd is None:
+        intencje = intencje_all
+        tematy = TEMATY
+        wg_okazji = asy["wg_okazji"]
+        wyd_dla_etykiet = baza["wydarzenia"]
+    else:
+        dozwolone = {w["id"] for w in wyd}
+        wyklucz = {"%s_q" % w["id"] for w in baza["wydarzenia"] if w["id"] not in dozwolone}
+        intencje = []
+        for i in intencje_all:
+            if i["id"] in wyklucz:
+                continue
+            i2 = dict(i)
+            if "nast" in i2:
+                i2["nast"] = [n for n in i2["nast"] if n not in wyklucz]
+            intencje.append(i2)
+        tematy = {k: v for k, v in TEMATY.items() if k not in wyklucz}
+        wg_okazji = {k: v for k, v in asy["wg_okazji"].items() if k in dozwolone}
+        wyd_dla_etykiet = wyd
+
     braki = [i["id"] for i in intencje if i["id"] != "powitanie" and i["id"] not in TEMATY]
     if braki:
         sys.exit("Brak etykiety w TEMATY dla intencji: %s" % ", ".join(braki))
 
     kb = {
         "intencje": intencje,
-        "tematy": {k: {"q": v} for k, v in TEMATY.items()},
-        "wgOkazji": asy["wg_okazji"],
+        "tematy": {k: {"q": v} for k, v in tematy.items()},
+        "wgOkazji": wg_okazji,
         "mocne": asy["mocne"],
         "niewiem": asy["niewiem"],
         "powitanie": asy["powitanie_baza"],
         "mail": firma["mail"],
         "tel": firma["telefon"],
-        "evLabel": {w["id"]: w["label_dl"] for w in baza["wydarzenia"]},
+        "evLabel": {w["id"]: w["label_dl"] for w in wyd_dla_etykiet},
     }
     return "  var KB = %s;" % json.dumps(kb, ensure_ascii=False)
 
@@ -703,7 +730,7 @@ def zbuduj_b2b(baza, asy, ids, nazwa):
         "SALE": gen_sale(baza["sale"]),
         "WELLNESS": gen_wellness(baza["wellness"]),
         "EV_CFG": gen_ev_cfg(wyd),
-        "KB": gen_kb(asy, baza),
+        "KB": gen_kb(asy, baza, wyd=wyd),
         "TEL": baza["firma"]["telefon"],
         "TEL_HREF": baza["firma"]["telefon_href"],
         "MAIL": baza["firma"]["mail"],
