@@ -1,0 +1,288 @@
+/* ══════════════════════════════════════════════════════════════════════
+   PONTI - warstwa wspolna: responsywnosc, nowoczesne detale, charakter
+   wydarzenia. Laduje sie PO arkuszu strony, wiec nadpisuje to, co trzeba.
+
+   1. Braki w istniejacym CSS (naglowki sekcji cenowej)
+   2. Charakter wydarzenia - paleta zmienia sie po wyborze okazji
+   3. Responsywnosc: mobile-first popraw­ki, dvh, safe-area, tap targety
+   4. Nowe komponenty: sale, wellness, pasek akcji, pasek postepu
+   5. Wydajnosc i dostepnosc
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* ── 1. Braki ─────────────────────────────────────────────────────── */
+
+/* Sekcja cenowa w prezentacji dla gosci uzywa klas .shead / .eyebrow / .rev,
+   ktorych jej arkusz nie definiowal - naglowek "Ile to kosztuje" byl bez stylu,
+   a bloki .rev nigdy nie dostawaly animacji wejscia. Oferta partnerska ma te
+   klasy u siebie, dlatego rezerwujemy poprawke tylko dla gosci. */
+.p-goscie .shead{margin-bottom:clamp(1.6rem,3vw,2.4rem)}
+.p-goscie .shead.center{text-align:center}
+.p-goscie .shead .eyebrow{display:block;font-size:.63rem;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--terra);margin-bottom:.9rem}
+.p-goscie .shead h2{margin:0}
+.p-goscie .rev{opacity:0;transform:translateY(28px);
+  transition:opacity 1s var(--e),transform 1s var(--e)}
+.p-goscie .rev.in{opacity:1;transform:none}
+
+/* ── 2. Charakter wydarzenia ───────────────────────────────────────── */
+/* Po wyborze okazji skrypt ustawia <html data-ev="..."> i <html data-mood="...">.
+   Kolor akcentu i temperatura tla ida za charakterem wydarzenia - subtelnie,
+   bo paleta PONTI zostaje ta sama. Bez wyboru: wartosci wlasne strony.
+
+   Kazda strona ma inna nazwe zmiennej akcentu (goscie: --terra,
+   partnerska: --brass), dlatego akcent okazji trzymamy w --ev-akcent
+   i dopiero potem podstawiamy pod wlasciwa nazwe. */
+
+html[data-ev]{transition:background-color .8s var(--e)}
+
+html[data-ev="chrzciny"]{--ev-akcent:#7C8B6A;--ev-akcent-dp:#63704F;--ev-akcent-lt:#9DAA8B}
+html[data-ev="komunia"]{--ev-akcent:#B08843;--ev-akcent-dp:#8E6B31;--ev-akcent-lt:#CBA968}
+html[data-ev="urodziny"]{--ev-akcent:#B85C38;--ev-akcent-dp:#93452A;--ev-akcent-lt:#D98A63}
+html[data-ev="firmowka"]{--ev-akcent:#55654A;--ev-akcent-dp:#3F4C36;--ev-akcent-lt:#7C8B6A}
+html[data-ev="konferencja"]{--ev-akcent:#6B6350;--ev-akcent-dp:#524B3C;--ev-akcent-lt:#8E856E}
+html[data-ev="panienskie"]{--ev-akcent:#A8475C;--ev-akcent-dp:#87374A;--ev-akcent-lt:#C46E82}
+html[data-ev="wesele"]{--ev-akcent:#93452A;--ev-akcent-dp:#75351F;--ev-akcent-lt:#BD6845}
+html[data-ev="para"]{--ev-akcent:#4F7B80;--ev-akcent-dp:#3B5F63;--ev-akcent-lt:#7BA5A9}
+html[data-ev="kompleks"]{--ev-akcent:#7A6A54;--ev-akcent-dp:#5E5140;--ev-akcent-lt:#9E8D75}
+
+.p-goscie{
+  --terra:var(--ev-akcent,#B85C38);
+  --terra-dp:var(--ev-akcent-dp,#93452A);
+  --terra-lt:var(--ev-akcent-lt,#D98A63);
+}
+.p-partner{
+  --brass:var(--ev-akcent,#B8973F);
+  --brass-lt:var(--ev-akcent-lt,#D4B65E);
+  /* nazwy, ktorych oczekuja wspolne komponenty ponizej */
+  --paper:var(--cream);
+  --paper2:var(--bone);
+  --paper3:var(--bone);
+  --line:rgba(20,24,15,.12);
+  --ink2:var(--ink-soft);
+  --mute:rgba(42,47,34,.62);
+  --e:var(--ease);
+  --terra:var(--ev-akcent,#B8973F);
+  --terra-lt:var(--ev-akcent-lt,#D4B65E);
+}
+
+/* Nastroj: dzien jest jasniejszy i chlodniejszy, noc cieplejsza i gestsza. */
+html[data-mood="dzien"] body.p-goscie{--paper:#FCFAF5;--paper2:#F4EFE5;--paper3:#EAE2D4}
+html[data-mood="wieczor"] body.p-goscie{--paper:#FBF8F2;--paper2:#F3ECE0;--paper3:#EAE0D0}
+html[data-mood="noc"] body.p-goscie{--paper:#FAF6EE;--paper2:#F1E9DB;--paper3:#E6DAC7}
+
+/* Znacznik wybranej okazji w nawigacji dostaje kolor okazji */
+.ev-chip{min-height:36px}
+
+/* ── 3. Responsywnosc ─────────────────────────────────────────────── */
+
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+
+/* overflow-x na <body> sprawia, ze drugi kierunek liczy sie jako "auto"
+   (computed: "hidden auto") i body staje sie kontenerem przewijania. Samo
+   przewijanie strony dziala, ale to niepotrzebny kontener - psuje position:
+   sticky w srodku i pomiary wysokosci. Przycinanie idzie wiec na <html>. */
+body{overflow-x:visible}
+html{overflow-x:clip}
+
+/* Naglowki nie zostawiaja jednego slowa w ostatniej linii */
+h1,h2,h3,.mf-q,.pr-side h3,.trust-q{text-wrap:balance}
+.lede,.pr-lead,.band-t p,.pk-desc,.mdesc{text-wrap:pretty}
+
+/* Hero: pelna wysokosc liczona dynamicznie (pasek adresu w iOS) */
+@supports (height:100dvh){.hero{min-height:100dvh}}
+
+/* Prezentacja dla gosci ma hero podzielone na jasna kolumne i zdjecie, wiec
+   przezroczysty pasek gubil linki na fotografii. Dostaje welon w kolorze
+   papieru. Oferta partnerska ma hero ciemne i biale logo - tam welonu nie ma. */
+.p-goscie nav{background:rgba(251,248,242,.88);
+  backdrop-filter:blur(14px) saturate(1.2);
+  -webkit-backdrop-filter:blur(14px) saturate(1.2)}
+
+/* Wciecia iPhone'a - nawigacja, panel czatu i pasek akcji */
+nav{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
+.pcz-pan{padding-bottom:env(safe-area-inset-bottom)}
+
+/* Obrazki nie skacza przy wczytywaniu i nie rozpychaja layoutu */
+img{max-width:100%;height:auto}
+.band-i img,.plate img,.si img,.hero-img img{height:100%}
+
+/* Wszystko, co sie klika, ma sensowne pole trafienia na telefonie */
+@media(hover:none){
+  .lnk,.ch-card,.pcz-chip,.btn,.si{min-height:44px}
+  .pcz-chip{padding:.6rem 1rem}
+  .lbn{padding:1.4rem .9rem;font-size:2.8rem}
+  .band:hover .band-i img,.plate:hover img,.si:hover img{transform:none}
+}
+
+/* Nawigacja mobilna: panel z prawej, z tlem i wyrazna hierarchia */
+@media(max-width:980px){
+  nav{padding-top:1rem;padding-bottom:1rem}
+  .nav-l.open{background:var(--paper);gap:1.6rem;
+    padding:5rem 1.5rem 3rem;justify-content:flex-start;overflow-y:auto}
+  .nav-l.open a.lnk{font-size:1.15rem;letter-spacing:.14em;padding:.7rem 0;
+    width:min(420px,100%);text-align:center;border-bottom:1px solid var(--line)}
+  .nav-l.open a.lnk::after{display:none}
+  .burger{width:44px;height:44px;align-items:center;justify-content:center}
+}
+
+/* Selektor okazji: przy dziewieciu kartach potrzebna jest inna siatka */
+.ch-grid{grid-template-columns:repeat(3,1fr)}
+.ch-in{max-width:1080px}
+@media(max-width:980px){.ch-grid{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}}
+@media(max-width:600px){
+  .chooser{align-items:flex-start;padding-top:2.5rem;padding-bottom:2.5rem}
+  .ch-grid{grid-template-columns:1fr 1fr;gap:.6rem}
+  .ch-card{padding:1rem .9rem}
+  .ch-n{margin-bottom:.4rem;font-size:.75rem}
+  .ch-t{font-size:1.02rem;line-height:1.2}
+  .ch-d{font-size:.72rem;line-height:1.45}
+  .ch-mark{margin-bottom:1.2rem}
+  .ch-sub{font-size:.88rem;margin-bottom:1.6rem}
+}
+@media(max-width:380px){.ch-grid{grid-template-columns:1fr}}
+
+/* Ceny: na telefonie kwota nad opisem, nie obok */
+@media(max-width:560px){
+  .pr-top{gap:1.2rem}
+  .pr-num{font-size:2.9rem}
+  .pr-meta{gap:1rem}
+  .pr-meta div{flex:1 1 45%}
+  .pr-hero{padding:1.3rem 1.1rem}
+  .pr-ex{padding:.9rem 1rem;font-size:.85rem}
+}
+
+/* Karta dan i dodatki: jedna kolumna wchodzi pozniej, dwie sa czytelne dluzej */
+@media(max-width:820px){.mc-cols,.pk-cols{grid-template-columns:1fr}}
+
+/* ── 4. Nowe komponenty ───────────────────────────────────────────── */
+
+/* Sale i przestrzenie */
+.sale-s{background:var(--paper2)}
+.sale-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:clamp(1.2rem,2.5vw,2rem)}
+.sale-c{background:var(--paper);border:1px solid var(--line);display:flex;flex-direction:column;
+  overflow:hidden;transition:transform .5s var(--e,ease),box-shadow .5s var(--e,ease)}
+.sale-c:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(20,24,15,.1)}
+.sale-c>.ph{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--paper3)}
+.sale-c>.ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--e,ease)}
+.sale-c:hover>.ph img{transform:scale(1.05)}
+.sale-c .cap-n{position:absolute;left:0;bottom:0;background:var(--paper);
+  padding:.5rem 1rem;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--terra)}
+.sale-c .bd{padding:1.5rem 1.4rem 1.6rem;display:flex;flex-direction:column;flex:1}
+.sale-c h3{font-size:clamp(1.4rem,2.2vw,1.8rem);margin-bottom:.3rem}
+.sale-c .poj{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--terra);margin-bottom:.9rem}
+.sale-c p{font-size:.88rem;line-height:1.75;color:var(--ink2);margin-bottom:1.1rem}
+.sale-c ul{list-style:none;display:grid;gap:.45rem;margin-top:auto}
+.sale-c li{display:flex;gap:.6rem;font-size:.83rem;color:var(--ink2);align-items:flex-start}
+.sale-c li::before{content:'';flex:0 0 auto;width:4px;height:4px;border-radius:50%;
+  background:var(--terra);margin-top:.6rem}
+
+/* Wellness */
+.well-s{background:var(--forest);color:var(--paper)}
+.well-head{max-width:56ch;margin-bottom:clamp(2.2rem,4vw,3.2rem)}
+.well-head .mark .t{color:rgba(251,248,242,.5)}
+.well-head .mark .n,.well-head .mark .r{color:var(--terra-lt);background:var(--terra-lt)}
+.well-head .mark .n{background:none}
+.well-head h2{color:#fff;margin-bottom:1.1rem}
+.well-head p{font-size:1rem;line-height:1.9;color:rgba(251,248,242,.78)}
+.well-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.4rem,3vw,2.6rem);
+  align-items:start}
+.well-ph{position:relative;overflow:hidden;aspect-ratio:4/3;background:rgba(255,255,255,.06)}
+.well-ph img{width:100%;height:100%;object-fit:cover}
+.well-cards{display:grid;gap:1.2rem}
+.well-c{border:1px solid rgba(251,248,242,.18);padding:1.4rem 1.4rem 1.5rem;
+  background:rgba(255,255,255,.035)}
+.well-c h4{font-family:var(--serif);font-size:1.45rem;font-weight:400;color:#fff;line-height:1.2}
+.well-c .sub{font-size:.63rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--terra-lt);margin:.35rem 0 .85rem}
+.well-c p{font-size:.85rem;line-height:1.75;color:rgba(251,248,242,.72);margin-bottom:1rem}
+.well-pr{display:grid;gap:.5rem;margin-bottom:.9rem}
+.well-pr div{display:flex;align-items:baseline;gap:.6rem;font-size:.86rem;
+  color:rgba(251,248,242,.85)}
+.well-pr .dots{flex:1;border-bottom:1px dotted rgba(251,248,242,.28);transform:translateY(-3px)}
+.well-pr b{font-family:var(--serif);font-size:1.15rem;font-weight:400;color:var(--terra-lt);
+  white-space:nowrap}
+.well-c .foot{font-size:.76rem;line-height:1.65;color:rgba(251,248,242,.55)}
+.well-zab{margin-top:clamp(2rem,4vw,3rem);padding-top:clamp(1.8rem,3vw,2.4rem);
+  border-top:1px solid rgba(251,248,242,.16)}
+.well-zab h4{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--terra-lt);margin-bottom:1.3rem}
+.well-zl{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+  gap:.5rem 2.2rem}
+.well-zl div{display:flex;align-items:baseline;gap:.6rem;font-size:.83rem;
+  color:rgba(251,248,242,.78);padding:.32rem 0}
+.well-zl .dots{flex:1;border-bottom:1px dotted rgba(251,248,242,.2);transform:translateY(-3px)}
+.well-zl span.c{color:rgba(251,248,242,.92);white-space:nowrap;font-size:.8rem}
+.well-note{margin-top:1.5rem;font-size:.76rem;color:rgba(251,248,242,.5);line-height:1.7}
+.well-bon{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.6rem;
+  border:1px solid var(--terra-lt);color:var(--terra-lt);padding:.55rem 1.1rem;
+  font-size:.72rem;letter-spacing:.1em}
+@media(max-width:880px){.well-grid{grid-template-columns:1fr}.well-ph{aspect-ratio:16/9}}
+
+/* Minimum konsumpcyjne - tabela w karcie */
+.pr-min table.mintab td.k{text-align:right}
+
+/* Cennik strefy Wellness na landingu voucherow */
+.vc{margin-top:clamp(2.4rem,5vw,3.6rem);background:var(--paper);
+  border:1px solid var(--line);padding:clamp(1.5rem,3.5vw,2.6rem)}
+.vc-head{max-width:60ch;margin-bottom:clamp(1.4rem,3vw,2rem)}
+.vc-head h3{font-size:clamp(1.4rem,2.6vw,2rem);margin-bottom:.7rem}
+.vc-head p{font-size:.9rem;line-height:1.8;color:var(--ink2)}
+.vc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:clamp(1.4rem,3vw,2.6rem)}
+.vc-col h4{font-family:var(--serif);font-size:1.35rem;font-weight:400}
+.vc-sub{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--terra);margin:.3rem 0 1rem}
+.vc-poz{display:grid;gap:.5rem;margin-bottom:.9rem}
+.vc-poz div{display:flex;align-items:baseline;gap:.6rem;font-size:.87rem;color:var(--ink2)}
+.vc-poz .dots{flex:1;border-bottom:1px dotted rgba(31,35,24,.26);transform:translateY(-3px)}
+.vc-poz b{font-family:var(--serif);font-size:1.15rem;font-weight:400;color:var(--terra);
+  white-space:nowrap}
+.vc-foot{font-size:.76rem;line-height:1.65;color:var(--mute)}
+
+/* Pasek postepu czytania */
+.prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--terra);
+  z-index:950;transition:width .12s linear}
+
+/* Pasek akcji na telefonie: zadzwon / napisz zawsze pod reka */
+.abar{position:fixed;left:0;right:0;bottom:0;z-index:880;display:none;
+  gap:1px;background:var(--line);
+  padding-bottom:env(safe-area-inset-bottom);
+  box-shadow:0 -8px 30px rgba(20,24,15,.12)}
+.abar a{flex:1;background:var(--paper);color:var(--ink);text-align:center;
+  padding:.95rem .5rem;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+  min-height:48px;display:flex;align-items:center;justify-content:center}
+.abar a.main{background:var(--terra);color:#fff}
+@media(max-width:760px){
+  .abar{display:flex}
+  footer{padding-bottom:5.5rem}
+  .pcz-fab{bottom:66px}
+}
+
+/* ── 5. Wydajnosc i dostepnosc ────────────────────────────────────── */
+
+/* Bez content-visibility na sekcjach: przy tak wysokich blokach szacowana
+   wysokosc rozjezdza sie z prawdziwa, pasek przewijania skacze, a pozycja
+   po skoku do #sekcji laduje w zlym miejscu. Za szybkosc wczytywania
+   odpowiada leniwe ladowanie zdjec, ktore robi to bez skutkow ubocznych. */
+
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--terra);outline-offset:3px;border-radius:2px}
+.ch-card:focus-visible{outline-offset:-2px}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001s!important;animation-iteration-count:1!important;
+    transition-duration:.001s!important;scroll-behavior:auto!important}
+  .rev,.rv{opacity:1!important;transform:none!important}
+}
+
+@media print{
+  .abar,.prog,.pcz-fab,.pcz-pan,.chooser{display:none!important}
+  .rev,.rv{opacity:1!important;transform:none!important}
+  .well-s{background:#fff;color:#000}
+  .well-head h2,.well-c h4{color:#000}
+  .well-c p,.well-pr div,.well-zl div{color:#333}
+  .sale-c,.well-c,.pr-hero{break-inside:avoid}
+}

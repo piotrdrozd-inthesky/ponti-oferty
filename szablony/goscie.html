@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PONTI Restaurant - Wrocław</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/goscie.css">
+<link rel="stylesheet" href="assets/lift.css">
+</head>
+<body class="p-goscie">
+
+<div class="prog" id="prog" aria-hidden="true"></div>
+
+<div class="chooser" id="chooser">
+  <div class="ch-in">
+    <div class="ch-mark">PONTI</div>
+    <div class="ch-kick">Zanim zaczniemy</div>
+    <h2>Co <em>świętujecie</em>?</h2>
+    <p class="ch-sub">Wybierzcie okazję, a pokażemy tylko to, co jej dotyczy - propozycję menu, możliwe dodatki i przykładowy przebieg wieczoru.</p>
+    <div class="ch-grid">
+{{CHOOSER}}
+    </div>
+    <p class="ch-foot">Jeszcze nie wiecie? <button data-pick="urodziny">Zobaczcie całą ofertę</button></p>
+  </div>
+</div>
+
+<nav id="nav">
+  <div class="wrap nav-in">
+    <div class="nav-l" id="navl">
+      <a href="#historia" class="lnk">Historia</a>
+      <a href="#okazje" class="lnk">Okazje</a>
+      <a href="#karta" class="lnk">Karta</a>
+      <a href="#ceny" class="lnk">Ceny</a><a href="#pakiety" class="lnk">Dodatki</a>
+    </div>
+    <a href="#top" class="brand">PONTI</a>
+    <div class="nav-r">
+      <a href="#sale" class="lnk">Sale</a>
+      <a href="#wellness" class="lnk">Wellness</a>
+      <a href="#kontakt" class="lnk">Rezerwacja</a>
+      <button class="ev-chip" id="evChip"><span class="x">&#9670;</span> <b id="evChipTxt">Okazja</b></button>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<header class="hero" id="top">
+  <div class="hero-txt">
+    <div class="hero-kick">Restauracja &middot; Wrocław</div>
+    <h1 class="hero-h" id="heroH">Włoska klasyka<br>na <em>polskich</em><br>produktach</h1>
+    <p class="hero-p" id="heroP">Miejsce na chrzciny, komunię, kolację firmową i każdą inną okazję, przy której jedzenie ma znaczyć więcej niż tło.</p>
+    <div class="hero-meta">
+      <div class="hrate"><span class="s">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <b>4,7</b> <span>w Google</span></div>
+      <div class="hdot"></div>
+      <div class="hloc">{{POJEMNOSC_KROTKO}}</div>
+    </div>
+    <div class="hero-cta">
+      <a href="#kontakt" class="btn b-fill">Zapytaj o termin</a>
+      <a href="#okazje" class="btn b-line">Zobacz okazje</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="assets/img/sala-okno-taras.webp" alt="Wnętrze PONTI Restaurant z widokiem na taras">
+    <div class="hero-stamp">
+      <div class="ss">Sala, Onda, taras i strefa Wellness - cztery przestrzenie pod jednym adresem</div>
+      <div class="sl">Wrocław</div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ MANIFEST ═══ -->
+<section class="pad manifest" id="historia">
+  <div class="wrap mf">
+    <div class="rv">
+      <div class="mark"><span class="n">01</span><span class="r"></span><span class="t">Idea</span></div>
+      <p class="mf-q">Tworzymy klasyczne dania kuchni włoskiej <span>na nowo</span> - opierając się wyłącznie na polskich rzemieślniczych produktach.</p>
+    </div>
+    <div class="mf-b rv d2">
+      <p class="lede">Makaron wyrabiamy na miejscu. Kiełbaskę robimy sami. Sery bierzemy od zaprzyjaźnionych rzemieślników. Zamiast sprowadzać składniki z Włoch, szukamy ich u polskich dostawców - i właśnie z tego napięcia rodzi się nasza kuchnia.</p>
+      <p class="lede">Ravioli z kiszonym czosnkiem niedźwiedzim. Spaghetti w rakowym sosie bisque z olejem z rokitnika. Carpaccio z serem „Morowa Owca" i majonezem z wędzoną szprotką. To dania, których nie zamówicie nigdzie indziej - i o których goście opowiadają jeszcze długo po wyjściu.</p>
+      <div class="mf-sign">
+        <div>
+          <div class="nm">Aleksander Struś</div>
+          <div class="rl">Szef kuchni</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SZEF - pełnowymiarowy pas ═══ -->
+<section class="pad-s">
+  <div class="wrap">
+    <div class="band">
+      <div class="band-i rv"><img src="assets/img/szef-kuchni.webp" alt="Aleksander Struś w kuchni PONTI"></div>
+      <div class="band-t rv d2">
+        <div class="mark"><span class="n">02</span><span class="r"></span><span class="t">Kuchnia</span></div>
+        <h3>Wszystko powstaje na miejscu</h3>
+        <p>Świeży makaron, własne wędliny, sosy gotowane od podstaw. Przy rezerwacjach grupowych szef układa menu indywidualnie - pod liczbę gości, charakter wydarzenia i budżet.</p>
+        <ul class="bl">
+          <li>Makaron wyrabiany codziennie w restauracji</li>
+          <li>Kiełbaska wieprzowa własnej produkcji</li>
+          <li>Sery od polskich rzemieślników, dojrzewające do 18 miesięcy</li>
+          <li>Karta zmieniana sezonowo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4,7 ═══ -->
+<section class="pad trust">
+  <div class="wrap mid">
+    <div class="rv">
+      <div class="trust-n">4,7</div>
+      <div class="trust-s">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="trust-l">Ocena w Google</div>
+      <p class="trust-q">Przyjęcie organizuje się raz. Musi wyjść.</p>
+    </div>
+    <div class="tgrid">
+      <div class="tg rv d1">
+        <h4>Degustacja przed terminem</h4>
+        <p>Przy rezerwacjach grupowych możecie spróbować menu, zanim potwierdzicie datę. Żadnych niespodzianek w dniu wydarzenia.</p>
+      </div>
+      <div class="tg rv d2">
+        <h4>Jedna osoba prowadzi</h4>
+        <p>Od pierwszego zapytania do końca przyjęcia opiekuje się Wami ta sama osoba. Bez przerzucania między działami.</p>
+      </div>
+      <div class="tg rv d3">
+        <h4>Menu ustalone z góry</h4>
+        <p>Goście nie czekają na zamówienia i nie liczą się przy rachunku. Karta ustalona wcześniej, jedna faktura na koniec.</p>
+      </div>
+      <div class="tg rv d4">
+        <h4>Odpowiedź w 24 godziny</h4>
+        <p>Każde zapytanie o termin grupowy potwierdzamy w ciągu doby - żebyście mogli spokojnie planować resztę.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OKAZJE - pasy ═══ -->
+<section class="pad" id="okazje">
+  <div class="wrap">
+    <div class="mid rv" style="text-align:center;margin-bottom:clamp(2.5rem,5vw,4rem)">
+      <div class="mark" style="justify-content:center"><span class="n">03</span><span class="r"></span><span class="t">Okazja</span></div>
+      <h2 id="okazjeH">Wasze wydarzenie</h2>
+      <p class="lede" style="max-width:52ch;margin:0 auto">Tak wygląda to u nas w praktyce. Szczegóły zawsze dopinamy pod konkretną grupę.</p>
+    </div>
+
+{{OKAZJE}}
+  </div>
+</section>
+
+<!-- ═══ KARTA ═══ -->
+<section class="pad menucard" id="karta">
+  <div class="wrap">
+    <div class="mc-head rv">
+      <div class="mark" style="justify-content:center"><span class="n">04</span><span class="r"></span><span class="t">Karta</span></div>
+      <h2>Nasza karta</h2>
+      <p class="lede" style="max-width:56ch;margin:0 auto">Tak wygląda nasza karta na co dzień. Dla grup przygotowujemy menu skrócone albo układane indywidualnie - pod charakter wydarzenia, liczbę gości i budżet.</p>
+    </div>
+
+    <div class="mc-cols">
+      <div class="rv d1">
+        <div class="mgroup">
+          <h4>Przystawki</h4>
+          <div class="mrow"><div class="mline"><span class="mname">Brodo</span><span class="mdots"></span></div>
+            <p class="mdesc">Bulion wołowo-drobiowy, gęsie żołądki, marynowana marchewka, oliwa lubczykowa</p></div>
+          <div class="mrow"><div class="mline"><span class="mname">Panzanella</span><span class="mdots"></span></div>
+            <p class="mdesc">Sałatka z kolorowych pomidorów, ser stracciatella, czereśnie, pangrattato</p></div>
+          <div class="mrow"><div class="mline"><span class="mname">Węgorz</span><span class="mdots"></span></div>
+            <p class="mdesc">Mus z węgorza i wątróbki dorsza, prażone nasiona rzepaku, olej rzepakowy, koperek</p></div>
+          <div class="mrow"><div class="mline"><span class="mname">Salsiccia</span><span class="mdots"></span></div>
+            <p class="mdesc">Kiełbaska wieprzowa własnej produkcji, sos demi glace, piklowana gorczyca, ogórek małosolny</p></div>
+          <div class="mrow"><div class="mline"><span class="mname">Carpaccio</span><span class="mdots"></span></div>
+            <p class="mdesc">Plastry polędwicy wołowej, ser „Morowa Owca", majonez z wędzoną szprotką, pangrattato</p></div>
+        </div>
+
+        <div class="mgroup">
+          <h4>Pasta</h4>
+          <div class="mrow"><div class="mline"><span class="mname">Ravioli Duo</span><span class="mdots"></span></div>
+            <p class="mdesc">Dwa farsze na krowiej ricotcie z pleśniowym kozim serem i kiszonym czosnkiem niedźwiedzim, w sosie maślanym z szałwią</p></div>
+          <div class="mrow"><div class="mline"><span class="mname">Ravioli Aperto</span><span class="mdots"></span></div>
+            <p class="mdesc">Duszony ozór wołowy w demi glace, przykryty kolorowym makaronem w sosie maślanym z kurkami</p></div>
+          <div class="mrow"><div class="mline"><span class="mname">Gnocchi</span><span class="mdots"></span></div>
+            <p class="mdesc">Sos paprykowo-pomidorowy, pieczony sandacz, kefir, koperek</p></div>
+          <div class="mrow"><div class="mline"><span class="mname">Spaghetti</span><span class="mdots"></span></div>
+            <p class="mdesc">Rakowy sos bisque, szyjki raków, szczypiorek, olej z rokitnika</p></div>
+          <div class="mrow"><div class="mline"><span class="mname">Paccheri</span><span class="mdots"></span></div>
+            <p class="mdesc">Ragu z kiełbasy wieprzowej, śmietana, natka pietruszki, ser Emilgrana</p></div>
+          <div class="mrow"><div class="mline"><span class="mname">Rigatoni</span><span class="mdots"></span></div>
+            <p class="mdesc">Boczek i guanciale, owczy ser dojrzewający 18 miesięcy, sos z żółtek, czarny pieprz</p></div>
+          <div class="mrow"><div class="mline"><span class="mname">Mafaldine</span><span class="mdots"></span></div>
+            <p class="mdesc">Sos śmietanowy na brandy, krótko grillowana polędwica wołowa, jeżyny, nasturcja</p></div>
+        </div>
+      </div>
+
+      <div class="rv d2">
+        <div class="mgroup">
+          <h4>Dania z grilla</h4>
+          <div class="mrow"><div class="mline"><span class="mname">Cukinia</span><span class="mdots"></span></div>
+            <p class="mdesc">Sos z pieczonych warzyw, biały krem orzechowy, lekko suszone pomidorki, sałatka z ziół</p></div>
+          <div class="mrow"><div class="mline"><span class="mname">Pstrąg</span><span class="mdots"></span></div>
+            <p class="mdesc">Pstrąg z zielenicy, sos ziołowy na lubczyku i czosnku, dressing jabłkowy, papryka chili</p></div>
+          <div class="mrow"><div class="mline"><span class="mname">Kurczak</span><span class="mdots"></span></div>
+            <p class="mdesc">Pierś z kością, sos z redukcji drobiowej, musztarda z gorczycą, piklowana czerwona cebula</p></div>
+          <div class="mrow"><div class="mline"><span class="mname">Grigliata</span><span class="mdots"></span></div>
+            <p class="mdesc">Płaty polędwicy wołowej, wędzona słonina i karkówka, sos z czarnym czosnkiem, fasolka szparagowa</p></div>
+          <div class="mrow"><div class="mline"><span class="mname">Tagliata</span><span class="mdots"></span></div>
+            <p class="mdesc">Polędwica wołowa, pieprzowy demi glace, gotowana kolorowa fasolka szparagowa</p></div>
+        </div>
+
+        <div class="mgroup">
+          <h4>Dodatki</h4>
+          <div class="mrow"><div class="mline"><span class="mname">Sałata</span><span class="mdots"></span></div>
+            <p class="mdesc">Liście sałat i ziół, dressing jabłkowy, nasiona rzepaku</p></div>
+          <div class="mrow"><div class="mline"><span class="mname">Warzywa</span><span class="mdots"></span></div>
+            <p class="mdesc">Marynowane i kiszone warzywa z olejem rzepakowym</p></div>
+          <div class="mrow"><div class="mline"><span class="mname">Młode ziemniaki</span><span class="mdots"></span></div>
+            <p class="mdesc">Gotowane, a później grillowane z masłem, olejem lnianym i koperkiem</p></div>
+          <div class="mrow"><div class="mline"><span class="mname">Rzymska</span><span class="mdots"></span></div>
+            <p class="mdesc">Grillowana sałata rzymska, zielony majonez, pangrattato, szczypiorek</p></div>
+        </div>
+
+        <div class="mgroup">
+          <h4>Desery</h4>
+          <div class="mrow"><div class="mline"><span class="mname">Słodki</span><span class="mdots"></span></div>
+            <p class="mdesc">Biszkopt na kawie zbożowej z miodem gryczanym, prażynki gryczane, mus mascarpone, sos kakaowy</p></div>
+          <div class="mrow"><div class="mline"><span class="mname">Słodko-kwaśny</span><span class="mdots"></span></div>
+            <p class="mdesc">Mus serowy na maślance z owczego mleka, sos cytrynowo-makowy, faworki</p></div>
+          <div class="mrow"><div class="mline"><span class="mname">Czekoladowy</span><span class="mdots"></span></div>
+            <p class="mdesc">Mus z gorzkiej wytrawnej czekolady, ciasteczko migdałowe, sos wiśniowy, czereśnie</p></div>
+          <div class="mrow"><div class="mline"><span class="mname">Lokalne sery</span><span class="mdots"></span></div>
+            <p class="mdesc">Cztery rodzaje od zaprzyjaźnionych rzemieślników, musztarda owocowa, chrupiąca focaccia</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="plates">
+      <figure class="plate rv d1"><img src="assets/img/ravioli.webp" alt="Ravioli Duo">
+        <figcaption><div class="pn">Ravioli Duo</div></figcaption></figure>
+      <figure class="plate rv d2"><img src="assets/img/pstrag.webp" alt="Tagliata">
+        <figcaption><div class="pn">Tagliata</div></figcaption></figure>
+      <figure class="plate rv d3"><img src="assets/img/pstrag.webp" alt="Pstrąg">
+        <figcaption><div class="pn">Pstrąg</div></figcaption></figure>
+      <figure class="plate rv d4"><img src="assets/img/rigatoni.webp" alt="Rigatoni">
+        <figcaption><div class="pn">Rigatoni</div></figcaption></figure>
+    </div>
+
+    <div class="mc-foot">
+      <p>Wycena dla grup przygotowywana jest indywidualnie - napiszcie, ilu Was będzie i jaka to okazja.<br>Karta zmienia się sezonowo. Pełna karta win i alkoholi dostępna na miejscu.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ PAKIETY ═══ -->
+
+<!-- PONTI:CENY -->
+<section class="pad pr-wrap" id="ceny">
+  <div class="wrap">
+    <div class="shead center rev">
+      <span class="eyebrow">Ceny</span>
+      <h2>Ile to kosztuje</h2>
+    </div>
+    <p class="pr-lead rev">Nie mamy cennika w PDF-ie, bo każde wydarzenie wygląda inaczej. Mamy za to jasny punkt wyjścia i zasadę, według której liczymy - poniżej obie te rzeczy, bez gwiazdek i drobnego druku.</p>
+    
+{{CENY_OKAZJE}}
+
+    <div class="shead center rev" style="margin-top:3.4rem">
+      <h2 style="font-size:clamp(1.5rem,3.4vw,2.1rem)">Trzy progi menu grupowego</h2>
+    </div>
+    <p class="pr-lead rev" style="margin-bottom:2rem">Od tego zaczyna się każda wycena.
+      Skład ustalamy potem razem z Wami - to punkt wyjścia, nie sztywny zestaw.</p>
+{{CENY_PROGI}}
+
+{{CENY_ZAUFANIE}}
+
+    
+{{CENY_MINIMUM}}
+
+    <p class="pr-foot rev">Każdą wycenę przygotowujemy indywidualnie. Napiszcie, co planujecie: <a href="mailto:{{MAIL}}">{{MAIL}}</a> lub <a href="tel:{{TEL_HREF}}">{{TEL}}</a></p>
+  </div>
+</section>
+
+<section class="pad packs" id="pakiety">
+  <div class="wrap">
+    <div class="pk-head rv">
+      <div class="mark" style="justify-content:center"><span class="n">04</span><span class="r"></span><span class="t">Dodatki</span></div>
+      <span class="pk-badge" id="pkBadge">Dobrane pod Waszą okazję</span>
+      <h2>Co możecie dołożyć</h2>
+      <p class="lede" style="max-width:56ch;margin:0 auto">Ceny brutto, doliczane do rachunku. Nic nie jest obowiązkowe - wybieracie tylko to, na co macie ochotę.</p>
+    </div>
+
+{{PAKIETY}}
+    <p class="pk-empty" id="pkEmpty">Dla tej okazji dodatki ustalamy indywidualnie - napiszcie, czego potrzebujecie.</p>
+
+    <div class="pk-foot rv d2">
+      <p>Nie widzicie czegoś, na czym Wam zależy? Powiedzcie - większość rzeczy jesteśmy w stanie zorganizować albo podpowiedzieć sprawdzonego wykonawcę.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SALE ═══ -->
+<section class="pad sale-s" id="sale">
+  <div class="wrap">
+    <div class="mid rv" style="text-align:center;margin-bottom:clamp(2.5rem,5vw,4rem)">
+      <div class="mark" style="justify-content:center"><span class="n">05</span><span class="r"></span><span class="t">Przestrzenie</span></div>
+      <h2>Gdzie to się dzieje</h2>
+      <p class="lede" style="max-width:54ch;margin:0 auto">Trzy przestrzenie, każda o innym charakterze. Przy jednym wydarzeniu można połączyć dwie albo wszystkie.</p>
+    </div>
+{{SALE}}
+  </div>
+</section>
+
+<!-- ═══ WELLNESS ═══ -->
+<section class="pad well-s" id="wellness">
+  <div class="wrap">
+{{WELLNESS}}
+  </div>
+</section>
+
+<!-- ═══ WNĘTRZE ═══ -->
+<section class="pad" id="wnetrze">
+  <div class="wrap">
+    <div class="mid rv" style="text-align:center;margin-bottom:clamp(2.5rem,5vw,4rem)">
+      <div class="mark" style="justify-content:center"><span class="n">07</span><span class="r"></span><span class="t">Wnętrze</span></div>
+      <h2>Sala, lounge, taras</h2>
+      <p class="lede" style="max-width:50ch;margin:0 auto">Surowy beton, ciepłe drewno, marmurowe blaty i bujna zieleń. Wysokie przeszklenia otwierają salę na taras.</p>
+    </div>
+    <div class="stag">
+      <div class="sc">
+        <div class="si r34 rv"><img src="assets/img/dlugi-stol.webp" alt="Sala główna"><span class="cap">Sala główna</span></div>
+        <div class="si r43 rv d2"><img src="assets/img/zielony-salon.webp" alt="Zielony salon"><span class="cap">Zielony salon</span></div>
+      </div>
+      <div class="sc">
+        <div class="si r43 rv d1"><img src="assets/img/sala-okno-taras.webp" alt="Widok na taras"><span class="cap">Widok na taras</span></div>
+        <div class="si r34 rv d3"><img src="assets/img/lounge.webp" alt="Strefa lounge"><span class="cap">Strefa lounge</span></div>
+      </div>
+      <div class="sc">
+        <div class="si r11 rv d2"><img src="assets/img/sala-glowna.webp" alt="Sala i bar"><span class="cap">Sala &amp; bar</span></div>
+        <div class="si r34 rv d4"><img src="assets/img/taras-wieczorem.webp" alt="Taras wieczorem"><span class="cap">Taras wieczorem</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRAKTYCZNIE ═══ -->
+<section class="pad-s">
+  <div class="wrap">
+    <div class="mark rv"><span class="n">08</span><span class="r"></span><span class="t">Praktycznie</span></div>
+{{FAKTY}}
+  </div>
+</section>
+
+<!-- ═══ ZAMKNIĘCIE ═══ -->
+<section class="close-s" id="kontakt">
+  <div class="close-bg" style="background-image:url('assets/img/dlugi-stol.webp')"></div>
+  <div class="wrap close-in">
+    <div class="mid rv">
+      <h2>Zarezerwuj swój termin</h2>
+      <p>Planujecie chrzciny, komunię, urodziny, kolację firmową albo wieczór panieński? Napiszcie - przygotujemy propozycję menu dopasowaną do charakteru wydarzenia i liczby gości. Odpowiadamy w ciągu 24 godzin.</p>
+      <div class="close-cta">
+        <a href="mailto:{{MAIL}}" class="btn b-fill">Napisz do nas</a>
+        <a href="tel:{{TEL_HREF}}" class="btn b-lite">{{TEL}}</a>
+      </div>
+    </div>
+    <div class="contact mid rv d2">
+      <div class="cbox"><div class="cl">Adres</div><div class="cv">ul. Drobnera 5<br>Wrocław</div></div>
+      <div class="cbox"><div class="cl">E-mail</div><div class="cv"><a href="mailto:{{MAIL}}">{{MAIL}}</a></div></div>
+      <div class="cbox"><div class="cl">Telefon</div><div class="cv"><a href="tel:{{TEL_HREF}}">{{TEL}}</a></div></div>
+      <div class="cbox"><div class="cl">Instagram</div><div class="cv"><a href="https://instagram.com/ponti.restaurant" target="_blank" rel="noopener">@ponti.restaurant</a></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fm">PONTI</div>
+    <p>Kuchnia włoska tworzona na nowo &middot; Wrocław<br>Kuchnia przyjmuje zamówienia do 30 minut przed zamknięciem lokalu</p>
+  </div>
+</footer>
+
+<nav class="abar" aria-label="Szybki kontakt">
+  <a href="tel:{{TEL_HREF}}" class="main">Zadzwoń</a>
+  <a href="mailto:{{MAIL}}">Napisz</a>
+  <a href="#ceny">Ceny</a>
+</nav>
+
+<div class="lb" id="lb">
+  <button class="lbx" id="lbx" aria-label="Zamknij">&times;</button>
+  <button class="lbn lbp" id="lbprev" aria-label="Poprzednie">&#8249;</button>
+  <img id="lbimg" src="" alt="">
+  <button class="lbn lbnx" id="lbnext" aria-label="Następne">&#8250;</button>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+
+  /* ── Selektor okazji ── */
+{{EV_CFG}}
+  var chooser = document.getElementById('chooser');
+
+  function applyEvent(ev){
+    if(!EV_COPY[ev]) return;
+    var c = EV_COPY[ev];
+    var hH = document.getElementById('heroH'), hP = document.getElementById('heroP');
+    if(hH) hH.innerHTML = c.heroH;
+    if(hP) hP.textContent = c.heroP;
+    var oh = document.getElementById('okazjeH');
+    if(oh) oh.textContent = c.title + ' w PONTI';
+
+    /* charakter wydarzenia: paleta akcentu i temperatura tla */
+    document.documentElement.setAttribute('data-ev', ev);
+    document.documentElement.setAttribute('data-mood', c.mood || 'wieczor');
+
+    /* zdjecie w hero i w stopce sekcji kontaktowej pod okazje */
+    var hi = document.querySelector('.hero-img img');
+    if(hi && c.foto){ hi.src = 'assets/img/' + c.foto + '.webp'; hi.alt = c.title + ' w PONTI'; }
+    var cb = document.querySelector('.close-bg');
+    if(cb && c.foto) cb.style.backgroundImage = "url('assets/img/" + c.foto + ".webp')";
+
+    /* jaka sala - liczby zalezne od okazji */
+    var sl = document.getElementById('salaInfo');
+    if(sl && c.sala) sl.textContent = c.sala;
+
+    document.querySelectorAll('[data-ev-band]').forEach(function(el){
+      el.style.display = el.getAttribute('data-ev-band') === ev ? '' : 'none';
+    });
+
+    document.querySelectorAll('[data-ev-price]').forEach(function(el){
+      el.style.display = el.getAttribute('data-ev-price') === ev ? '' : 'none';
+    });
+    window.__PONTI_EV__ = ev;
+    document.querySelectorAll('[data-ev-pack]').forEach(function(el){
+      var ok = el.getAttribute('data-ev-pack').split(' ').indexOf(ev) >= 0;
+      el.style.display = ok ? '' : 'none';
+    });
+    document.querySelectorAll('[data-ev-group]').forEach(function(g){
+      var vis = 0;
+      g.querySelectorAll('[data-ev-pack]').forEach(function(r){ if(r.style.display !== 'none') vis++; });
+      g.style.display = vis ? '' : 'none';
+    });
+    var anyPack = document.querySelectorAll('[data-ev-pack]').length &&
+      [].slice.call(document.querySelectorAll('[data-ev-pack]')).some(function(r){return r.style.display !== 'none';});
+    var empty = document.getElementById('pkEmpty');
+    if(empty) empty.style.display = anyPack ? 'none' : 'block';
+
+    var badge = document.getElementById('pkBadge');
+    if(badge) badge.textContent = 'Dobrane pod: ' + EV_LABEL[ev];
+    var chip = document.getElementById('evChipTxt');
+    if(chip) chip.textContent = EV_LABEL[ev];
+
+    document.querySelectorAll('.rv,.rev').forEach(function(el){
+      if(el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in');
+    });
+  }
+
+  document.querySelectorAll('[data-pick]').forEach(function(b){
+    b.addEventListener('click', function(){
+      applyEvent(b.getAttribute('data-pick'));
+      chooser.classList.add('gone');
+      document.body.style.overflow = '';
+    });
+  });
+  var evChip = document.getElementById('evChip');
+  if(evChip) evChip.addEventListener('click', function(){
+    chooser.classList.remove('gone');
+    document.body.style.overflow = 'hidden';
+    window.scrollTo({top:0,behavior:'instant'});
+  });
+  document.body.style.overflow = 'hidden';
+  applyEvent('urodziny');
+
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+  document.querySelectorAll('.rv,.rev').forEach(function(el){io.observe(el)});
+
+  var nav=document.getElementById('nav'),
+      prog=document.getElementById('prog'),
+      links=[].slice.call(document.querySelectorAll('.nav-in a.lnk')),
+      secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))}).filter(Boolean),
+      tick=false;
+  function frame(){
+    nav.classList.toggle('solid',window.pageYOffset>50);
+    if(prog){
+      var h=document.documentElement.scrollHeight-window.innerHeight;
+      prog.style.width=(h>0 ? Math.min(100,(window.pageYOffset/h)*100) : 0)+'%';
+    }
+    var cur=null;
+    secs.forEach(function(s){if(s&&s.getBoundingClientRect().top<=150)cur=s.id;});
+    links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+cur);});
+    tick=false;
+  }
+  window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(frame);tick=true;}},{passive:true});
+  frame();
+
+  var bg=document.getElementById('burger'),nl=document.getElementById('navl');
+  if(bg){
+    bg.addEventListener('click',function(){bg.classList.toggle('x');nl.classList.toggle('open');});
+    nl.addEventListener('click',function(e){if(e.target.tagName==='A'){bg.classList.remove('x');nl.classList.remove('open');}});
+  }
+
+  var items=[].slice.call(document.querySelectorAll('.si')),
+      lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg'),
+      srcs=items.map(function(it){return it.querySelector('img').src}),idx=0;
+  function show(i){idx=(i+srcs.length)%srcs.length;lbimg.src=srcs[idx];}
+  items.forEach(function(it,i){it.addEventListener('click',function(){
+    show(i);lb.classList.add('on');document.body.style.overflow='hidden';});});
+  function close(){lb.classList.remove('on');document.body.style.overflow='';}
+  document.getElementById('lbx').addEventListener('click',close);
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.getElementById('lbprev').addEventListener('click',function(e){e.stopPropagation();show(idx-1)});
+  document.getElementById('lbnext').addEventListener('click',function(e){e.stopPropagation();show(idx+1)});
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('on'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')show(idx-1);
+    if(e.key==='ArrowRight')show(idx+1);
+  });
+})();
+</script>
+
+<!-- PONTI:CZAT -->
+<button class="pcz-fab" id="chFab"><span class="dot"></span> Zapytaj o swoje wydarzenie</button>
+<div class="pcz-pan" id="chPan" role="dialog" aria-label="Asystent PONTI">
+  <div class="pcz-hd">
+    <div class="av">P</div>
+    <div><b>Asystent PONTI</b><span>Zwykle odpowiada od razu</span></div>
+    <button class="pcz-x" id="chX" aria-label="Zamknij">&times;</button>
+  </div>
+  <div class="pcz-bd" id="chBd"></div>
+  <div class="pcz-chips" id="chChips"></div>
+  <div class="pcz-in">
+    <input id="chInp" type="text" placeholder="Napiszcie, co planujecie&hellip;" autocomplete="off">
+    <button class="pcz-send" id="chGo" aria-label="Wyślij">&#10148;</button>
+  </div>
+  <p class="pcz-note">Odpowiadam na podstawie oficjalnych informacji PONTI.
+    Terminy i wyceny potwierdza zawsze człowiek.</p>
+</div>
+
+<script>
+/* ══════════════ ASYSTENT CZATU ══════════════ */
+(function(){
+  'use strict';
+{{KB}}
+
+  /* Jeśli wpiszesz tu adres formularza (np. z Formspree albo własnego webhooka),
+     zapytania będą wychodziły automatycznie w tle. Puste = otwiera klienta poczty. */
+  var FORM_ENDPOINT = '';
+
+  var fab=document.getElementById('chFab'), pan=document.getElementById('chPan'),
+      bd=document.getElementById('chBd'), chips=document.getElementById('chChips'),
+      inp=document.getElementById('chInp'), go=document.getElementById('chGo'),
+      x=document.getElementById('chX');
+  if(!fab||!pan) return;
+
+  var log=[], score=0, opened=false, formShown=false, sent=false;
+
+  function norm(s){
+    return (s||'').toLowerCase()
+      .replace(/[ąĄ]/g,'a').replace(/[ćĆ]/g,'c').replace(/[ęĘ]/g,'e')
+      .replace(/[łŁ]/g,'l').replace(/[ńŃ]/g,'n').replace(/[óÓ]/g,'o')
+      .replace(/[śŚ]/g,'s').replace(/[żźŻŹ]/g,'z')
+      .replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();
+  }
+
+  function esc(s){
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function add(who,html){
+    var d=document.createElement('div');
+    d.className='pcz-msg '+who;
+    d.innerHTML=html;
+    bd.appendChild(d);
+    bd.scrollTop=bd.scrollHeight;
+    return d;
+  }
+
+  function typing(){
+    var d=document.createElement('div');
+    d.className='pcz-typ';
+    d.innerHTML='<i></i><i></i><i></i>';
+    bd.appendChild(d); bd.scrollTop=bd.scrollHeight;
+    return d;
+  }
+
+  function bot(text,cb){
+    var t=typing();
+    setTimeout(function(){
+      t.remove();
+      add('bot',text);
+      log.push({r:'PONTI',t:text.replace(/<[^>]+>/g,'')});
+      if(cb) cb();
+    }, Math.min(1100, 260 + text.length*7));
+  }
+
+  function setChips(list){
+    chips.innerHTML='';
+    list.forEach(function(c){
+      var b=document.createElement('button');
+      b.className='pcz-chip'; b.textContent=c;
+      b.addEventListener('click',function(){ ask(c); });
+      chips.appendChild(b);
+    });
+  }
+
+  function currentEv(){
+    return (window.__PONTI_EV__ && KB.evLabel[window.__PONTI_EV__]) ? window.__PONTI_EV__ : '';
+  }
+
+  function match(q){
+    var n=' '+norm(q)+' ', best=null, bestScore=0, bestEv=null, bestEvScore=0;
+    KB.intencje.forEach(function(it){
+      var sc=0;
+      it.kw.forEach(function(k){
+        var kn=norm(k);
+        if(!kn) return;
+        if(n.indexOf(' '+kn+' ')>=0) sc+=kn.split(' ').length*3;
+        else if(n.indexOf(kn)>=0) sc+=kn.split(' ').length*2;
+      });
+      if(sc<=0) return;
+      /* pytanie o konkretną okazję bije ogólny cennik: "ile kosztuje komunia" */
+      if(it.id.slice(-2)==='_q'){ if(sc>bestEvScore){ bestEvScore=sc; bestEv=it; } }
+      if(sc>bestScore){ bestScore=sc; best=it; }
+    });
+    /* Pytanie o konkretna okazje ma mocne pierwszenstwo: "ile kosztuje komunia"
+       ma dac odpowiedz o komunii, nie ogolny cennik. Ustepuje tylko wtedy, gdy
+       inny temat pasuje wielokrotnie mocniej - jak "ile za masaz dla dwojga",
+       gdzie chodzi o zabiegi, a nie o oferte dla par. */
+    if(bestEv && bestEvScore>=3 && bestScore <= bestEvScore*3) return bestEv;
+    return bestScore>=2 ? best : null;
+  }
+
+  function buyingSignal(q){
+    var n=norm(q);
+    for(var i=0;i<KB.mocne.length;i++){
+      if(n.indexOf(norm(KB.mocne[i]))>=0) return 3;
+    }
+    return 0;
+  }
+
+  function ask(q){
+    q=(q||'').trim();
+    if(!q || sent) return;
+    add('me', esc(q));
+    log.push({r:'Gość', t:q});
+    inp.value='';
+
+    var sig = buyingSignal(q);
+    score += sig;
+    var hit = match(q);
+    if(hit){ score += (hit.s||0); }
+
+    /* wprost prosi o kontakt / ofertę - nie każemy mu czekać */
+    if(norm(q).indexOf('zostawiam kontakt')>=0 || norm(q).indexOf('zostaw kontakt')>=0){
+      if(!formShown){ bot('Jasne, już to biorę.', function(){ setTimeout(showForm,320); }); }
+      else { bot('Formularz jest tuż nad tą wiadomością - wystarczy go uzupełnić.'); }
+      setChips([]);
+      return;
+    }
+
+    if(score>=4 && !formShown){
+      bot(hit ? hit.a : 'Jasne.', function(){ setTimeout(showForm, 420); });
+      setChips([]);
+      return;
+    }
+
+    if(hit){
+      bot(hit.a, function(){ suggest(hit.id); });
+    } else if(sig>0 || score>=3){
+      bot('Najlepiej, żeby odpowiedział Wam ktoś z restauracji z konkretami. '+
+          'Zostawcie namiary, a przekażę całą naszą rozmowę dalej.', function(){
+        if(!formShown) setTimeout(showForm, 320);
+      });
+      setChips([]);
+    } else {
+      bot(esc(KB.niewiem), function(){
+        setChips(['Zostawiam kontakt','Ile to kosztuje','Sprawdź termin']);
+      });
+    }
+  }
+
+  /* Podpowiedzi bierzemy z bazy wiedzy: kazda intencja ma pole "nast"
+     z identyfikatorami sensownych nastepnych pytan. Na przycisku pokazujemy
+     etykiete tematu, a klikniecie zadaje pytanie tym samym tekstem. */
+  function etykieta(id){
+    var it = KB.tematy[id];
+    return it ? it.q : null;
+  }
+
+  function suggest(id){
+    var it = KB.intencje.filter(function(x){ return x.id===id; })[0];
+    var out = [];
+    if(it && it.nast){
+      it.nast.forEach(function(n){
+        var e = etykieta(n);
+        if(e && out.length<3) out.push(e);
+      });
+    }
+    if(!out.length) out = [etykieta('cena_ogolna'), etykieta('menu_progi')].filter(Boolean);
+    out.push('Zostawiam kontakt');
+    setChips(out);
+  }
+
+  /* ── formularz zapytania ── */
+  function showForm(){
+    if(formShown) return;
+    formShown=true;
+    setChips([]);
+    var ev=currentEv();
+    var f=document.createElement('div');
+    f.className='pcz-form';
+    f.innerHTML =
+      '<h5>Przekażę to dalej</h5>'+
+      '<p>Zostawcie namiary i trzy szczegóły. Wyślemy podsumowanie tej rozmowy na '+
+      KB.mail+' - odpiszemy w ciągu doby.</p>'+
+      '<label>Imię i nazwisko</label><input id="cfN" type="text" autocomplete="name">'+
+      '<label>E-mail lub telefon</label><input id="cfC" type="text" autocomplete="email">'+
+      '<div class="pcz-row">'+
+        '<div><label>Data</label><input id="cfD" type="text" placeholder="np. 16 maja"></div>'+
+        '<div><label>Liczba osób</label><input id="cfG" type="text" placeholder="np. 30"></div>'+
+      '</div>'+
+      '<label>Coś jeszcze? (opcjonalnie)</label><textarea id="cfM" rows="2"></textarea>'+
+      '<button class="pcz-go" id="cfGo">Wyślij zapytanie</button>'+
+      '<p class="pcz-err" id="cfE">Podajcie imię i kontakt - bez tego nie odpiszemy.</p>';
+    bd.appendChild(f);
+    bd.scrollTop=bd.scrollHeight;
+    document.getElementById('cfGo').addEventListener('click',function(){ submit(ev,f); });
+  }
+
+  function transcript(){
+    return log.map(function(l){ return l.r+': '+l.t; }).join('\n\n');
+  }
+
+  function submit(ev,formEl){
+    var n=document.getElementById('cfN').value.trim(),
+        c=document.getElementById('cfC').value.trim(),
+        d=document.getElementById('cfD').value.trim(),
+        g=document.getElementById('cfG').value.trim(),
+        m=document.getElementById('cfM').value.trim(),
+        err=document.getElementById('cfE');
+    if(!n || !c){ err.style.display='block'; return; }
+    err.style.display='none';
+
+    var okazja = ev ? KB.evLabel[ev] : 'nieokreślona';
+    var subject='[PONTI] Zapytanie z czatu - '+okazja+
+                (d?', '+d:'')+(g?', '+g+' os.':'');
+    var body =
+      'ZAPYTANIE Z ASYSTENTA NA PREZENTACJI\n'+
+      '====================================\n\n'+
+      'Imię i nazwisko: '+n+'\n'+
+      'Kontakt: '+c+'\n'+
+      'Okazja: '+okazja+'\n'+
+      'Data: '+(d||'nie podano')+'\n'+
+      'Liczba osób: '+(g||'nie podano')+'\n'+
+      'Uwagi: '+(m||'brak')+'\n\n'+
+      '------------------------------------\n'+
+      'PRZEBIEG ROZMOWY\n'+
+      '------------------------------------\n\n'+
+      transcript()+'\n\n'+
+      '------------------------------------\n'+
+      'Wysłane automatycznie z prezentacji PONTI.\n';
+
+    sent=true;
+    formEl.remove();
+
+    if(FORM_ENDPOINT){
+      fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({subject:subject,message:body,name:n,contact:c,
+          okazja:okazja,data:d,osoby:g})}).catch(function(){});
+    } else {
+      var href='mailto:'+KB.mail+'?subject='+encodeURIComponent(subject)+
+               '&body='+encodeURIComponent(body);
+      var a=document.createElement('a');
+      a.href=href; a.style.display='none';
+      document.body.appendChild(a); a.click();
+      setTimeout(function(){ a.remove(); }, 400);
+    }
+
+    bot('Dziękuję, '+esc(n.split(' ')[0])+'. Podsumowanie naszej rozmowy poszło na <b>'+
+        KB.mail+'</b>.<br><br>Odezwiemy się do Was w ciągu doby z konkretną propozycją. '+
+        'Gdyby coś było pilne - <a href="tel:'+KB.tel.replace(/ /g,'')+'">'+KB.tel+'</a>.',
+      function(){
+        var w=document.createElement('div');
+        w.className='pcz-msg bot';
+        w.innerHTML='<b>Gdyby okno poczty się nie otworzyło:</b> '+
+          '<button class="pcz-chip" id="cfCopy" style="margin-top:.5rem">Skopiuj treść zapytania</button>';
+        bd.appendChild(w); bd.scrollTop=bd.scrollHeight;
+        document.getElementById('cfCopy').addEventListener('click',function(){
+          var t=this;
+          (navigator.clipboard ? navigator.clipboard.writeText(body)
+                               : Promise.reject()).then(function(){
+            t.textContent='Skopiowane - wklejcie na '+KB.mail;
+          }).catch(function(){
+            var ta=document.createElement('textarea');
+            ta.value=body; document.body.appendChild(ta); ta.select();
+            try{ document.execCommand('copy'); t.textContent='Skopiowane'; }catch(e){}
+            ta.remove();
+          });
+        });
+      });
+    inp.disabled=true; go.disabled=true; inp.placeholder='Zapytanie wysłane';
+  }
+
+  /* ── otwieranie ── */
+  function open(){
+    pan.classList.add('on'); fab.classList.add('hide');
+    if(!opened){
+      opened=true;
+      var ev=currentEv();
+      var hi = ev
+        ? 'Dzień dobry. Widzę, że oglądacie ofertę na: <b>'+KB.evLabel[ev]+'</b>. '+
+          'Mogę powiedzieć, ile to kosztuje, w której sali to robimy i co jest w cenie. '+
+          'O co chcecie zapytać?'
+        : KB.powitanie;
+      bot(hi, function(){
+        var ids = (ev && KB.wgOkazji[ev]) ? KB.wgOkazji[ev] : ['cena_ogolna','ile_osob','wellness_strefa'];
+        var lista = ids.map(etykieta).filter(Boolean).slice(0,3);
+        lista.push('Zostawiam kontakt');
+        setChips(lista);
+      });
+    }
+    setTimeout(function(){ if(window.innerWidth>520) inp.focus(); }, 320);
+  }
+  function close(){ pan.classList.remove('on'); fab.classList.remove('hide'); }
+
+  fab.addEventListener('click',open);
+  x.addEventListener('click',close);
+  go.addEventListener('click',function(){ ask(inp.value); });
+  inp.addEventListener('keydown',function(e){ if(e.key==='Enter') ask(inp.value); });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape' && pan.classList.contains('on')) close();
+  });
+})();
+</script>
+</body>
+</html>

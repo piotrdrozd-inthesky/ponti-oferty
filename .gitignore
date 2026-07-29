@@ -1,0 +1,6 @@
+.DS_Store
+.tmp-img/
+.tmp-new/
+.tmp-*
+__pycache__/
+*.pyc

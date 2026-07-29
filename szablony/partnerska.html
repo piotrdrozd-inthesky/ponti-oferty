@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PONTI Restaurant - Oferta współpracy partnerskiej</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/partnerska.css">
+<link rel="stylesheet" href="assets/lift.css">
+</head>
+<body class="p-partner">
+
+<div class="prog" id="prog"></div>
+
+
+<div class="chooser" id="chooser">
+  <div class="ch-in">
+    <div class="ch-mark">PONTI</div>
+    <div class="ch-kick">Zanim zaczniemy</div>
+    <h2>Jakie wydarzenia<br>obsługujecie najczęściej?</h2>
+    <p class="ch-sub">Wybierzcie typ, a dopasujemy ofertę: pokażemy przebieg takiego wydarzenia u nas i tylko te dodatki, które przy tej okazji mają sens. Zmienicie w każdej chwili.</p>
+    <div class="ch-grid">
+{{CHOOSER}}
+    </div>
+    <p class="ch-foot">Obsługujecie różne? <button data-pick="urodziny">Zacznijcie od urodzin</button></p>
+  </div>
+</div>
+
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="brand">PONTI</a>
+    <div class="nav-links" id="navlinks">
+      <a href="#wspolpraca">Współpraca</a>
+      <a href="#opinie">Opinie</a>
+      <a href="#wycena">Jak wyceniamy</a>
+      <a href="#wnetrze">Wnętrze</a>
+      <a href="#okazje">Okazje</a>
+      <a href="#ceny">Ceny</a><a href="#pakiety">Dodatki</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+    <button class="ev-chip" id="evChip"><span class="x">&#9670;</span> <b id="evChipTxt">Okazja</b></button>
+    <a href="#kontakt" class="nav-cta">Rozpocznij współpracę</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-bg" id="heroBg" style="background-image:url('assets/img/sala-okno-taras.webp')"></div>
+  <div class="hero-in">
+    <div class="hero-mark">PONTI</div>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">10% od każdej rezerwacji,<br>którą nam przyślecie</p>
+    <p class="hero-loc">Restauracja &middot; Wrocław</p>
+    <div class="hero-rate"><span class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <strong>4,7</strong> &nbsp;w Google</div>
+    <div class="hero-cta-row">
+      <a href="#wspolpraca" class="btn btn-gold">Policz swoją prowizję</a>
+      <a href="#okazje" class="btn btn-ghost">Zobacz możliwości</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Przewiń</span><div class="scroll-line"></div></div>
+</header>
+
+
+<section class="pad gain" id="wspolpraca">
+  <div class="wrap gz">
+    <div class="shead center rev">
+      <span class="pbadge">&#9679; Program partnerski</span>
+      <h2>10% od każdej rezerwacji,<br>którą nam przyślecie.</h2>
+      <p class="lead">Bez wyłączności. Bez limitów. Bez opłat wstępnych. Polecacie - my płacimy, a Wasz klient dostaje miejsce, za które nie będziecie się tłumaczyć.</p>
+    </div>
+    <div class="bgrid">
+      <div class="bcard rev rev-d1">
+        <div class="bi"><svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h4>Przychód bez pracy</h4>
+        <p>Nie organizujecie, nie koordynujecie, nie odpowiadacie za obsługę. Podajecie kontakt - resztę robimy my.</p>
+      </div>
+      <div class="bcard rev rev-d2">
+        <div class="bi"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h4>Zero ryzyka reputacyjnego</h4>
+        <p>4,7 w Google. Polecając nas, nie ryzykujecie tym, na co pracowaliście latami - a to jedyny realny koszt polecenia.</p>
+      </div>
+      <div class="bcard rev rev-d3">
+        <div class="bi"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <h4>Priorytet terminów</h4>
+        <p>Rezerwacje od partnerów blokujemy w pierwszej kolejności. Wasz klient dostaje termin, kiedy inni słyszą „brak miejsc".</p>
+      </div>
+      <div class="bcard rev rev-d4">
+        <div class="bi"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg></div>
+        <h4>Gotowe materiały</h4>
+        <p>Dostajecie osobną prezentację dla klienta - inny projekt, bez wzmianki o prowizji. Przesyłacie dalej i wyglądacie profesjonalnie.</p>
+      </div>
+    </div>
+
+    <div class="calc rev rev-d2">
+      <div class="calc-head">
+        <h3>Policzcie swoją prowizję</h3>
+        <p>Wybierzcie typ wydarzenia albo ustawcie własne wartości.</p>
+      </div>
+{{CALC_CHIPY}}
+      <div class="calc-grid">
+        <div>
+          <div class="ctrl">
+            <div class="ctrl-top"><span class="ctrl-lbl">Liczba osób</span><span class="ctrl-val" id="vPeople">20</span></div>
+            <input type="range" id="sPeople" min="2" max="{{POJ_MAX}}" value="20" step="1">
+            <div class="ctrl-scale"><span>2</span><span>{{POJ_MAX}}</span></div>
+          </div>
+          <div class="ctrl">
+            <div class="ctrl-top"><span class="ctrl-lbl">Kwota od osoby</span><span class="ctrl-val" id="vAvg">150 zł</span></div>
+            <input type="range" id="sAvg" min="80" max="400" value="150" step="10">
+            <div class="ctrl-scale"><span>80 zł</span><span>400 zł</span></div>
+          </div>
+        </div>
+        <div class="result">
+          <div class="rl">Wasza prowizja</div>
+          <div class="rv" id="rVal">300 zł</div>
+          <div class="rs">10% wartości rezerwacji</div>
+          <div class="result-one"><div class="v" id="rTot">3 000 zł</div><div class="l">Wartość rezerwacji</div></div>
+        </div>
+      </div>
+      <p class="calc-foot">Jedna rezerwacja, jedno polecenie. Ile ich zrobicie w miesiącu - zależy tylko od Was.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="pad proof" id="opinie">
+  <div class="wrap">
+    <div class="rate-hero">
+      <div class="rate-box rev">
+        <div class="rate-num">4,7</div>
+        <div class="rate-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="rate-src">Ocena w Google</div>
+      </div>
+      <div class="rate-txt rev rev-d1">
+        <span class="eyebrow">Zadowolenie gości</span>
+        <h2>Polecacie miejsce,<br>za które nie będziecie się tłumaczyć</h2>
+        <p class="lead">Każde polecenie obciąża Waszą reputację - to jedyny realny koszt, jaki ponosicie. Dlatego liczy się nie prowizja, tylko to, czy klient wróci zadowolony. 4,7 w Google to nasza odpowiedź. A poniżej cztery rzeczy, które robimy, żeby żadna grupa nie wyszła rozczarowana.</p>
+      </div>
+    </div>
+    <div class="gcards">
+      <div class="gcard rev rev-d1">
+        <h4>Degustacja przed wydarzeniem</h4>
+        <p>Przy rezerwacjach grupowych można spróbować menu, zanim termin zostanie potwierdzony. Żadnych niespodzianek w dniu wydarzenia.</p>
+      </div>
+      <div class="gcard rev rev-d2">
+        <h4>Jeden opiekun rezerwacji</h4>
+        <p>Od pierwszego zapytania do końca wydarzenia prowadzi jedna osoba. Bez przerzucania między działami.</p>
+      </div>
+      <div class="gcard rev rev-d3">
+        <h4>Odpowiedź w 24 godziny</h4>
+        <p>Każde zapytanie o termin grupowy potwierdzamy w ciągu doby - zanim klient zdąży zapytać gdzie indziej.</p>
+      </div>
+      <div class="gcard rev rev-d4">
+        <h4>Menu ustalone z góry</h4>
+        <p>Grupa nie czeka na zamówienia i nie licytuje się przy rachunku. Karta ustalona wcześniej, jedna faktura na koniec.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="wycena">
+  <div class="wrap">
+    <div class="shead center rev">
+      <span class="eyebrow">Wycena</span>
+      <h2>Każde wydarzenie<br>wyceniamy indywidualnie</h2>
+      <p class="lead">Nie mamy sztywnego cennika imprez, bo chrzciny w niedzielne południe i firmówka w piątkowy wieczór to dwie różne rzeczy. Wycenę przygotowujemy do konkretnego zapytania - zwykle w ciągu doby.</p>
+    </div>
+
+    <div class="price-grid">
+      <div class="pcard rev rev-d1">
+        <div class="pk">Menu</div><div class="pv">Na wybór</div>
+        <div class="pd">Zestaw skrócony z naszej karty albo menu układane od zera pod wydarzenie</div>
+      </div>
+      <div class="pcard rev rev-d2">
+        <div class="pk">Napoje</div><div class="pv">Osobno</div>
+        <div class="pd">Pakiet win, open bar albo rozliczenie według realnego zużycia</div>
+      </div>
+      <div class="pcard rev rev-d3">
+        <div class="pk">Dodatki</div><div class="pv">Do wyboru</div>
+        <div class="pd">Welcome prosecco, muzyka na żywo, dekoracje, tort, SPA, nocleg</div>
+      </div>
+      <div class="pcard rev rev-d4">
+        <div class="pk">Wycena</div><div class="pv">24 godziny</div>
+        <div class="pd">Konkretna kwota od osoby, bez widełek i bez gwiazdek</div>
+      </div>
+    </div>
+
+    <div class="setbox rev rev-d2">
+      <h3>Co wpływa na cenę</h3>
+      <p class="sintro">Żebyście wiedzieli, o co zapytać klienta przy pierwszej rozmowie - i mogli wstępnie oszacować, zanim odezwiecie się do nas.</p>
+      <div class="setrow">
+        <div class="setitem">
+          <div class="sn">Pora i termin</div><div class="sv">Kiedy</div>
+          <div class="sd">Niedzielne popołudnie kosztuje mniej niż sobotni wieczór</div>
+        </div>
+        <div class="setitem">
+          <div class="sn">Czas trwania</div><div class="sv">Jak długo</div>
+          <div class="sd">Cztery godziny to inna obsada obsługi niż osiem</div>
+        </div>
+        <div class="setitem">
+          <div class="sn">Napoje</div><div class="sv">Co pijecie</div>
+          <div class="sd">To alkohol, nie jedzenie, najbardziej rozstrzela końcowy rachunek</div>
+        </div>
+      </div>
+      <p class="sfoot">Liczba gości wpływa na wycenę najmniej - przy większych grupach cena od osoby zwykle spada, nie rośnie.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pad-sm">
+  <div class="wrap">
+    <div class="split">
+      <div class="rev">
+        <span class="eyebrow">Szef kuchni</span>
+        <h2>Aleksander Struś</h2>
+        <p class="lead" style="margin-top:1.4rem">Klasyczne dania kuchni włoskiej tworzone od nowa - wyłącznie na polskich rzemieślniczych produktach regionalnych. Makaron wyrabiany na miejscu, kiełbaska własnej produkcji, sery od zaprzyjaźnionych rzemieślników.</p>
+        <blockquote class="quote">Odkrywamy przed Gośćmi zupełnie nowe oblicze dobrze znanych potraw.</blockquote>
+        <p class="lead">Ravioli z kiszonym czosnkiem niedźwiedzim. Spaghetti w rakowym sosie bisque z olejem z rokitnika. Carpaccio z serem „Morowa Owca". Dania, o których goście opowiadają jeszcze długo po wyjściu - i dlatego wracają.</p>
+      </div>
+      <div class="split-img rev rev-d2">
+        <img src="assets/img/szef-kuchni.webp" alt="Aleksander Struś - szef kuchni PONTI">
+        <div class="chef-tag"><div class="n">Aleksander Struś</div><div class="r">Szef kuchni</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="wnetrze">
+  <div class="wrap">
+    <div class="shead center rev">
+      <span class="eyebrow">Przestrzeń</span>
+      <h2>Wnętrze, które robi wrażenie</h2>
+      <p class="lead">Sala główna, strefa lounge i taras otwarty na zieleń. Trzy różne nastroje w jednym miejscu.</p>
+    </div>
+    <div class="gal">
+      <div class="gitem g-a rev"><img src="assets/img/dlugi-stol.webp" alt="Sala główna PONTI"><span class="gcap">Sala główna</span></div>
+      <div class="gitem g-b rev rev-d1"><img src="assets/img/sala-okno-taras.webp" alt="Stoliki przy tarasie"><span class="gcap">Widok na taras</span></div>
+      <div class="gitem g-c rev rev-d2"><img src="assets/img/lounge.webp" alt="Strefa lounge"><span class="gcap">Strefa lounge</span></div>
+      <div class="gitem g-d rev rev-d3"><img src="assets/img/sala-glowna.webp" alt="Sala i bar"><span class="gcap">Sala &amp; bar</span></div>
+      <div class="gitem g-e rev rev-d4"><img src="assets/img/taras-wieczorem.webp" alt="Taras wieczorem"><span class="gcap">Taras wieczorem</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad occ" id="okazje">
+  <div class="wrap">
+    <div class="shead center rev">
+      <span class="eyebrow">Na każdą okazję</span>
+      <h2>Wydarzenia w PONTI</h2>
+      <p class="lead">Przełączajcie się między typami - zobaczycie, jak wygląda każde z nich u nas.</p>
+    </div>
+
+    <div class="tabs rev">
+{{TABS}}
+    </div>
+
+    <div class="panes rev rev-d1">
+{{PANES}}
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ PAKIETY ═══ -->
+
+<!-- PONTI:CENY -->
+<section class="pad pr-wrap" id="ceny">
+  <div class="wrap">
+    <div class="shead center rev">
+      <span class="eyebrow">Ceny i Wasza prowizja</span>
+      <h2>Ile kosztuje wydarzenie<br>i ile na nim zarabiacie</h2>
+    </div>
+    <p class="pr-lead rev">Poniżej dokładnie to, co zobaczy Wasz klient - te same liczby, bez ukrytych narzutów. Do każdego wydarzenia dopisaliśmy, ile wynosi z niego Wasza prowizja.</p>
+    
+{{CENY_OKAZJE}}
+
+    <div class="shead center rev" style="margin-top:3.4rem">
+      <h2 style="font-size:clamp(1.5rem,3.4vw,2.1rem)">Trzy progi menu grupowego</h2>
+    </div>
+    <p class="pr-lead rev" style="margin-bottom:2rem">Od tego zaczyna się każda wycena.
+      Skład ustalamy potem razem z Wami - to punkt wyjścia, nie sztywny zestaw.</p>
+{{CENY_PROGI}}
+
+{{CENY_ZAUFANIE}}
+
+    
+{{CENY_MINIMUM}}
+
+    <p class="pr-foot rev">Prowizję liczymy od pełnej wartości rachunku - z napojami i alkoholem. Pytania: <a href="mailto:{{MAIL}}">{{MAIL}}</a></p>
+  </div>
+</section>
+
+<section class="pad packs" id="pakiety">
+  <div class="wrap">
+    <div class="pk-head rev">
+      <span class="pk-badge" id="pkBadge">Dobrane pod okazję</span>
+      <h2>Dodatki, które<br>podnoszą rachunek</h2>
+      <p class="lead" style="max-width:60ch;margin:0 auto">Ceny brutto. Im więcej dodatków w rezerwacji, tym wyższa Wasza prowizja - bo liczymy ją od pełnej wartości rachunku, nie od samego jedzenia.</p>
+    </div>
+
+{{PAKIETY}}
+
+    <p class="pk-empty" id="pkEmpty">Dla tej okazji dodatki ustalamy indywidualnie.</p>
+
+    <div class="pk-foot rev rev-d2">
+      <p>Klient chce czegoś, czego tu nie ma? Zapytajcie - większość rzeczy jesteśmy w stanie zorganizować albo polecić sprawdzonego wykonawcę.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="kuchnia">
+  <div class="wrap">
+    <div class="shead center rev">
+      <span class="eyebrow">Z karty</span>
+      <h2>Kilka dań z menu</h2>
+      <p class="lead">Tak wygląda nasza karta na co dzień. Dla grup przygotowujemy menu skrócone albo układane indywidualnie.</p>
+    </div>
+    <div class="dgrid">
+      <div class="dish rev rev-d1">
+        <div class="dish-img"><img src="assets/img/ravioli.webp" alt="Ravioli Duo"></div>
+        <div class="dish-body">
+          <div class="dish-top"><span class="dish-n">Ravioli Duo</span></div>
+          <p class="dish-d">Dwa farsze na krowiej ricotcie z pleśniowym kozim serem i kiszonym czosnkiem niedźwiedzim, w sosie maślanym z szałwią.</p>
+        </div>
+      </div>
+      <div class="dish rev rev-d2">
+        <div class="dish-img"><img src="assets/img/pstrag.webp" alt="Tagliata"></div>
+        <div class="dish-body">
+          <div class="dish-top"><span class="dish-n">Tagliata</span></div>
+          <p class="dish-d">Polędwica wołowa z pieprzowym demi glace i gotowaną kolorową fasolką szparagową.</p>
+        </div>
+      </div>
+      <div class="dish rev rev-d3">
+        <div class="dish-img"><img src="assets/img/rigatoni.webp" alt="Rigatoni"></div>
+        <div class="dish-body">
+          <div class="dish-top"><span class="dish-n">Rigatoni</span></div>
+          <p class="dish-d">Z boczkiem i guanciale, owczym serem dojrzewającym 18 miesięcy, sosem z żółtek i czarnym pieprzem.</p>
+        </div>
+      </div>
+      <div class="dish rev rev-d4">
+        <div class="dish-img"><img src="assets/img/pstrag.webp" alt="Pstrąg"></div>
+        <div class="dish-body">
+          <div class="dish-top"><span class="dish-n">Pstrąg</span></div>
+          <p class="dish-d">Pstrąg z zielenicy, z sosem ziołowym na lubczyku i czosnku, dressing jabłkowy i papryka chili.</p>
+        </div>
+      </div>
+    </div>
+    <p class="menu-note">Karta zmienia się sezonowo. Pełną kartę oraz listę win przesyłamy na życzenie.</p>
+  </div>
+</section>
+
+
+<section class="pad gain" id="zasady">
+  <div class="wrap gz">
+    <div class="shead center rev">
+      <span class="eyebrow">Zasady</span>
+      <h2>Jak to działa</h2>
+      <p class="lead">Cztery kroki i jedna umowa na stronę. Bez systemów, bez logowania, bez integracji.</p>
+    </div>
+    <div class="steps rev rev-d1">
+      <div class="step"><div class="step-n">01</div><h4>Otrzymujecie kod</h4>
+        <p>Nadajemy Wam unikalny kod partnerski. Przekazujecie go klientowi albo rezerwujecie w jego imieniu.</p></div>
+      <div class="step"><div class="step-n">02</div><h4>Klient rezerwuje</h4>
+        <p>Podaje Wasz kod przy rezerwacji. Przypisujemy ją do Waszego konta partnerskiego.</p></div>
+      <div class="step"><div class="step-n">03</div><h4>Wydarzenie się odbywa</h4>
+        <p>Dbamy o Waszego klienta tak, żeby wrócił i polecił Was dalej. Wasza reputacja jest naszą.</p></div>
+      <div class="step"><div class="step-n">04</div><h4>Wypłacamy prowizję</h4>
+        <p>Zestawienie do 5. dnia miesiąca, płatność w 14 dni od Waszej faktury.</p></div>
+    </div>
+    <div class="terms rev rev-d2">
+      <div class="term"><div class="term-i">&#10003;</div><div class="term-t"><strong>Bez wyłączności</strong><span>Możecie polecać także inne miejsca. Chcemy wygrywać jakością, nie umową.</span></div></div>
+      <div class="term"><div class="term-i">&#10003;</div><div class="term-t"><strong>Bez opłat wstępnych</strong><span>Nie płacicie za przystąpienie ani za utrzymanie współpracy.</span></div></div>
+      <div class="term"><div class="term-i">&#10003;</div><div class="term-t"><strong>Kolacja testowa</strong><span>Zapraszamy Was na kolację na nasz koszt, zanim polecicie nas komukolwiek.</span></div></div>
+      <div class="term"><div class="term-i">&#10003;</div><div class="term-t"><strong>Alternatywa: kwota stała</strong><span>Wolicie stałą stawkę zamiast procentu? Ustalimy indywidualnie.</span></div></div>
+      <div class="term"><div class="term-i">&#10003;</div><div class="term-t"><strong>Prowizja od całości</strong><span>Liczymy od pełnej wartości rachunku - z napojami i alkoholem.</span></div></div>
+      <div class="term"><div class="term-i">&#10003;</div><div class="term-t"><strong>Wypowiedzenie w każdej chwili</strong><span>Bez okresu wypowiedzenia i bez kar. Zostajecie, bo się opłaca.</span></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="pad cta" id="kontakt">
+  <div class="wrap narrow">
+    <div class="rev">
+      <span class="eyebrow">Zaczynamy?</span>
+      <h2>Umówmy kolację testową</h2>
+      <p class="lead">Zanim polecicie nas komukolwiek - przyjdźcie i sprawdźcie sami. Zapraszamy na kolację na nasz koszt. Bez zobowiązań i bez prezentacji sprzedażowej. Po prostu zjedzcie i oceńcie, czy to miejsce, pod którym chcecie się podpisać.</p>
+      <div class="cta-row">
+        <a href="mailto:{{MAIL}}" class="btn btn-dark">Napisz do nas</a>
+        <a href="tel:{{TEL_HREF}}" class="btn btn-out">{{TEL}}</a>
+      </div>
+    </div>
+    <div class="contact rev rev-d2">
+      <div class="cbox"><div class="cl">Adres</div><div class="cv">ul. Drobnera 5<br>Wrocław</div></div>
+      <div class="cbox"><div class="cl">E-mail</div><div class="cv"><a href="mailto:{{MAIL}}">{{MAIL}}</a></div></div>
+      <div class="cbox"><div class="cl">Telefon</div><div class="cv"><a href="tel:{{TEL_HREF}}">{{TEL}}</a></div></div>
+      <div class="cbox"><div class="cl">Instagram</div><div class="cv"><a href="https://instagram.com/ponti.restaurant" target="_blank" rel="noopener">@ponti.restaurant</a></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-mark">PONTI</div>
+    <p>Kuchnia włoska tworzona na nowo &middot; Wrocław<br>Oferta współpracy partnerskiej &middot; Dokument poufny, nie do przekazywania klientom końcowym</p>
+  </div>
+</footer>
+
+<nav class="abar" aria-label="Szybki kontakt">
+  <a href="mailto:{{MAIL}}" class="main">Napisz do nas</a>
+  <a href="tel:{{TEL_HREF}}">Zadzwoń</a>
+  <a href="#wspolpraca">Prowizja</a>
+</nav>
+
+<div class="lb" id="lb">
+  <button class="lb-x" id="lbx" aria-label="Zamknij">&times;</button>
+  <button class="lb-nav lb-prev" id="lbp" aria-label="Poprzednie">&#8249;</button>
+  <img id="lbimg" src="" alt="">
+  <button class="lb-nav lb-next" id="lbn" aria-label="Następne">&#8250;</button>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.rev').forEach(function(el){io.observe(el)});
+
+  var nav=document.getElementById('nav'),prog=document.getElementById('prog'),
+      heroBg=document.getElementById('heroBg'),
+      links=[].slice.call(document.querySelectorAll('.nav-links a')),
+      secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))}).filter(Boolean),
+      ticking=false;
+  function frame(){
+    var y=window.pageYOffset,h=document.documentElement.scrollHeight-window.innerHeight;
+    nav.classList.toggle('solid',y>60);
+    prog.style.width=(h>0?(y/h*100):0)+'%';
+    if(heroBg&&y<window.innerHeight)heroBg.style.transform='translateY('+(y*0.32)+'px)';
+    var cur=null;
+    secs.forEach(function(s){if(s&&s.getBoundingClientRect().top<=140)cur=s.id;});
+    links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+cur);});
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(frame);ticking=true;}},{passive:true});
+  frame();
+
+  var b=document.getElementById('burger'),nl=document.getElementById('navlinks');
+  if(b){
+    b.addEventListener('click',function(){b.classList.toggle('x');nl.classList.toggle('open');});
+    nl.addEventListener('click',function(e){if(e.target.tagName==='A'){b.classList.remove('x');nl.classList.remove('open');}});
+  }
+
+{{EV_CFG}}
+  var tabs=[].slice.call(document.querySelectorAll('.tab')),
+      panes=[].slice.call(document.querySelectorAll('.pane')),
+      chooser=document.getElementById('chooser');
+
+  function applyEvent(ev){
+    if(!EV_LABEL[ev]) return;
+    /* charakter wydarzenia - akcent strony idzie za wybrana okazja */
+    document.documentElement.setAttribute('data-ev', ev);
+    tabs.forEach(function(x){x.classList.toggle('on', x.getAttribute('data-t')===ev)});
+    panes.forEach(function(p){p.classList.toggle('on', p.getAttribute('data-p')===ev)});
+
+    document.querySelectorAll('[data-ev-price]').forEach(function(el){
+      el.style.display = el.getAttribute('data-ev-price') === ev ? '' : 'none';
+    });
+    window.__PONTI_EV__ = ev;
+    document.querySelectorAll('[data-ev-pack]').forEach(function(el){
+      el.style.display = el.getAttribute('data-ev-pack').split(' ').indexOf(ev)>=0 ? '' : 'none';
+    });
+    document.querySelectorAll('[data-ev-group]').forEach(function(g){
+      var vis=0;
+      g.querySelectorAll('[data-ev-pack]').forEach(function(r){if(r.style.display!=='none')vis++});
+      g.style.display = vis ? '' : 'none';
+    });
+    var any=[].slice.call(document.querySelectorAll('[data-ev-pack]'))
+              .some(function(r){return r.style.display!=='none'});
+    var empty=document.getElementById('pkEmpty');
+    if(empty) empty.style.display = any ? 'none' : 'block';
+
+    var badge=document.getElementById('pkBadge');
+    if(badge) badge.textContent='Dobrane pod: '+EV_LABEL[ev];
+    var chip=document.getElementById('evChipTxt');
+    if(chip) chip.textContent=EV_LABEL[ev];
+
+    document.querySelectorAll('.rev').forEach(function(el){
+      if(el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in');
+    });
+  }
+
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){ applyEvent(t.getAttribute('data-t')); });
+  });
+  document.querySelectorAll('[data-pick]').forEach(function(b){
+    b.addEventListener('click',function(){
+      applyEvent(b.getAttribute('data-pick'));
+      chooser.classList.add('gone');
+      document.body.style.overflow='';
+    });
+  });
+  var evChip=document.getElementById('evChip');
+  if(evChip) evChip.addEventListener('click',function(){
+    chooser.classList.remove('gone');
+    document.body.style.overflow='hidden';
+    window.scrollTo({top:0,behavior:'instant'});
+  });
+  document.body.style.overflow='hidden';
+  applyEvent('urodziny');
+
+  var items=[].slice.call(document.querySelectorAll('.gitem')),
+      lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg'),
+      srcs=items.map(function(it){return it.querySelector('img').src}),idx=0;
+  function show(i){idx=(i+srcs.length)%srcs.length;lbimg.src=srcs[idx];}
+  items.forEach(function(it,i){it.addEventListener('click',function(){show(i);lb.classList.add('on');document.body.style.overflow='hidden';});});
+  function close(){lb.classList.remove('on');document.body.style.overflow='';}
+  document.getElementById('lbx').addEventListener('click',close);
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.getElementById('lbp').addEventListener('click',function(e){e.stopPropagation();show(idx-1)});
+  document.getElementById('lbn').addEventListener('click',function(e){e.stopPropagation();show(idx+1)});
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('on'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')show(idx-1);
+    if(e.key==='ArrowRight')show(idx+1);
+  });
+
+  var sP=document.getElementById('sPeople'),sA=document.getElementById('sAvg');
+  if(sP&&sA){
+    var vP=document.getElementById('vPeople'),vA=document.getElementById('vAvg'),
+        rv=document.getElementById('rVal'),rTot=document.getElementById('rTot'),
+        chips=[].slice.call(document.querySelectorAll('.chip')),
+        RATE=10,tId=null;
+    function fmt(n){return Math.round(n).toLocaleString('pl-PL');}
+    function calc(){
+      var p=+sP.value,a=+sA.value,total=p*a,com=total*RATE/100;
+      vP.textContent=p;vA.textContent=a+' zł';
+      rTot.textContent=fmt(total)+' zł';
+      rv.textContent=fmt(com)+' zł';
+      rv.classList.add('pop');clearTimeout(tId);
+      tId=setTimeout(function(){rv.classList.remove('pop')},300);
+    }
+    [sP,sA].forEach(function(s){s.addEventListener('input',calc)});
+    chips.forEach(function(c){
+      c.addEventListener('click',function(){
+        chips.forEach(function(x){x.classList.remove('on')});
+        c.classList.add('on');
+        sP.value=c.getAttribute('data-people');
+        sA.value=c.getAttribute('data-avg');
+        calc();
+      });
+    });
+    calc();
+  }
+})();
+</script>
+</body>
+</html>
