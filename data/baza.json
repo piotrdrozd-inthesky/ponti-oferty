@@ -1,932 +1,966 @@
 {
-  "_o_pliku": "Jedno zrodlo prawdy dla obu ofert i asystenta czatu. Zmiana tutaj + python3 tools/buduj.py = zmiana na obu stronach. Nie edytuj HTML recznie.",
-  "_aktualizacja": "2026-07-29",
-  "firma": {
-    "nazwa": "PONTI Restaurant",
-    "adres": "ul. Bolesława Drobnera 5, 50-257 Wrocław",
-    "adres_krotki": "ul. Drobnera 5, Wrocław",
-    "telefon": "+48 533 273 709",
-    "telefon_href": "+48533273709",
-    "telefon_recepcja_spa": "+48 795 502 402",
-    "mail": "kontakt@ponti.restaurant",
-    "mail_spa": "recepcja@ponti.spa",
-    "strona": "ponti.restaurant",
-    "instagram": "@ponti.restaurant",
-    "rezerwacje_online": "https://mojstolik.pl/restauracja/Ponti/23469b97f0a0e4abbd19e9e935b94f05",
-    "ocena_google": "4,7",
-    "szef_kuchni": "Aleksander Struś",
-    "godziny": "Pn-Czw 14-22 · Pt-Sb 14-23 · Nd 14-20",
-    "godziny_lista": [
-      [
-        "Poniedziałek - czwartek",
-        "14:00 - 22:00"
-      ],
-      [
-        "Piątek - sobota",
-        "14:00 - 23:00"
-      ],
-      [
-        "Niedziela",
-        "14:00 - 20:00"
-      ]
-    ],
-    "kuchnia_do": "Kuchnia przyjmuje zamówienia do 30 minut przed zamknięciem lokalu",
-    "haslo": "Włoski temperament. Polskie serce."
+ "_o_pliku": "Jedno zrodlo prawdy dla obu ofert i asystenta czatu. Zmiana tutaj + python3 tools/buduj.py = zmiana na obu stronach. Nie edytuj HTML recznie.",
+ "_aktualizacja": "2026-07-29",
+ "firma": {
+  "nazwa": "PONTI Restaurant",
+  "adres": "ul. Bolesława Drobnera 5, 50-257 Wrocław",
+  "adres_krotki": "ul. Drobnera 5, Wrocław",
+  "telefon": "+48 533 273 709",
+  "telefon_href": "+48533273709",
+  "telefon_recepcja_spa": "+48 795 502 402",
+  "mail": "kontakt@ponti.restaurant",
+  "mail_spa": "recepcja@ponti.spa",
+  "strona": "ponti.restaurant",
+  "instagram": "@ponti.restaurant",
+  "rezerwacje_online": "https://mojstolik.pl/restauracja/Ponti/23469b97f0a0e4abbd19e9e935b94f05",
+  "ocena_google": "4,7",
+  "szef_kuchni": "Aleksander Struś",
+  "godziny": "Pn-Czw 14-22 · Pt-Sb 14-23 · Nd 14-20",
+  "godziny_lista": [
+   [
+    "Poniedziałek - czwartek",
+    "14:00 - 22:00"
+   ],
+   [
+    "Piątek - sobota",
+    "14:00 - 23:00"
+   ],
+   [
+    "Niedziela",
+    "14:00 - 20:00"
+   ]
+  ],
+  "kuchnia_do": "Kuchnia przyjmuje zamówienia do 30 minut przed zamknięciem lokalu",
+  "haslo": "Włoski temperament. Polskie serce."
+ },
+ "pojemnosc": {
+  "restauracja": 100,
+  "onda": 40,
+  "wellness_wylacznosc": 11,
+  "opis": "Sala restauracji do 100 osób, Sala Onda do 40 osób na wyłączność, strefa Wellness do 11 osób na wyłączność."
+ },
+ "menu_progi": [
+  {
+   "id": "I",
+   "nazwa": "MENU I",
+   "podtytul": "Kameralne",
+   "cena": 149,
+   "zawiera": "Przystawka do wyboru z dwóch, danie główne z dwóch, deser",
+   "porownanie": "Trzy dania i wybór przy każdym. Tyle, co spokojna kolacja we dwoje na mieście.",
+   "polecane": false
   },
-  "pojemnosc": {
-    "restauracja": 100,
-    "onda": 40,
-    "wellness_wylacznosc": 11,
-    "opis": "Sala restauracji do 100 osób, Sala Onda do 40 osób na wyłączność, strefa Wellness do 11 osób na wyłączność."
+  {
+   "id": "II",
+   "nazwa": "MENU II",
+   "podtytul": "Klasyczne",
+   "cena": 199,
+   "zawiera": "Przystawka z trzech, pasta z trzech, danie główne z trzech, deser",
+   "porownanie": "Cztery dania i realny wybór przy każdym. Najbezpieczniejszy wybór dla grupy mieszanej.",
+   "polecane": true,
+   "badge": "Wybierane najczęściej"
   },
-  "menu_progi": [
-    {
-      "id": "I",
-      "nazwa": "MENU I",
-      "podtytul": "Kameralne",
-      "cena": 149,
-      "zawiera": "Przystawka do wyboru z dwóch, danie główne z dwóch, deser",
-      "porownanie": "Trzy dania i wybór przy każdym. Tyle, co spokojna kolacja we dwoje na mieście.",
-      "polecane": false
-    },
-    {
-      "id": "II",
-      "nazwa": "MENU II",
-      "podtytul": "Klasyczne",
-      "cena": 199,
-      "zawiera": "Przystawka z trzech, pasta z trzech, danie główne z trzech, deser",
-      "porownanie": "Cztery dania i realny wybór przy każdym. Najbezpieczniejszy wybór dla grupy mieszanej.",
-      "polecane": true,
-      "badge": "Wybierane najczęściej"
-    },
-    {
-      "id": "III",
-      "nazwa": "MENU III",
-      "podtytul": "Degustacyjne",
-      "cena": 279,
-      "zawiera": "Amuse-bouche, przystawka, pasta, danie główne, deser",
-      "porownanie": "Pięć wyjść z kuchni. Kolacja, która sama jest wydarzeniem wieczoru.",
-      "polecane": false
-    }
-  ],
-  "wellness": {
-    "nazwa": "PONTI Wellness & SPA",
-    "adres": "ul. Bolesława Drobnera 7, Wrocław",
-    "opis": "Piętro wyżej niż talerz: dwa jacuzzi z widokiem na Odrę i sauna. Dania i napoje z karty PONTI zamawiacie przez kiosk w strefie, obsługa przynosi je na miejsce.",
-    "voucher_po_kolacji": 50,
-    "warianty": [
-      {
-        "nazwa": "Strefa dzielona",
-        "podtytul": "Wejście indywidualne",
-        "opis": "Jacuzzi z widokiem na Odrę i sauna na 1,5 godziny. Najprostszy sposób, żeby zajrzeć do strefy we dwoje albo w małym gronie.",
-        "pozycje": [
-          [
-            "1 osoba",
-            "150 zł"
-          ],
-          [
-            "2 osoby",
-            "300 zł"
-          ],
-          [
-            "3 osoby",
-            "450 zł"
-          ]
-        ],
-        "stopka": "Każda dodatkowa godzina +99 zł od osoby. W cenie kieliszek prosecco na osobę, również 0%."
-      },
-      {
-        "nazwa": "Na wyłączność",
-        "podtytul": "Cała strefa tylko dla Was",
-        "opis": "Dwa jacuzzi i sauna zamknięte dla Waszego towarzystwa. Nikogo obcego w wodzie, kolacja z karty PONTI podana na miejsce. Od 2 osób, do 11 osób.",
-        "pozycje": [
-          [
-            "1,5 h lub 2 h",
-            "od 350 zł / os."
-          ],
-          [
-            "3 h, do 4 osób",
-            "900 zł"
-          ],
-          [
-            "3 h, 6-11 osób",
-            "200 zł / os."
-          ]
-        ],
-        "stopka": "W cenie prosecco na osobę i patera owoców. Dodatkowa godzina +99 zł od osoby."
-      }
-    ],
-    "zabiegi": [
-      [
-        "Masaż klasyczny",
-        "30 min 200 zł · 60 min 280 zł · 90 min 360 zł"
-      ],
-      [
-        "Masaż relaksacyjny",
-        "60 min 280 zł · 90 min 360 zł"
-      ],
-      [
-        "Masaż gorącymi kamieniami",
-        "60 min 280 zł · 90 min 376 zł"
-      ],
-      [
-        "Masaż z peelingiem dla dwojga",
-        "90 min 680 zł"
-      ],
-      [
-        "Ponti Head SPA & Face Ritual",
-        "90 min 312 zł"
-      ],
-      [
-        "Ponti Vichy Rain Ritual",
-        "60 min 280 zł · 90 min 344 zł"
-      ],
-      [
-        "Ponti Magnesium Reset Thalion",
-        "90 min 440 zł"
-      ],
-      [
-        "SCENS Eternal Lifting Experience",
-        "75 min 464 zł"
-      ],
-      [
-        "Sauna sucha / infrared dla dwojga",
-        "30 min 56 zł · 60 min 72 zł"
-      ]
-    ],
-    "zabiegi_zrodlo": "Ceny promocyjne z Booksy, stan na 9 lipca 2026. Rezerwacja zabiegów: recepcja@ponti.spa, +48 795 502 402."
-  },
-  "sale": [
-    {
-      "nazwa": "Sala Onda",
-      "pojemnosc": "do 40 osób",
-      "foto": "sala-onda",
-      "opis": "Onda znaczy fala - i taki jest jej sufit. Osobna sala na wyłączność, wysokie okna nad Odrą, dedykowana obsługa. Kolacje firmowe, urodziny, szkolenia i prezentacje.",
-      "cechy": [
-        "Sala zamknięta tylko dla Was",
-        "Pełna karta kuchni i baru PONTI",
-        "Menu ustalane wcześniej pod grupę",
-        "Miejsce na prezentację i projektor"
-      ]
-    },
-    {
-      "nazwa": "Sala główna z tarasem",
-      "pojemnosc": "do 100 osób",
-      "foto": "dlugi-stol",
-      "opis": "Surowy beton, ciepłe drewno, marmurowe blaty i bujna zieleń. Wysokie przeszklenia otwierają salę na taras nad Odrą. Największa przestrzeń, dostępna także na wyłączność.",
-      "cechy": [
-        "Sala, strefa lounge i taras",
-        "Widok na Odrę i Kładkę Słodową",
-        "Układ stołów pod Waszą grupę",
-        "Latem taras włączony do wydarzenia"
-      ]
-    },
-    {
-      "nazwa": "Strefa Wellness",
-      "pojemnosc": "do 11 osób",
-      "foto": "jacuzzi-wieczor",
-      "opis": "Dwa jacuzzi i sauna na wyłączność, piętro wyżej. Zamawianie z karty PONTI bez wychodzenia z wody. Najmocniejszy punkt wieczorów panieńskich i pakietów dla par.",
-      "cechy": [
-        "Dwa jacuzzi z widokiem na Odrę",
-        "Sauna sucha i infrared",
-        "Prosecco i patera owoców w cenie",
-        "Gabinety masażu i rytuałów obok"
-      ]
-    }
-  ],
-  "wydarzenia": [
-    {
-      "id": "chrzciny",
-      "label": "Chrzciny",
-      "label_dl": "Chrzciny",
-      "haczyk": "Niedzielne popołudnie, rodzina, dzieci",
-      "akcent": "#7C8B6A",
-      "nastroj": "dzien",
-      "foto": "sala-okno-taras",
-      "hero_h": "Chrzciny<br>w <em>PONTI</em>",
-      "hero_p": "Rodzinna uroczystość w eleganckiej, ale nieprzytłaczającej oprawie. Bez wrażenia sali bankietowej, bez sztywnego protokołu.",
-      "band_p": "Niedzielne popołudnie przy jednym dużym stole. Menu serwowane w spokojnym tempie, osobne dania dla dzieci, miejsce na własny tort. Sala jest jasna i cicha - rozmowa nie musi być krzykiem.",
-      "band_lista": [
-        "Niedziela, zwykle 12:00-16:00",
-        "Osobne dania dla najmłodszych",
-        "Tempo serwisu dopasowane do dzieci",
-        "Własny tort bez opłaty za wniesienie"
-      ],
-      "menu": "MENU I lub II",
-      "od": 149,
-      "typowo": 190,
-      "termin": "niedziela, 12:00-16:00",
-      "czas": "4 godziny",
-      "przyklad_osob": 20,
-      "naglowek_ceny": "Najspokojniejszy i najtańszy typ uroczystości. I tak ma być.",
-      "dlaczego": "Chrzciny wypadają w dzień, przy stole są dzieci i kierowcy, alkohol prawie nie schodzi. Rachunek opiera się na jedzeniu, więc jest po prostu niższy. Nie doliczamy niczego za to, że okazja jest uroczysta.",
-      "dostajecie": [
-        "Menu serwowane albo w zestawach, tempo dopasowane do najmłodszych",
-        "Osobne dania dla dzieci",
-        "Miejsce na własny tort, bez opłaty za wniesienie",
-        "Kameralna przestrzeń, bez wrażenia sali bankietowej"
-      ],
-      "sala": "Sala Onda do 40 osób albo sala główna do 100 osób"
-    },
-    {
-      "id": "komunia",
-      "label": "Komunia",
-      "label_dl": "Komunia",
-      "haczyk": "Maj, szeroka rodzina, uroczyście",
-      "akcent": "#B08843",
-      "nastroj": "dzien",
-      "foto": "sala-glowna",
-      "hero_h": "Komunia<br>w <em>PONTI</em>",
-      "hero_p": "Uroczysty obiad dla szerokiej rodziny, w miejscu, które wygląda inaczej niż wszystkie sale, w których byliście do tej pory.",
-      "band_p": "Majowa niedziela, szeroka rodzina, jeden stół albo kilka złączonych. Menu serwowane, drukowana karta z imieniem dziecka, układ stołów przy którym wszyscy się widzą.",
-      "band_lista": [
-        "Maj, niedziela 13:00-17:00",
-        "Menu serwowane, bez kolejki do bufetu",
-        "Drukowane menu z imieniem dziecka",
-        "Osobne dania dla dzieci"
-      ],
-      "menu": "MENU II",
-      "od": 199,
-      "typowo": 220,
-      "termin": "maj, niedziela 13:00-17:00",
-      "czas": "4 godziny",
-      "przyklad_osob": 30,
-      "naglowek_ceny": "Uroczysty obiad dla szerokiej rodziny - w miejscu, które nie wygląda jak sala.",
-      "dlaczego": "Komunie mieszczą się w kilku majowych weekendach w całym roku. Terminy schodzą pierwsze i to jedyny powód, dla którego prosimy o wcześniejszą rezerwację.",
-      "dostajecie": [
-        "Menu serwowane, dopasowane do liczby gości",
-        "Osobne dania dla dzieci",
-        "Drukowane menu z imieniem dziecka",
-        "Układ stołów, przy którym wszyscy się widzą"
-      ],
-      "sala": "Sala Onda do 40 osób albo sala główna do 100 osób"
-    },
-    {
-      "id": "urodziny",
-      "label": "Urodziny",
-      "label_dl": "Urodziny",
-      "haczyk": "Wieczór, dorośli, świętowanie",
-      "akcent": "#B85C38",
-      "nastroj": "wieczor",
-      "foto": "lounge",
-      "hero_h": "Urodziny<br>w <em>PONTI</em>",
-      "hero_p": "Wieczór, przy którym jedzenie jest wydarzeniem, a nie tłem. Dla trzydziestki, czterdziestki i każdej innej okrągłej liczby.",
-      "band_p": "Zaczynacie kieliszkiem w strefie lounge, potem kolacja przy stole, a wieczór trwa tyle, ile chcecie. Do tego pełna karta win i koktajli, a jeśli macie ochotę - muzyka na żywo albo DJ.",
-      "band_lista": [
-        "Piątek lub sobota, 19:00-24:00",
-        "Start w strefie lounge",
-        "Pełna karta win i koktajli",
-        "Możliwość wydzielenia części sali"
-      ],
-      "menu": "MENU I lub II",
-      "od": 199,
-      "typowo": 320,
-      "termin": "piątek lub sobota, 19:00-24:00",
-      "czas": "5 godzin",
-      "przyklad_osob": 30,
-      "naglowek_ceny": "Wieczór, w którym jedzenie jest wydarzeniem, a nie tłem.",
-      "dlaczego": "Wieczorem rachunek rośnie z jednego powodu: napojów i alkoholu. Samo menu zaczyna się tam, gdzie zawsze - reszta zależy wyłącznie od tego, co zamówicie do stołu.",
-      "dostajecie": [
-        "Start w strefie lounge, kolacja przy stole",
-        "Pełna karta win i koktajli",
-        "Możliwość wydzielenia części sali albo Sala Onda na wyłączność",
-        "Muzyka na żywo albo DJ do wyboru"
-      ],
-      "sala": "Sala Onda do 40 osób na wyłączność"
-    },
-    {
-      "id": "firmowka",
-      "label": "Event firmowy",
-      "label_dl": "Kolacja firmowa",
-      "haczyk": "Kolacja, integracja, spotkanie zespołu",
-      "akcent": "#55654A",
-      "nastroj": "wieczor",
-      "foto": "dlugi-stol",
-      "hero_h": "Kolacja firmowa<br>w <em>PONTI</em>",
-      "hero_p": "Zamknięta przestrzeń, ustalone menu, jedna faktura. Idealne zakończenie dnia integracyjnego albo konferencji.",
-      "band_p": "Sala Onda zamknięta dla Waszego zespołu, menu ustalone wcześniej, jedna faktura na całość. Nagłośnienie z mikrofonem i projektor, jeśli ktoś ma coś powiedzieć. Środek tygodnia wychodzi wyraźnie taniej niż weekend.",
-      "band_lista": [
-        "Wtorek-czwartek, 18:00-22:00",
-        "Sala Onda do 40 osób na wyłączność",
-        "Jedna faktura na całość",
-        "Nagłośnienie, mikrofon i projektor"
-      ],
-      "menu": "MENU II",
-      "od": 199,
-      "typowo": 270,
-      "termin": "wtorek-czwartek, 18:00-22:00",
-      "czas": "4 godziny",
-      "przyklad_osob": 25,
-      "naglowek_ceny": "Jedna faktura, jeden kontakt, zero improwizacji w dniu wydarzenia.",
-      "dlaczego": "Przy eventach firmowych nie negocjujecie ceny talerza, tylko kupujecie spokój. Ustalamy wszystko wcześniej, wystawiamy jedną fakturę i nie zawracamy Wam głowy w trakcie.",
-      "dostajecie": [
-        "Jedna faktura na całość, ustalona przed wydarzeniem",
-        "Nagłośnienie, mikrofon i projektor na przemówienia",
-        "Sala Onda na wyłączność albo wydzielona część sali",
-        "Terminy wtorek-czwartek w najniższym progu"
-      ],
-      "sala": "Sala Onda do 40 osób na wyłączność"
-    },
-    {
-      "id": "konferencja",
-      "label": "Konferencja i szkolenie",
-      "label_dl": "Konferencja i szkolenie",
-      "haczyk": "Dzień pracy, prezentacja, lunch",
-      "akcent": "#6B6350",
-      "nastroj": "dzien",
-      "foto": "sala-onda",
-      "hero_h": "Konferencja<br>w <em>PONTI</em>",
-      "hero_p": "Sala Onda na cały dzień: prezentacja, przerwy i lunch w jednym miejscu, bez przewożenia grupy między adresami.",
-      "band_p": "Sala Onda do 40 osób, wysokie okna nad Odrą, projektor i nagłośnienie na miejscu. Przerwy kawowe i lunch układamy pod program dnia, a wieczorem ta sama grupa może zostać na kolacji albo zejść do strefy Wellness.",
-      "band_lista": [
-        "Sala Onda do 40 osób, dzień roboczy",
-        "Projektor, ekran, nagłośnienie i mikrofon",
-        "Przerwy kawowe i lunch pod program dnia",
-        "Apartamenty w tym samym budynku"
-      ],
-      "menu": "MENU I lub lunch ustalany pod program",
-      "od": 149,
-      "typowo": null,
-      "termin": "poniedziałek-czwartek, dzień",
-      "czas": "pod program dnia",
-      "przyklad_osob": 25,
-      "naglowek_ceny": "Cena zależy od programu dnia, nie od liczby slajdów.",
-      "dlaczego": "Konferencja to nie kolacja - liczy się liczba przerw, długość dnia i to, czy grupa zostaje na wieczór. Dlatego lunch i przerwy kawowe wyceniamy pod konkretny plan, a nie z gotowej tabeli. Punkt wyjścia dla części jedzeniowej to MENU I, czyli 149 zł od osoby.",
-      "dostajecie": [
-        "Sala Onda na wyłączność, do 40 osób",
-        "Nagłośnienie z mikrofonem i projektor - 450 zł za dzień",
-        "Przerwy kawowe i lunch ustalane pod program",
-        "Nocleg dla uczestników w tym samym budynku"
-      ],
-      "sala": "Sala Onda do 40 osób na wyłączność",
-      "bez_typowego": "Wyceniamy indywidualnie pod program dnia"
-    },
-    {
-      "id": "panienskie",
-      "label": "Panieński i kawalerski",
-      "label_dl": "Wieczór panieński i kawalerski",
-      "haczyk": "Wieczór, mała grupa, jacuzzi nad Odrą",
-      "akcent": "#A8475C",
-      "nastroj": "noc",
-      "foto": "jacuzzi-wieczor",
-      "hero_h": "Wieczór panieński<br>w <em>PONTI</em>",
-      "hero_p": "Kolacja, jacuzzi nad Odrą i nocleg bez wychodzenia z budynku. Cały scenariusz wieczoru pod jednym adresem.",
-      "band_p": "Najmocniejszy argument: wszystko jest w jednym miejscu. Strefa Wellness na wyłączność dla maksymalnie jedenastu osób, kolacja z karty PONTI podana do wody, a rano nikt nie szuka taksówki, bo apartamenty są piętro wyżej.",
-      "band_lista": [
-        "Piątek lub sobota, wieczór",
-        "Strefa Wellness na wyłączność, do 11 osób",
-        "Kolacja z karty podana do strefy",
-        "Apartamenty w tym samym budynku"
-      ],
-      "menu": "MENU I lub II",
-      "od": 149,
-      "typowo": 290,
-      "termin": "piątek lub sobota, wieczór",
-      "czas": "4-5 godzin",
-      "przyklad_osob": 12,
-      "naglowek_ceny": "Mała grupa, ale najwyższe spożycie na osobę i najmocniejsza oprawa.",
-      "dlaczego": "Przy panieńskim płacicie nie za liczbę talerzy, a za scenariusz: strefa Wellness tylko dla Was, prosecco, kolacja podana do wody i pokój na górze. Cena rośnie od oprawy, nie od jedzenia.",
-      "dostajecie": [
-        "Strefa Wellness na wyłączność do 11 osób, od 350 zł od osoby",
-        "Prosecco i patera owoców w cenie strefy",
-        "Kolacja z karty PONTI zamawiana bez wychodzenia z wody",
-        "Wieża prosecco 890 zł albo barman na miejscu 1 600 zł"
-      ],
-      "sala": "Strefa Wellness do 11 osób plus Sala Onda do 40 osób"
-    },
-    {
-      "id": "wesele",
-      "label": "Wesele kameralne",
-      "label_dl": "Wesele kameralne",
-      "haczyk": "Sobota, najbliżsi, pełen wieczór",
-      "akcent": "#93452A",
-      "nastroj": "wieczor",
-      "foto": "zielony-salon",
-      "hero_h": "Wesele kameralne<br>w <em>PONTI</em>",
-      "hero_p": "Dla par, które nie chcą wesela w sali z lustrami. Kolacja na najwyższym poziomie, w gronie najbliższych.",
-      "band_p": "Sobota od szesnastej do północy, menu degustacyjne, sala na wyłączność. Apartamenty dla Pary Młodej i gości w tym samym budynku, więc wieczór nie kończy się szukaniem noclegu. Format dla tych, którzy wolą kolację na poziomie od sali na trzysta osób.",
-      "band_lista": [
-        "Sobota, 16:00-24:00",
-        "Menu degustacyjne, pięć wyjść z kuchni",
-        "Sala na wyłączność",
-        "Nocleg dla Pary Młodej i gości na miejscu"
-      ],
-      "menu": "MENU III",
-      "od": 279,
-      "typowo": 480,
-      "termin": "sobota, 16:00-24:00",
-      "czas": "8 godzin",
-      "przyklad_osob": 60,
-      "naglowek_ceny": "Najdroższe nie dlatego, że jedzenie jest lepsze. Dlatego, że wieczór jest Wasz cały.",
-      "dlaczego": "Osiem godzin blokuje salę i całą obsługę na cały wieczór. Płacicie za wyłączność i za czas, nie za dopisek wesele przy nazwie rezerwacji.",
-      "dostajecie": [
-        "Sala na wyłączność na cały wieczór",
-        "Menu degustacyjne, pięć wyjść z kuchni",
-        "Nocleg dla Pary Młodej i gości w tym samym budynku",
-        "Współpraca z Waszym fotografem i dekoratorem"
-      ],
-      "sala": "Sala główna do 100 osób na wyłączność"
-    },
-    {
-      "id": "para",
-      "kategoria": "produkt_indywidualny",
-      "_uwaga": "Nie pokazujemy jako karte wyboru okazji w goscie.html ani partnerska.html - to nie jest wydarzenie, ktore agencja moglaby nam polecic, tylko produkt na landing voucherow. Dane zostaja dla asystenta czatu (guest moze o to zapytac wprost) i dla przyszlego wykorzystania.",
-      "label": "Kolacja i Wellness dla dwojga",
-      "label_dl": "Kolacja i Wellness dla dwojga",
-      "haczyk": "Dwie osoby, kolacja i jacuzzi nad Odrą",
-      "akcent": "#4F7B80",
-      "nastroj": "noc",
-      "foto": "jacuzzi-dzien",
-      "hero_h": "Kolacja i Wellness<br>we <em>dwoje</em>",
-      "hero_p": "Kolacja z widokiem na Odrę, a potem jacuzzi piętro wyżej. Bez przejazdów, bez pilnowania godziny.",
-      "band_p": "Najprostszy wieczór, jaki mamy: kolacja z karty przy oknie, a po niej strefa Wellness. Jacuzzi z widokiem na rzekę, sauna, prosecco w cenie. Po kolacji w PONTI dostajecie voucher 50 zł na strefę - to nie promocja, to stała zasada.",
-      "band_lista": [
-        "Kolacja z pełnej karty PONTI",
-        "Strefa dzielona dla dwojga: 300 zł za 1,5 godziny",
-        "Cała strefa tylko dla Was: od 350 zł od osoby",
-        "Voucher 50 zł na strefę po kolacji"
-      ],
-      "menu": "pełna karta à la carte",
-      "od": 113,
-      "typowo": null,
-      "termin": "codziennie, godziny restauracji",
-      "czas": "wieczór",
-      "przyklad_osob": 2,
-      "naglowek_ceny": "Dwie pozycje na rachunku: kolacja i woda.",
-      "dlaczego": "Dla dwóch osób nie układamy menu grupowego - zamawiacie z karty. Trzydaniowa kolacja wychodzi od 113 zł od osoby. Strefa Wellness ma własny, jawny cennik, a voucher 50 zł po kolacji zbija go dodatkowo.",
-      "dostajecie": [
-        "Kolacja z karty, trzy dania od 113 zł od osoby",
-        "Strefa dzielona 1,5 h: 150 zł za osobę, 300 zł za dwoje",
-        "Cała strefa na wyłączność: od 350 zł od osoby",
-        "Prosecco w cenie strefy, również w wersji 0%"
-      ],
-      "sala": "Restauracja plus strefa Wellness",
-      "bez_typowego": "Rachunek zależy od tego, co zamówicie z karty"
-    },
-    {
-      "id": "kompleks",
-      "label": "Pełny kompleks z noclegiem",
-      "label_dl": "Wydarzenie z noclegiem",
-      "tagline": "ALL DAY IN PONTI",
-      "haczyk": "Grupa z innego miasta, wszystko w jednym miejscu",
-      "akcent": "#7A6A54",
-      "nastroj": "wieczor",
-      "foto": "apart-sypialnia",
-      "hero_h": "Cały kompleks<br>na <em>Wasze</em> wydarzenie",
-      "hero_p": "Jeden telefon zamiast czterech: sala na spotkanie, kolacja, strefa Wellness i nocleg - wszystko w jednym budynku, pod jedną fakturą.",
-      "band_p": "Kiedy grupa przyjeżdża z innego miasta, największym problemem nie jest kolacja, a logistyka. U nas cały dzień mieści się pod jednym adresem: rano lub po południu spotkanie w Sali Onda, wieczorem kolacja, po niej strefa Wellness, a na noc pokoje piętro wyżej. Nikt nie przemieszcza się między czterema miejscami w mieście - to właśnie znaczy ALL DAY IN PONTI. Nocleg organizujemy pod konkretną grupę i termin.",
-      "band_lista": [
-        "Sala Onda do 40 osób i sala główna do 100 osób",
-        "Strefa Wellness do 11 osób na wyłączność",
-        "Apartamenty w tym samym budynku",
-        "Jedna osoba prowadzi całość, jedna faktura"
-      ],
-      "menu": "MENU II lub III",
-      "od": 199,
-      "typowo": null,
-      "termin": "termin ustalany pod grupę",
-      "czas": "od jednego wieczoru do kilku dni",
-      "przyklad_osob": 30,
-      "naglowek_ceny": "Wyceniamy cały scenariusz, nie pojedyncze pozycje.",
-      "dlaczego": "Przy pakiecie z noclegiem cena zależy od liczby pokoi, terminu i tego, ile z kompleksu bierzecie. Nie mamy na to gotowej stawki i nie chcemy jej udawać - podajemy realne liczby po rozmowie o Waszym planie. Sam próg jedzeniowy zaczyna się na MENU II, czyli 199 zł od osoby.",
-      "dostajecie": [
-        "Kolacja w restauracji albo w Sali Onda na wyłączność",
-        "Strefa Wellness dla grupy do 11 osób",
-        "Apartamenty dla uczestników, organizowane przez nas",
-        "Jedna osoba prowadzi całość od pierwszego maila"
-      ],
-      "sala": "Cały kompleks: restauracja, Onda, Wellness, apartamenty",
-      "bez_typowego": "Wycena po rozmowie o planie i liczbie pokoi"
-    }
-  ],
-  "minimum": {
-    "naglowek": "Minimum konsumpcyjne za wyłączność",
-    "opis": "Kiedy chcecie zamknąć salę tylko dla siebie, obowiązuje minimum konsumpcyjne. To nie opłata za wynajem - to kwota, którą trzeba przejeść i przepić.",
-    "pozycje": [
-      [
-        "Poniedziałek - czwartek, wieczór",
-        "9 900 zł"
-      ],
-      [
-        "Niedziela, dzień",
-        "12 600 zł"
-      ],
-      [
-        "Piątek, wieczór",
-        "18 000 zł"
-      ],
-      [
-        "Sobota, wieczór",
-        "20 700 zł"
-      ]
-    ],
-    "rada": "Jeśli zależy Wam na niższej kwocie, najprościej przesunąć termin na środek tygodnia. Sobota jest najdroższa, bo rezygnujemy z całego wieczoru normalnej sprzedaży."
-  },
-  "dodatki": [
-    {
-      "grupa": "Napoje i alkohol",
-      "pozycje": [
-        {
-          "nazwa": "Welcome bezalkoholowy",
-          "cena": "19 zł / os.",
-          "opis": "Autorska lemoniada albo koktajl 0% podany na wejściu.",
-          "ev": [
-            "chrzciny",
-            "komunia",
-            "urodziny",
-            "firmowka",
-            "konferencja",
-            "panienskie",
-            "wesele",
-            "kompleks"
-          ]
-        },
-        {
-          "nazwa": "Welcome Prosecco",
-          "cena": "29 zł / os.",
-          "opis": "Kieliszek prosecco na powitanie gości.",
-          "ev": [
-            "urodziny",
-            "firmowka",
-            "panienskie",
-            "wesele",
-            "kompleks"
-          ]
-        },
-        {
-          "nazwa": "Pakiet win do kolacji",
-          "cena": "79 zł / os.",
-          "opis": "Dwie lampki wina dobrane do menu przez naszą obsługę.",
-          "ev": [
-            "urodziny",
-            "firmowka",
-            "panienskie",
-            "wesele",
-            "kompleks"
-          ]
-        },
-        {
-          "nazwa": "Open bar 4 godziny",
-          "cena": "189 zł / os.",
-          "opis": "Wino, piwo i trzy koktajle bez ograniczeń. Od 20 osób.",
-          "ev": [
-            "urodziny",
-            "firmowka",
-            "panienskie",
-            "wesele",
-            "kompleks"
-          ]
-        },
-        {
-          "nazwa": "Wieża prosecco",
-          "cena": "890 zł",
-          "opis": "Sześćdziesiąt kieliszków ustawionych w piramidę. Moment na zdjęcia.",
-          "ev": [
-            "urodziny",
-            "panienskie",
-            "wesele"
-          ]
-        },
-        {
-          "nazwa": "Stacja koktajlowa z barmanem",
-          "cena": "1 600 zł",
-          "opis": "Trzy godziny miksowania na miejscu, karta koktajli pod Waszą grupę.",
-          "ev": [
-            "urodziny",
-            "firmowka",
-            "panienskie",
-            "wesele",
-            "kompleks"
-          ]
-        }
-      ]
-    },
-    {
-      "grupa": "Oprawa wieczoru",
-      "pozycje": [
-        {
-          "nazwa": "Nagłośnienie, mikrofon i projektor",
-          "cena": "450 zł",
-          "opis": "Dla przemówień, prezentacji i pokazu zdjęć.",
-          "ev": [
-            "firmowka",
-            "konferencja",
-            "wesele",
-            "kompleks"
-          ]
-        },
-        {
-          "nazwa": "Dekoracja florystyczna stołów",
-          "cena": "od 800 zł",
-          "opis": "Kompozycje sezonowe dobrane do charakteru uroczystości i liczby stołów.",
-          "ev": [
-            "chrzciny",
-            "komunia",
-            "urodziny",
-            "firmowka",
-            "panienskie",
-            "wesele",
-            "kompleks"
-          ]
-        },
-        {
-          "nazwa": "Muzyka na żywo",
-          "cena": "1 800 zł",
-          "opis": "Duet akustyczny, dwa sety po 45 minut. Warunki potwierdzamy przy dacie.",
-          "ev": [
-            "urodziny",
-            "wesele",
-            "kompleks"
-          ]
-        },
-        {
-          "nazwa": "DJ",
-          "cena": "1 900 zł",
-          "opis": "Cztery godziny. Warunki techniczne potwierdzamy przy dacie.",
-          "ev": [
-            "urodziny",
-            "panienskie",
-            "wesele"
-          ]
-        }
-      ]
-    },
-    {
-      "grupa": "Personalizacja",
-      "pozycje": [
-        {
-          "nazwa": "Drukowane menu personalizowane",
-          "cena": "12 zł / os.",
-          "opis": "Karta z imieniem gościa, datą uroczystości albo logo firmy.",
-          "ev": [
-            "chrzciny",
-            "komunia",
-            "urodziny",
-            "firmowka",
-            "konferencja",
-            "panienskie",
-            "wesele",
-            "kompleks"
-          ]
-        },
-        {
-          "nazwa": "Obsługa własnego tortu",
-          "cena": "12 zł / os.",
-          "opis": "Przechowanie, krojenie i serwis Waszego tortu. Bez opłaty za wniesienie.",
-          "ev": [
-            "chrzciny",
-            "komunia",
-            "urodziny",
-            "panienskie",
-            "wesele",
-            "kompleks"
-          ]
-        },
-        {
-          "nazwa": "Tort okolicznościowy",
-          "cena": "25 zł / os.",
-          "opis": "Tort zamawiany u naszego cukiernika, projektowany pod uroczystość.",
-          "ev": [
-            "chrzciny",
-            "komunia",
-            "urodziny",
-            "firmowka",
-            "wesele",
-            "kompleks"
-          ]
-        },
-        {
-          "nazwa": "Upominek dla gości",
-          "cena": "22 zł / os.",
-          "opis": "Słoiczek konfitury albo butelka oliwy z etykietą na Waszą okazję.",
-          "ev": [
-            "chrzciny",
-            "komunia",
-            "firmowka",
-            "konferencja",
-            "panienskie",
-            "wesele",
-            "kompleks"
-          ]
-        },
-        {
-          "nazwa": "Osobne menu dla dzieci",
-          "cena": "ustalane indywidualnie",
-          "opis": "Dania dla najmłodszych, serwowane równolegle z menu dorosłych.",
-          "ev": [
-            "chrzciny",
-            "komunia",
-            "kompleks"
-          ]
-        }
-      ]
-    },
-    {
-      "grupa": "Wellness i nocleg",
-      "pozycje": [
-        {
-          "nazwa": "Strefa Wellness dzielona",
-          "cena": "150 zł / os.",
-          "opis": "Jacuzzi nad Odrą i sauna na 1,5 godziny. Prosecco w cenie, także 0%.",
-          "ev": [
-            "urodziny",
-            "firmowka",
-            "konferencja",
-            "panienskie",
-            "wesele",
-            "kompleks"
-          ]
-        },
-        {
-          "nazwa": "Strefa Wellness na wyłączność",
-          "cena": "od 350 zł / os.",
-          "opis": "Dwa jacuzzi i sauna tylko dla Was, do 11 osób. Prosecco i patera owoców.",
-          "ev": [
-            "urodziny",
-            "panienskie",
-            "wesele",
-            "kompleks"
-          ]
-        },
-        {
-          "nazwa": "Masaże i rytuały PONTI",
-          "cena": "od 200 zł",
-          "opis": "Masaże, Head SPA, Vichy Rain Ritual i zabiegi na twarz w gabinetach obok strefy.",
-          "ev": [
-            "panienskie",
-            "kompleks",
-            "konferencja"
-          ]
-        },
-        {
-          "nazwa": "Nocleg w apartamencie",
-          "cena": "organizujemy pod grupę",
-          "opis": "Apartamenty w tym samym budynku. Cenę podajemy po sprawdzeniu terminu i liczby pokoi.",
-          "ev": [
-            "urodziny",
-            "firmowka",
-            "konferencja",
-            "panienskie",
-            "wesele",
-            "kompleks"
-          ]
-        },
-        {
-          "nazwa": "Przekąski nocne",
-          "cena": "39 zł / os.",
-          "opis": "Focaccia, sery i coś słonego po dwudziestej drugiej dla tych, którzy zostają.",
-          "ev": [
-            "urodziny",
-            "firmowka",
-            "panienskie",
-            "wesele",
-            "kompleks"
-          ]
-        }
-      ]
-    }
-  ],
-  "prowizja": {
-    "stawka": 10,
-    "opis": "10% od pełnej wartości rachunku, z napojami i alkoholem",
-    "zasady": [
-      [
-        "Prowizja",
-        "10% od pełnej wartości rachunku - z napojami i alkoholem"
-      ],
-      [
-        "Alternatywa",
-        "kwota stała, ustalana indywidualnie"
-      ],
-      [
-        "Wyłączność",
-        "brak - możecie polecać też inne miejsca"
-      ],
-      [
-        "Opłaty wstępne",
-        "brak"
-      ],
-      [
-        "Limity",
-        "brak"
-      ],
-      [
-        "Wypowiedzenie",
-        "w każdej chwili, bez okresu i bez kar"
-      ],
-      [
-        "Rozliczenie",
-        "zestawienie do 5. dnia miesiąca, płatność 14 dni od faktury"
-      ],
-      [
-        "Przypisanie rezerwacji",
-        "unikalny kod partnerski podawany przy rezerwacji"
-      ],
-      [
-        "Kolacja testowa",
-        "jecie u nas na nasz koszt, zanim cokolwiek podpiszecie"
-      ]
-    ]
-  },
-  "rzemieslnicy": [
-    [
-      "Młyn Skokowa",
-      "Skokowa",
-      "mąka do całej pasty fresca"
-    ],
-    [
-      "M-Beef",
-      "Bolesławiec",
-      "wołowina, polędwica do tagliaty"
-    ],
-    [
-      "Sernica Dolnośląska",
-      "Bielawa",
-      "sery dojrzewające"
-    ],
-    [
-      "Serowarnia Rzemieślnicza",
-      "Namysłów",
-      "sery"
-    ],
-    [
-      "Sery Kosińscy",
-      "Siedlnica",
-      "sery owcze"
-    ],
-    [
-      "Pstrąg świeży",
-      "Zielenica",
-      "pstrąg z grilla"
-    ],
-    [
-      "Warzywa z Jednogrodu",
-      "Żórawina",
-      "warzywa sezonowe"
-    ],
-    [
-      "Pani z Warzywniaka",
-      "Wrocław",
-      "warzywa"
-    ],
-    [
-      "Szopa Rzemieślnika",
-      "Kiełczów",
-      "wyroby rzemieślnicze"
-    ],
-    [
-      "Malinowa Zagroda",
-      "Wysoka",
-      "owoce"
-    ],
-    [
-      "Wędzarnia Dymek",
-      "Oława",
-      "wędzonki"
-    ],
-    [
-      "Oleje z Doliny Baryczy",
-      "Twardogóra",
-      "oleje tłoczone"
-    ],
-    [
-      "Oleje Milo",
-      "Milicz",
-      "oleje"
-    ],
-    [
-      "Sady Celmerów",
-      "Wzgórza Trzebnickie",
-      "owoce"
-    ],
-    [
-      "Żywe octy owocowe",
-      "Długołęka",
-      "octy"
-    ]
-  ],
-  "liczby": [
-    [
-      "100%",
-      "pasty robimy sami, na miejscu"
-    ],
-    [
-      "15+",
-      "polskich rzemieślniczych dostawców"
-    ],
-    [
-      "7",
-      "rodzajów świeżego makaronu"
-    ]
-  ],
-  "karta_ceny": {
-    "_uwaga": "Ceny z karty à la carte. W ofertach wydarzeń NIE pokazujemy ich przy pozycjach - sluza tylko asystentowi do odpowiedzi o rachunek dla dwojga.",
-    "carpaccio": 59,
-    "ravioli_duo": 52,
-    "tagliata": 149,
-    "deser_czekoladowy": 32,
-    "kolacja_3_dania_od": 113,
-    "kolacja_3_dania_srednio": 126,
-    "kolacja_3_dania_do": 267
+  {
+   "id": "III",
+   "nazwa": "MENU III",
+   "podtytul": "Degustacyjne",
+   "cena": 279,
+   "zawiera": "Amuse-bouche, przystawka, pasta, danie główne, deser",
+   "porownanie": "Pięć wyjść z kuchni. Kolacja, która sama jest wydarzeniem wieczoru.",
+   "polecane": false
   }
+ ],
+ "wellness": {
+  "nazwa": "PONTI Wellness & SPA",
+  "adres": "ul. Bolesława Drobnera 7, Wrocław",
+  "opis": "Piętro wyżej niż talerz: dwa jacuzzi z widokiem na Odrę i sauna. Dania i napoje z karty PONTI zamawiacie przez kiosk w strefie, obsługa przynosi je na miejsce.",
+  "voucher_po_kolacji": 50,
+  "warianty": [
+   {
+    "nazwa": "Strefa dzielona",
+    "podtytul": "Wejście indywidualne",
+    "opis": "Jacuzzi z widokiem na Odrę i sauna na 1,5 godziny. Najprostszy sposób, żeby zajrzeć do strefy we dwoje albo w małym gronie.",
+    "pozycje": [
+     [
+      "1 osoba",
+      "150 zł"
+     ],
+     [
+      "2 osoby",
+      "300 zł"
+     ],
+     [
+      "3 osoby",
+      "450 zł"
+     ]
+    ],
+    "stopka": "Każda dodatkowa godzina +99 zł od osoby. W cenie kieliszek prosecco na osobę, również 0%."
+   },
+   {
+    "nazwa": "Na wyłączność",
+    "podtytul": "Cała strefa tylko dla Was",
+    "opis": "Dwa jacuzzi i sauna zamknięte dla Waszego towarzystwa. Nikogo obcego w wodzie, kolacja z karty PONTI podana na miejsce. Od 2 osób, do 11 osób.",
+    "pozycje": [
+     [
+      "1,5 h lub 2 h",
+      "od 350 zł / os."
+     ],
+     [
+      "3 h, do 4 osób",
+      "900 zł"
+     ],
+     [
+      "3 h, 6-11 osób",
+      "200 zł / os."
+     ]
+    ],
+    "stopka": "W cenie prosecco na osobę i patera owoców. Dodatkowa godzina +99 zł od osoby."
+   }
+  ],
+  "zabiegi": [
+   [
+    "Masaż klasyczny",
+    "30 min 200 zł · 60 min 280 zł · 90 min 360 zł"
+   ],
+   [
+    "Masaż relaksacyjny",
+    "60 min 280 zł · 90 min 360 zł"
+   ],
+   [
+    "Masaż gorącymi kamieniami",
+    "60 min 280 zł · 90 min 376 zł"
+   ],
+   [
+    "Masaż z peelingiem dla dwojga",
+    "90 min 680 zł"
+   ],
+   [
+    "Ponti Head SPA & Face Ritual",
+    "90 min 312 zł"
+   ],
+   [
+    "Ponti Vichy Rain Ritual",
+    "60 min 280 zł · 90 min 344 zł"
+   ],
+   [
+    "Ponti Magnesium Reset Thalion",
+    "90 min 440 zł"
+   ],
+   [
+    "SCENS Eternal Lifting Experience",
+    "75 min 464 zł"
+   ],
+   [
+    "Sauna sucha / infrared dla dwojga",
+    "30 min 56 zł · 60 min 72 zł"
+   ]
+  ],
+  "zabiegi_zrodlo": "Ceny promocyjne z Booksy, stan na 9 lipca 2026. Rezerwacja zabiegów: recepcja@ponti.spa, +48 795 502 402."
+ },
+ "sale": [
+  {
+   "nazwa": "Sala Onda",
+   "pojemnosc": "do 40 osób",
+   "foto": "sala-onda",
+   "opis": "Onda znaczy fala - i taki jest jej sufit. Osobna sala na wyłączność, wysokie okna nad Odrą, dedykowana obsługa. Kolacje firmowe, urodziny, szkolenia i prezentacje.",
+   "cechy": [
+    "Sala zamknięta tylko dla Was",
+    "Pełna karta kuchni i baru PONTI",
+    "Menu ustalane wcześniej pod grupę",
+    "Miejsce na prezentację i projektor"
+   ]
+  },
+  {
+   "nazwa": "Sala główna z tarasem",
+   "pojemnosc": "do 100 osób",
+   "foto": "dlugi-stol",
+   "opis": "Surowy beton, ciepłe drewno, marmurowe blaty i bujna zieleń. Wysokie przeszklenia otwierają salę na taras nad Odrą. Największa przestrzeń, dostępna także na wyłączność.",
+   "cechy": [
+    "Sala, strefa lounge i taras",
+    "Widok na Odrę i Kładkę Słodową",
+    "Układ stołów pod Waszą grupę",
+    "Latem taras włączony do wydarzenia"
+   ]
+  },
+  {
+   "nazwa": "Strefa Wellness",
+   "pojemnosc": "do 11 osób",
+   "foto": "jacuzzi-wieczor",
+   "opis": "Dwa jacuzzi i sauna na wyłączność, piętro wyżej. Zamawianie z karty PONTI bez wychodzenia z wody. Najmocniejszy punkt wieczorów panieńskich i pakietów dla par.",
+   "cechy": [
+    "Dwa jacuzzi z widokiem na Odrę",
+    "Sauna sucha i infrared",
+    "Prosecco i patera owoców w cenie",
+    "Gabinety masażu i rytuałów obok"
+   ]
+  }
+ ],
+ "wydarzenia": [
+  {
+   "id": "chrzciny",
+   "label": "Chrzciny",
+   "label_dl": "Chrzciny",
+   "haczyk": "Niedzielne popołudnie, rodzina, dzieci",
+   "akcent": "#7C8B6A",
+   "nastroj": "dzien",
+   "foto": "sala-okno-taras",
+   "hero_h": "Chrzciny<br>w <em>PONTI</em>",
+   "hero_p": "Rodzinna uroczystość w eleganckiej, ale nieprzytłaczającej oprawie. Bez wrażenia sali bankietowej, bez sztywnego protokołu.",
+   "band_p": "Niedzielne popołudnie przy jednym dużym stole. Menu serwowane w spokojnym tempie, osobne dania dla dzieci, miejsce na własny tort. Sala jest jasna i cicha - rozmowa nie musi być krzykiem.",
+   "band_lista": [
+    "Niedziela, zwykle 12:00-16:00",
+    "Osobne dania dla najmłodszych",
+    "Tempo serwisu dopasowane do dzieci",
+    "Własny tort bez opłaty za wniesienie"
+   ],
+   "menu": "MENU I lub II",
+   "od": 149,
+   "typowo": 190,
+   "termin": "niedziela, 12:00-16:00",
+   "czas": "4 godziny",
+   "przyklad_osob": 20,
+   "naglowek_ceny": "Najspokojniejszy i najtańszy typ uroczystości. I tak ma być.",
+   "dlaczego": "Chrzciny wypadają w dzień, przy stole są dzieci i kierowcy, alkohol prawie nie schodzi. Rachunek opiera się na jedzeniu, więc jest po prostu niższy. Nie doliczamy niczego za to, że okazja jest uroczysta.",
+   "dostajecie": [
+    "Menu serwowane albo w zestawach, tempo dopasowane do najmłodszych",
+    "Osobne dania dla dzieci",
+    "Miejsce na własny tort, bez opłaty za wniesienie",
+    "Kameralna przestrzeń, bez wrażenia sali bankietowej"
+   ],
+   "sala": "Sala Onda do 40 osób albo sala główna do 100 osób"
+  },
+  {
+   "id": "komunia",
+   "label": "Komunia",
+   "label_dl": "Komunia",
+   "haczyk": "Maj, szeroka rodzina, uroczyście",
+   "akcent": "#B08843",
+   "nastroj": "dzien",
+   "foto": "sala-glowna",
+   "hero_h": "Komunia<br>w <em>PONTI</em>",
+   "hero_p": "Uroczysty obiad dla szerokiej rodziny, w miejscu, które wygląda inaczej niż wszystkie sale, w których byliście do tej pory.",
+   "band_p": "Majowa niedziela, szeroka rodzina, jeden stół albo kilka złączonych. Menu serwowane, drukowana karta z imieniem dziecka, układ stołów przy którym wszyscy się widzą.",
+   "band_lista": [
+    "Maj, niedziela 13:00-17:00",
+    "Menu serwowane, bez kolejki do bufetu",
+    "Drukowane menu z imieniem dziecka",
+    "Osobne dania dla dzieci"
+   ],
+   "menu": "MENU II",
+   "od": 199,
+   "typowo": 220,
+   "termin": "maj, niedziela 13:00-17:00",
+   "czas": "4 godziny",
+   "przyklad_osob": 30,
+   "naglowek_ceny": "Uroczysty obiad dla szerokiej rodziny - w miejscu, które nie wygląda jak sala.",
+   "dlaczego": "Komunie mieszczą się w kilku majowych weekendach w całym roku. Terminy schodzą pierwsze i to jedyny powód, dla którego prosimy o wcześniejszą rezerwację.",
+   "dostajecie": [
+    "Menu serwowane, dopasowane do liczby gości",
+    "Osobne dania dla dzieci",
+    "Drukowane menu z imieniem dziecka",
+    "Układ stołów, przy którym wszyscy się widzą"
+   ],
+   "sala": "Sala Onda do 40 osób albo sala główna do 100 osób"
+  },
+  {
+   "id": "urodziny",
+   "label": "Urodziny",
+   "label_dl": "Urodziny",
+   "haczyk": "Wieczór, dorośli, świętowanie",
+   "akcent": "#B85C38",
+   "nastroj": "wieczor",
+   "foto": "lounge",
+   "hero_h": "Urodziny<br>w <em>PONTI</em>",
+   "hero_p": "Wieczór, przy którym jedzenie jest wydarzeniem, a nie tłem. Dla trzydziestki, czterdziestki i każdej innej okrągłej liczby.",
+   "band_p": "Zaczynacie kieliszkiem w strefie lounge, potem kolacja przy stole, a wieczór trwa tyle, ile chcecie. Do tego pełna karta win i koktajli, a jeśli macie ochotę - muzyka na żywo albo DJ.",
+   "band_lista": [
+    "Piątek lub sobota, 19:00-24:00",
+    "Start w strefie lounge",
+    "Pełna karta win i koktajli",
+    "Możliwość wydzielenia części sali"
+   ],
+   "menu": "MENU I lub II",
+   "od": 199,
+   "typowo": 320,
+   "termin": "piątek lub sobota, 19:00-24:00",
+   "czas": "5 godzin",
+   "przyklad_osob": 30,
+   "naglowek_ceny": "Wieczór, w którym jedzenie jest wydarzeniem, a nie tłem.",
+   "dlaczego": "Wieczorem rachunek rośnie z jednego powodu: napojów i alkoholu. Samo menu zaczyna się tam, gdzie zawsze - reszta zależy wyłącznie od tego, co zamówicie do stołu.",
+   "dostajecie": [
+    "Start w strefie lounge, kolacja przy stole",
+    "Pełna karta win i koktajli",
+    "Możliwość wydzielenia części sali albo Sala Onda na wyłączność",
+    "Muzyka na żywo albo DJ do wyboru"
+   ],
+   "sala": "Sala Onda do 40 osób na wyłączność"
+  },
+  {
+   "id": "firmowka",
+   "label": "Event firmowy",
+   "label_dl": "Kolacja firmowa",
+   "haczyk": "Kolacja, integracja, spotkanie zespołu",
+   "akcent": "#55654A",
+   "nastroj": "wieczor",
+   "foto": "dlugi-stol",
+   "hero_h": "Kolacja firmowa<br>w <em>PONTI</em>",
+   "hero_p": "Zamknięta przestrzeń, ustalone menu, jedna faktura. Idealne zakończenie dnia integracyjnego albo konferencji.",
+   "band_p": "Sala Onda zamknięta dla Waszego zespołu, menu ustalone wcześniej, jedna faktura na całość. Nagłośnienie z mikrofonem i projektor, jeśli ktoś ma coś powiedzieć. Środek tygodnia wychodzi wyraźnie taniej niż weekend.",
+   "band_lista": [
+    "Wtorek-czwartek, 18:00-22:00",
+    "Sala Onda do 40 osób na wyłączność",
+    "Jedna faktura na całość",
+    "Nagłośnienie, mikrofon i projektor"
+   ],
+   "menu": "MENU II",
+   "od": 199,
+   "typowo": 270,
+   "termin": "wtorek-czwartek, 18:00-22:00",
+   "czas": "4 godziny",
+   "przyklad_osob": 25,
+   "naglowek_ceny": "Jedna faktura, jeden kontakt, zero improwizacji w dniu wydarzenia.",
+   "dlaczego": "Przy eventach firmowych nie negocjujecie ceny talerza, tylko kupujecie spokój. Ustalamy wszystko wcześniej, wystawiamy jedną fakturę i nie zawracamy Wam głowy w trakcie.",
+   "dostajecie": [
+    "Jedna faktura na całość, ustalona przed wydarzeniem",
+    "Nagłośnienie, mikrofon i projektor na przemówienia",
+    "Sala Onda na wyłączność albo wydzielona część sali",
+    "Terminy wtorek-czwartek w najniższym progu"
+   ],
+   "sala": "Sala Onda do 40 osób na wyłączność"
+  },
+  {
+   "id": "wigilia",
+   "kategoria": "b2b",
+   "label": "Wigilia firmowa",
+   "label_dl": "Wigilia firmowa",
+   "haczyk": "Świąteczna kolacja zespołu, grudzień",
+   "akcent": "#6E3B32",
+   "nastroj": "wieczor",
+   "foto": "dlugi-stol",
+   "hero_h": "Wigilia firmowa<br>w <em>PONTI</em>",
+   "hero_p": "Wspólny stół nad Odrą, świąteczne menu ustalone wcześniej, jedna faktura. Grudzień ma tylko dziewięć mocnych wieczorów — czwartki, piątki i soboty od 3 do 19 grudnia.",
+   "band_p": "Sala Onda zamknięta dla Waszego zespołu albo sala główna z widokiem na Odrę. Świąteczne menu na polskich produktach od regionalnych rzemieślników, ustalone wcześniej, jedna faktura na całość. Nie doliczamy niczego za to, że okazja jest świąteczna.",
+   "band_lista": [
+    "Czwartek-sobota, 3-19 grudnia",
+    "Sala Onda do 40 osób albo sala główna do 100",
+    "Świąteczne menu ustalone przed wydarzeniem",
+    "Jedna faktura na całość"
+   ],
+   "menu": "MENU II",
+   "od": 199,
+   "typowo": 270,
+   "termin": "czwartek-sobota, 3-19 grudnia",
+   "czas": "4 godziny",
+   "przyklad_osob": 25,
+   "naglowek_ceny": "Nie doliczamy niczego za to, że okazja jest świąteczna.",
+   "dlaczego": "Płacicie za czas, salę i menu — dokładnie jak przy każdej kolacji firmowej. Grudniowa data nie zmienia cennika. Zmienia tylko dostępność terminów, dlatego rezerwacja we wrześniu to realna przewaga, nie sprzedażowy trik.",
+   "dostajecie": [
+    "Jedna faktura na całość, ustalona przed wydarzeniem",
+    "Świąteczne menu grupowe z polskich regionalnych produktów",
+    "Sala Onda na wyłączność albo wydzielona część sali głównej",
+    "Nagłośnienie i mikrofon na życzenia i podsumowanie roku"
+   ],
+   "sala": "Sala Onda do 40 osób na wyłączność"
+  },
+  {
+   "id": "konferencja",
+   "label": "Konferencja i szkolenie",
+   "label_dl": "Konferencja i szkolenie",
+   "haczyk": "Dzień pracy, prezentacja, lunch",
+   "akcent": "#6B6350",
+   "nastroj": "dzien",
+   "foto": "sala-onda",
+   "hero_h": "Konferencja<br>w <em>PONTI</em>",
+   "hero_p": "Sala Onda na cały dzień: prezentacja, przerwy i lunch w jednym miejscu, bez przewożenia grupy między adresami.",
+   "band_p": "Sala Onda do 40 osób, wysokie okna nad Odrą, projektor i nagłośnienie na miejscu. Przerwy kawowe i lunch układamy pod program dnia, a wieczorem ta sama grupa może zostać na kolacji albo zejść do strefy Wellness.",
+   "band_lista": [
+    "Sala Onda do 40 osób, dzień roboczy",
+    "Projektor, ekran, nagłośnienie i mikrofon",
+    "Przerwy kawowe i lunch pod program dnia",
+    "Apartamenty w tym samym budynku"
+   ],
+   "menu": "MENU I lub lunch ustalany pod program",
+   "od": 149,
+   "typowo": null,
+   "termin": "poniedziałek-czwartek, dzień",
+   "czas": "pod program dnia",
+   "przyklad_osob": 25,
+   "naglowek_ceny": "Cena zależy od programu dnia, nie od liczby slajdów.",
+   "dlaczego": "Konferencja to nie kolacja - liczy się liczba przerw, długość dnia i to, czy grupa zostaje na wieczór. Dlatego lunch i przerwy kawowe wyceniamy pod konkretny plan, a nie z gotowej tabeli. Punkt wyjścia dla części jedzeniowej to MENU I, czyli 149 zł od osoby.",
+   "dostajecie": [
+    "Sala Onda na wyłączność, do 40 osób",
+    "Nagłośnienie z mikrofonem i projektor - 450 zł za dzień",
+    "Przerwy kawowe i lunch ustalane pod program",
+    "Nocleg dla uczestników w tym samym budynku"
+   ],
+   "sala": "Sala Onda do 40 osób na wyłączność",
+   "bez_typowego": "Wyceniamy indywidualnie pod program dnia"
+  },
+  {
+   "id": "panienskie",
+   "label": "Panieński i kawalerski",
+   "label_dl": "Wieczór panieński i kawalerski",
+   "haczyk": "Wieczór, mała grupa, jacuzzi nad Odrą",
+   "akcent": "#A8475C",
+   "nastroj": "noc",
+   "foto": "jacuzzi-wieczor",
+   "hero_h": "Wieczór panieński<br>w <em>PONTI</em>",
+   "hero_p": "Kolacja, jacuzzi nad Odrą i nocleg bez wychodzenia z budynku. Cały scenariusz wieczoru pod jednym adresem.",
+   "band_p": "Najmocniejszy argument: wszystko jest w jednym miejscu. Strefa Wellness na wyłączność dla maksymalnie jedenastu osób, kolacja z karty PONTI podana do wody, a rano nikt nie szuka taksówki, bo apartamenty są piętro wyżej.",
+   "band_lista": [
+    "Piątek lub sobota, wieczór",
+    "Strefa Wellness na wyłączność, do 11 osób",
+    "Kolacja z karty podana do strefy",
+    "Apartamenty w tym samym budynku"
+   ],
+   "menu": "MENU I lub II",
+   "od": 149,
+   "typowo": 290,
+   "termin": "piątek lub sobota, wieczór",
+   "czas": "4-5 godzin",
+   "przyklad_osob": 12,
+   "naglowek_ceny": "Mała grupa, ale najwyższe spożycie na osobę i najmocniejsza oprawa.",
+   "dlaczego": "Przy panieńskim płacicie nie za liczbę talerzy, a za scenariusz: strefa Wellness tylko dla Was, prosecco, kolacja podana do wody i pokój na górze. Cena rośnie od oprawy, nie od jedzenia.",
+   "dostajecie": [
+    "Strefa Wellness na wyłączność do 11 osób, od 350 zł od osoby",
+    "Prosecco i patera owoców w cenie strefy",
+    "Kolacja z karty PONTI zamawiana bez wychodzenia z wody",
+    "Wieża prosecco 890 zł albo barman na miejscu 1 600 zł"
+   ],
+   "sala": "Strefa Wellness do 11 osób plus Sala Onda do 40 osób"
+  },
+  {
+   "id": "wesele",
+   "label": "Wesele kameralne",
+   "label_dl": "Wesele kameralne",
+   "haczyk": "Sobota, najbliżsi, pełen wieczór",
+   "akcent": "#93452A",
+   "nastroj": "wieczor",
+   "foto": "zielony-salon",
+   "hero_h": "Wesele kameralne<br>w <em>PONTI</em>",
+   "hero_p": "Dla par, które nie chcą wesela w sali z lustrami. Kolacja na najwyższym poziomie, w gronie najbliższych.",
+   "band_p": "Sobota od szesnastej do północy, menu degustacyjne, sala na wyłączność. Apartamenty dla Pary Młodej i gości w tym samym budynku, więc wieczór nie kończy się szukaniem noclegu. Format dla tych, którzy wolą kolację na poziomie od sali na trzysta osób.",
+   "band_lista": [
+    "Sobota, 16:00-24:00",
+    "Menu degustacyjne, pięć wyjść z kuchni",
+    "Sala na wyłączność",
+    "Nocleg dla Pary Młodej i gości na miejscu"
+   ],
+   "menu": "MENU III",
+   "od": 279,
+   "typowo": 480,
+   "termin": "sobota, 16:00-24:00",
+   "czas": "8 godzin",
+   "przyklad_osob": 60,
+   "naglowek_ceny": "Najdroższe nie dlatego, że jedzenie jest lepsze. Dlatego, że wieczór jest Wasz cały.",
+   "dlaczego": "Osiem godzin blokuje salę i całą obsługę na cały wieczór. Płacicie za wyłączność i za czas, nie za dopisek wesele przy nazwie rezerwacji.",
+   "dostajecie": [
+    "Sala na wyłączność na cały wieczór",
+    "Menu degustacyjne, pięć wyjść z kuchni",
+    "Nocleg dla Pary Młodej i gości w tym samym budynku",
+    "Współpraca z Waszym fotografem i dekoratorem"
+   ],
+   "sala": "Sala główna do 100 osób na wyłączność"
+  },
+  {
+   "id": "para",
+   "kategoria": "produkt_indywidualny",
+   "_uwaga": "Nie pokazujemy jako karte wyboru okazji w goscie.html ani partnerska.html - to nie jest wydarzenie, ktore agencja moglaby nam polecic, tylko produkt na landing voucherow. Dane zostaja dla asystenta czatu (guest moze o to zapytac wprost) i dla przyszlego wykorzystania.",
+   "label": "Kolacja i Wellness dla dwojga",
+   "label_dl": "Kolacja i Wellness dla dwojga",
+   "haczyk": "Dwie osoby, kolacja i jacuzzi nad Odrą",
+   "akcent": "#4F7B80",
+   "nastroj": "noc",
+   "foto": "jacuzzi-dzien",
+   "hero_h": "Kolacja i Wellness<br>we <em>dwoje</em>",
+   "hero_p": "Kolacja z widokiem na Odrę, a potem jacuzzi piętro wyżej. Bez przejazdów, bez pilnowania godziny.",
+   "band_p": "Najprostszy wieczór, jaki mamy: kolacja z karty przy oknie, a po niej strefa Wellness. Jacuzzi z widokiem na rzekę, sauna, prosecco w cenie. Po kolacji w PONTI dostajecie voucher 50 zł na strefę - to nie promocja, to stała zasada.",
+   "band_lista": [
+    "Kolacja z pełnej karty PONTI",
+    "Strefa dzielona dla dwojga: 300 zł za 1,5 godziny",
+    "Cała strefa tylko dla Was: od 350 zł od osoby",
+    "Voucher 50 zł na strefę po kolacji"
+   ],
+   "menu": "pełna karta à la carte",
+   "od": 113,
+   "typowo": null,
+   "termin": "codziennie, godziny restauracji",
+   "czas": "wieczór",
+   "przyklad_osob": 2,
+   "naglowek_ceny": "Dwie pozycje na rachunku: kolacja i woda.",
+   "dlaczego": "Dla dwóch osób nie układamy menu grupowego - zamawiacie z karty. Trzydaniowa kolacja wychodzi od 113 zł od osoby. Strefa Wellness ma własny, jawny cennik, a voucher 50 zł po kolacji zbija go dodatkowo.",
+   "dostajecie": [
+    "Kolacja z karty, trzy dania od 113 zł od osoby",
+    "Strefa dzielona 1,5 h: 150 zł za osobę, 300 zł za dwoje",
+    "Cała strefa na wyłączność: od 350 zł od osoby",
+    "Prosecco w cenie strefy, również w wersji 0%"
+   ],
+   "sala": "Restauracja plus strefa Wellness",
+   "bez_typowego": "Rachunek zależy od tego, co zamówicie z karty"
+  },
+  {
+   "id": "kompleks",
+   "label": "Pełny kompleks z noclegiem",
+   "label_dl": "Wydarzenie z noclegiem",
+   "tagline": "ALL DAY IN PONTI",
+   "haczyk": "Grupa z innego miasta, wszystko w jednym miejscu",
+   "akcent": "#7A6A54",
+   "nastroj": "wieczor",
+   "foto": "apart-sypialnia",
+   "hero_h": "Cały kompleks<br>na <em>Wasze</em> wydarzenie",
+   "hero_p": "Jeden telefon zamiast czterech: sala na spotkanie, kolacja, strefa Wellness i nocleg - wszystko w jednym budynku, pod jedną fakturą.",
+   "band_p": "Kiedy grupa przyjeżdża z innego miasta, największym problemem nie jest kolacja, a logistyka. U nas cały dzień mieści się pod jednym adresem: rano lub po południu spotkanie w Sali Onda, wieczorem kolacja, po niej strefa Wellness, a na noc pokoje piętro wyżej. Nikt nie przemieszcza się między czterema miejscami w mieście - to właśnie znaczy ALL DAY IN PONTI. Nocleg organizujemy pod konkretną grupę i termin.",
+   "band_lista": [
+    "Sala Onda do 40 osób i sala główna do 100 osób",
+    "Strefa Wellness do 11 osób na wyłączność",
+    "Apartamenty w tym samym budynku",
+    "Jedna osoba prowadzi całość, jedna faktura"
+   ],
+   "menu": "MENU II lub III",
+   "od": 199,
+   "typowo": null,
+   "termin": "termin ustalany pod grupę",
+   "czas": "od jednego wieczoru do kilku dni",
+   "przyklad_osob": 30,
+   "naglowek_ceny": "Wyceniamy cały scenariusz, nie pojedyncze pozycje.",
+   "dlaczego": "Przy pakiecie z noclegiem cena zależy od liczby pokoi, terminu i tego, ile z kompleksu bierzecie. Nie mamy na to gotowej stawki i nie chcemy jej udawać - podajemy realne liczby po rozmowie o Waszym planie. Sam próg jedzeniowy zaczyna się na MENU II, czyli 199 zł od osoby.",
+   "dostajecie": [
+    "Kolacja w restauracji albo w Sali Onda na wyłączność",
+    "Strefa Wellness dla grupy do 11 osób",
+    "Apartamenty dla uczestników, organizowane przez nas",
+    "Jedna osoba prowadzi całość od pierwszego maila"
+   ],
+   "sala": "Cały kompleks: restauracja, Onda, Wellness, apartamenty",
+   "bez_typowego": "Wycena po rozmowie o planie i liczbie pokoi"
+  }
+ ],
+ "minimum": {
+  "naglowek": "Minimum konsumpcyjne za wyłączność",
+  "opis": "Kiedy chcecie zamknąć salę tylko dla siebie, obowiązuje minimum konsumpcyjne. To nie opłata za wynajem - to kwota, którą trzeba przejeść i przepić.",
+  "pozycje": [
+   [
+    "Poniedziałek - czwartek, wieczór",
+    "9 900 zł"
+   ],
+   [
+    "Niedziela, dzień",
+    "12 600 zł"
+   ],
+   [
+    "Piątek, wieczór",
+    "18 000 zł"
+   ],
+   [
+    "Sobota, wieczór",
+    "20 700 zł"
+   ]
+  ],
+  "rada": "Jeśli zależy Wam na niższej kwocie, najprościej przesunąć termin na środek tygodnia. Sobota jest najdroższa, bo rezygnujemy z całego wieczoru normalnej sprzedaży."
+ },
+ "dodatki": [
+  {
+   "grupa": "Napoje i alkohol",
+   "pozycje": [
+    {
+     "nazwa": "Welcome bezalkoholowy",
+     "cena": "19 zł / os.",
+     "opis": "Autorska lemoniada albo koktajl 0% podany na wejściu.",
+     "ev": [
+      "chrzciny",
+      "komunia",
+      "urodziny",
+      "firmowka",
+      "konferencja",
+      "panienskie",
+      "wesele",
+      "kompleks"
+     ]
+    },
+    {
+     "nazwa": "Welcome Prosecco",
+     "cena": "29 zł / os.",
+     "opis": "Kieliszek prosecco na powitanie gości.",
+     "ev": [
+      "urodziny",
+      "firmowka",
+      "panienskie",
+      "wesele",
+      "kompleks"
+     ]
+    },
+    {
+     "nazwa": "Pakiet win do kolacji",
+     "cena": "79 zł / os.",
+     "opis": "Dwie lampki wina dobrane do menu przez naszą obsługę.",
+     "ev": [
+      "urodziny",
+      "firmowka",
+      "panienskie",
+      "wesele",
+      "kompleks"
+     ]
+    },
+    {
+     "nazwa": "Open bar 4 godziny",
+     "cena": "189 zł / os.",
+     "opis": "Wino, piwo i trzy koktajle bez ograniczeń. Od 20 osób.",
+     "ev": [
+      "urodziny",
+      "firmowka",
+      "panienskie",
+      "wesele",
+      "kompleks"
+     ]
+    },
+    {
+     "nazwa": "Wieża prosecco",
+     "cena": "890 zł",
+     "opis": "Sześćdziesiąt kieliszków ustawionych w piramidę. Moment na zdjęcia.",
+     "ev": [
+      "urodziny",
+      "panienskie",
+      "wesele"
+     ]
+    },
+    {
+     "nazwa": "Stacja koktajlowa z barmanem",
+     "cena": "1 600 zł",
+     "opis": "Trzy godziny miksowania na miejscu, karta koktajli pod Waszą grupę.",
+     "ev": [
+      "urodziny",
+      "firmowka",
+      "panienskie",
+      "wesele",
+      "kompleks"
+     ]
+    }
+   ]
+  },
+  {
+   "grupa": "Oprawa wieczoru",
+   "pozycje": [
+    {
+     "nazwa": "Nagłośnienie, mikrofon i projektor",
+     "cena": "450 zł",
+     "opis": "Dla przemówień, prezentacji i pokazu zdjęć.",
+     "ev": [
+      "firmowka",
+      "konferencja",
+      "wesele",
+      "kompleks"
+     ]
+    },
+    {
+     "nazwa": "Dekoracja florystyczna stołów",
+     "cena": "od 800 zł",
+     "opis": "Kompozycje sezonowe dobrane do charakteru uroczystości i liczby stołów.",
+     "ev": [
+      "chrzciny",
+      "komunia",
+      "urodziny",
+      "firmowka",
+      "panienskie",
+      "wesele",
+      "kompleks"
+     ]
+    },
+    {
+     "nazwa": "Muzyka na żywo",
+     "cena": "1 800 zł",
+     "opis": "Duet akustyczny, dwa sety po 45 minut. Warunki potwierdzamy przy dacie.",
+     "ev": [
+      "urodziny",
+      "wesele",
+      "kompleks"
+     ]
+    },
+    {
+     "nazwa": "DJ",
+     "cena": "1 900 zł",
+     "opis": "Cztery godziny. Warunki techniczne potwierdzamy przy dacie.",
+     "ev": [
+      "urodziny",
+      "panienskie",
+      "wesele"
+     ]
+    }
+   ]
+  },
+  {
+   "grupa": "Personalizacja",
+   "pozycje": [
+    {
+     "nazwa": "Drukowane menu personalizowane",
+     "cena": "12 zł / os.",
+     "opis": "Karta z imieniem gościa, datą uroczystości albo logo firmy.",
+     "ev": [
+      "chrzciny",
+      "komunia",
+      "urodziny",
+      "firmowka",
+      "konferencja",
+      "panienskie",
+      "wesele",
+      "kompleks"
+     ]
+    },
+    {
+     "nazwa": "Obsługa własnego tortu",
+     "cena": "12 zł / os.",
+     "opis": "Przechowanie, krojenie i serwis Waszego tortu. Bez opłaty za wniesienie.",
+     "ev": [
+      "chrzciny",
+      "komunia",
+      "urodziny",
+      "panienskie",
+      "wesele",
+      "kompleks"
+     ]
+    },
+    {
+     "nazwa": "Tort okolicznościowy",
+     "cena": "25 zł / os.",
+     "opis": "Tort zamawiany u naszego cukiernika, projektowany pod uroczystość.",
+     "ev": [
+      "chrzciny",
+      "komunia",
+      "urodziny",
+      "firmowka",
+      "wesele",
+      "kompleks"
+     ]
+    },
+    {
+     "nazwa": "Upominek dla gości",
+     "cena": "22 zł / os.",
+     "opis": "Słoiczek konfitury albo butelka oliwy z etykietą na Waszą okazję.",
+     "ev": [
+      "chrzciny",
+      "komunia",
+      "firmowka",
+      "konferencja",
+      "panienskie",
+      "wesele",
+      "kompleks"
+     ]
+    },
+    {
+     "nazwa": "Osobne menu dla dzieci",
+     "cena": "ustalane indywidualnie",
+     "opis": "Dania dla najmłodszych, serwowane równolegle z menu dorosłych.",
+     "ev": [
+      "chrzciny",
+      "komunia",
+      "kompleks"
+     ]
+    }
+   ]
+  },
+  {
+   "grupa": "Wellness i nocleg",
+   "pozycje": [
+    {
+     "nazwa": "Strefa Wellness dzielona",
+     "cena": "150 zł / os.",
+     "opis": "Jacuzzi nad Odrą i sauna na 1,5 godziny. Prosecco w cenie, także 0%.",
+     "ev": [
+      "urodziny",
+      "firmowka",
+      "konferencja",
+      "panienskie",
+      "wesele",
+      "kompleks"
+     ]
+    },
+    {
+     "nazwa": "Strefa Wellness na wyłączność",
+     "cena": "od 350 zł / os.",
+     "opis": "Dwa jacuzzi i sauna tylko dla Was, do 11 osób. Prosecco i patera owoców.",
+     "ev": [
+      "urodziny",
+      "panienskie",
+      "wesele",
+      "kompleks"
+     ]
+    },
+    {
+     "nazwa": "Masaże i rytuały PONTI",
+     "cena": "od 200 zł",
+     "opis": "Masaże, Head SPA, Vichy Rain Ritual i zabiegi na twarz w gabinetach obok strefy.",
+     "ev": [
+      "panienskie",
+      "kompleks",
+      "konferencja"
+     ]
+    },
+    {
+     "nazwa": "Nocleg w apartamencie",
+     "cena": "organizujemy pod grupę",
+     "opis": "Apartamenty w tym samym budynku. Cenę podajemy po sprawdzeniu terminu i liczby pokoi.",
+     "ev": [
+      "urodziny",
+      "firmowka",
+      "konferencja",
+      "panienskie",
+      "wesele",
+      "kompleks"
+     ]
+    },
+    {
+     "nazwa": "Przekąski nocne",
+     "cena": "39 zł / os.",
+     "opis": "Focaccia, sery i coś słonego po dwudziestej drugiej dla tych, którzy zostają.",
+     "ev": [
+      "urodziny",
+      "firmowka",
+      "panienskie",
+      "wesele",
+      "kompleks"
+     ]
+    }
+   ]
+  }
+ ],
+ "prowizja": {
+  "stawka": 10,
+  "opis": "10% od pełnej wartości rachunku, z napojami i alkoholem",
+  "zasady": [
+   [
+    "Prowizja",
+    "10% od pełnej wartości rachunku - z napojami i alkoholem"
+   ],
+   [
+    "Alternatywa",
+    "kwota stała, ustalana indywidualnie"
+   ],
+   [
+    "Wyłączność",
+    "brak - możecie polecać też inne miejsca"
+   ],
+   [
+    "Opłaty wstępne",
+    "brak"
+   ],
+   [
+    "Limity",
+    "brak"
+   ],
+   [
+    "Wypowiedzenie",
+    "w każdej chwili, bez okresu i bez kar"
+   ],
+   [
+    "Rozliczenie",
+    "zestawienie do 5. dnia miesiąca, płatność 14 dni od faktury"
+   ],
+   [
+    "Przypisanie rezerwacji",
+    "unikalny kod partnerski podawany przy rezerwacji"
+   ],
+   [
+    "Kolacja testowa",
+    "jecie u nas na nasz koszt, zanim cokolwiek podpiszecie"
+   ]
+  ]
+ },
+ "rzemieslnicy": [
+  [
+   "Młyn Skokowa",
+   "Skokowa",
+   "mąka do całej pasty fresca"
+  ],
+  [
+   "M-Beef",
+   "Bolesławiec",
+   "wołowina, polędwica do tagliaty"
+  ],
+  [
+   "Sernica Dolnośląska",
+   "Bielawa",
+   "sery dojrzewające"
+  ],
+  [
+   "Serowarnia Rzemieślnicza",
+   "Namysłów",
+   "sery"
+  ],
+  [
+   "Sery Kosińscy",
+   "Siedlnica",
+   "sery owcze"
+  ],
+  [
+   "Pstrąg świeży",
+   "Zielenica",
+   "pstrąg z grilla"
+  ],
+  [
+   "Warzywa z Jednogrodu",
+   "Żórawina",
+   "warzywa sezonowe"
+  ],
+  [
+   "Pani z Warzywniaka",
+   "Wrocław",
+   "warzywa"
+  ],
+  [
+   "Szopa Rzemieślnika",
+   "Kiełczów",
+   "wyroby rzemieślnicze"
+  ],
+  [
+   "Malinowa Zagroda",
+   "Wysoka",
+   "owoce"
+  ],
+  [
+   "Wędzarnia Dymek",
+   "Oława",
+   "wędzonki"
+  ],
+  [
+   "Oleje z Doliny Baryczy",
+   "Twardogóra",
+   "oleje tłoczone"
+  ],
+  [
+   "Oleje Milo",
+   "Milicz",
+   "oleje"
+  ],
+  [
+   "Sady Celmerów",
+   "Wzgórza Trzebnickie",
+   "owoce"
+  ],
+  [
+   "Żywe octy owocowe",
+   "Długołęka",
+   "octy"
+  ]
+ ],
+ "liczby": [
+  [
+   "100%",
+   "pasty robimy sami, na miejscu"
+  ],
+  [
+   "15+",
+   "polskich rzemieślniczych dostawców"
+  ],
+  [
+   "7",
+   "rodzajów świeżego makaronu"
+  ]
+ ],
+ "karta_ceny": {
+  "_uwaga": "Ceny z karty à la carte. W ofertach wydarzeń NIE pokazujemy ich przy pozycjach - sluza tylko asystentowi do odpowiedzi o rachunek dla dwojga.",
+  "carpaccio": 59,
+  "ravioli_duo": 52,
+  "tagliata": 149,
+  "deser_czekoladowy": 32,
+  "kolacja_3_dania_od": 113,
+  "kolacja_3_dania_srednio": 126,
+  "kolacja_3_dania_do": 267
+ }
 }

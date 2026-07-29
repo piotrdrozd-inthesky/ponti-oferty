@@ -41,7 +41,7 @@ def wyd_agencyjne(baza):
     return [w for w in baza["wydarzenia"] if w.get("kategoria", "wydarzenie") == "wydarzenie"]
 
 
-MINIMUM_DOTYCZY = ["chrzciny", "komunia", "urodziny", "firmowka", "panienskie", "wesele"]
+MINIMUM_DOTYCZY = ["chrzciny", "komunia", "urodziny", "firmowka", "wigilia", "panienskie", "wesele"]
 
 
 # ══════════════════════════════════════════════════════════════════
@@ -623,6 +623,48 @@ def zbuduj_goscie(baza, asy):
     return zloz(szablon, regiony, "goscie.html")
 
 
+STRONY_B2B = {
+    "firmowa.html": ["firmowka", "konferencja", "kompleks"],
+    "wigilia.html": ["wigilia"],
+    "zespol.html": ["firmowka"],
+}
+
+
+def zbuduj_b2b(baza, asy, ids, nazwa):
+    """goscie.html zawezone do okazji z `ids` - oferta pod jeden segment maili.
+
+    Kategoria "b2b" w data/baza.json istnieje tylko po to: takie wydarzenie
+    (np. wigilia) nie wchodzi do goscie.html ani partnerska.html, a tu tak.
+    """
+    szablon = open(os.path.join(SZAB, "goscie.html"), encoding="utf-8").read()
+    kolejnosc = {i: n for n, i in enumerate(ids)}
+    wyd = sorted([w for w in baza["wydarzenia"] if w["id"] in kolejnosc],
+                 key=lambda w: kolejnosc[w["id"]])
+    if len(wyd) != len(ids):
+        sys.exit("%s: brak wydarzen: %s" % (nazwa,
+                 set(ids) - {w["id"] for w in wyd}))
+    poj = baza["pojemnosc"]
+    regiony = {
+        "CHOOSER": gen_chooser(wyd),
+        "OKAZJE": gen_okazje(wyd),
+        "CENY_OKAZJE": gen_ceny_okazje(wyd),
+        "CENY_PROGI": gen_ceny_progi(baza["menu_progi"]),
+        "CENY_ZAUFANIE": gen_ceny_zaufanie(),
+        "CENY_MINIMUM": gen_ceny_minimum(baza["minimum"], poj),
+        "PAKIETY": gen_pakiety(baza["dodatki"]),
+        "FAKTY": gen_fakty(poj),
+        "SALE": gen_sale(baza["sale"]),
+        "WELLNESS": gen_wellness(baza["wellness"]),
+        "EV_CFG": gen_ev_cfg(wyd),
+        "KB": gen_kb(asy, baza),
+        "TEL": baza["firma"]["telefon"],
+        "TEL_HREF": baza["firma"]["telefon_href"],
+        "MAIL": baza["firma"]["mail"],
+        "POJEMNOSC_KROTKO": "Grupy do %d osób" % poj["restauracja"],
+    }
+    return zloz(szablon, regiony, nazwa)
+
+
 class Kontroler(HTMLParser):
     """Pilnuje, czy znaczniki sie domykaja.
 
@@ -724,6 +766,8 @@ def main():
         "partnerska.html": zbuduj_partnerska(baza),
         "voucher.html": zbuduj_voucher(baza),
     }
+    for nazwa, ids in STRONY_B2B.items():
+        strony[nazwa] = zbuduj_b2b(baza, asy, ids, nazwa)
 
     for nazwa, tresc in strony.items():
         sciezka = os.path.join(REPO, nazwa)
