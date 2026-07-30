@@ -475,33 +475,18 @@ footer p{font-size:.76rem;color:var(--mute);line-height:1.8}
 .pr-tier .eq{font-size:.82rem;color:var(--mute);font-style:italic;margin-top:auto;padding-top:.9rem;
   border-top:1px solid var(--line);line-height:1.55}
 
-.pr-trust{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-bottom:2.6rem}
-.pr-tbox{background:#fff;border:1px solid var(--line);border-radius:4px;padding:1.6rem}
+.pr-trust{display:flex;justify-content:center;margin-bottom:2.6rem}
+.pr-tbox{background:#fff;border:1px solid var(--line);border-radius:4px;padding:1.6rem;
+  max-width:560px;width:100%}
 .pr-tbox h4{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:1rem;
   color:var(--mute);font-weight:500}
 .pr-tbox li{list-style:none;font-size:.88rem;color:var(--ink2);padding-left:1.5rem;position:relative;
   margin-bottom:.55rem;line-height:1.6}
 .pr-tbox.yes li::before{content:'\2713';position:absolute;left:0;top:0;color:var(--terra);font-size:.9rem}
-.pr-tbox.no li::before{content:'-';position:absolute;left:0;top:0;color:var(--mute);font-size:.9rem}
-
-.pr-min{background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden}
-.pr-min-h{padding:1.5rem 1.6rem 0}
-.pr-min-h h4{font-family:var(--serif);font-size:1.35rem;font-weight:400;margin-bottom:.5rem}
-.pr-min-h p{font-size:.9rem;color:var(--ink2);max-width:62ch}
-.pr-min table{width:100%;border-collapse:collapse;margin-top:1.2rem}
-.pr-min td{padding:.85rem 1.6rem;border-top:1px solid var(--line);font-size:.88rem;color:var(--ink2);
-  vertical-align:top}
-.pr-min td.k{font-family:var(--serif);font-size:1.25rem;color:var(--terra);white-space:nowrap;
-  text-align:right;width:1%}
-.pr-min td.w{font-weight:500;white-space:nowrap;width:1%}
-.pr-min td.l{color:var(--mute);font-size:.82rem}
 .pr-foot{margin-top:1.8rem;text-align:center;font-size:.88rem;color:var(--mute)}
 .pr-foot a{color:var(--terra);border-bottom:1px solid currentColor}
 @media(max-width:760px){
-  .pr-cols,.pr-trust{grid-template-columns:1fr;gap:1.4rem}
-  .pr-min td{padding:.7rem .9rem;font-size:.82rem}
-  .pr-min td.k{font-size:1.05rem}
-  .pr-min td.l{display:none}
+  .pr-cols{grid-template-columns:1fr;gap:1.4rem}
 }
 
 /* ── ASYSTENT CZATU ───────────────────────────────────── */

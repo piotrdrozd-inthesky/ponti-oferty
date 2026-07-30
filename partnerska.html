@@ -444,8 +444,8 @@
       <span class="eyebrow">Ceny i Wasza prowizja</span>
       <h2>Ile kosztuje wydarzenie<br>i ile na nim zarabiacie</h2>
     </div>
-    <p class="pr-lead rev">Poniżej dokładnie to, co zobaczy Wasz klient - te same liczby, bez ukrytych narzutów. Do każdego wydarzenia dopisaliśmy, ile wynosi z niego Wasza prowizja.</p>
-    
+    <p class="pr-lead rev">Poniżej dokładnie to, co zobaczy Wasz klient - te same liczby, bez ukrytych narzutów. Do każdego wydarzenia dopisaliśmy, ile wynosi z niego Wasza prowizja. Wszystkie kwoty podajemy netto.</p>
+
       <div class="pr-hero rev" data-ev-price="chrzciny">
         <div class="pr-top">
           <div class="pr-big">
@@ -734,24 +734,6 @@
 
     <div class="pr-trust rev">
       <div class="pr-tbox yes"><h4>W cenie, bez dopłat</h4><ul><li>Obsługa kelnerska przez cały czas trwania wydarzenia</li><li>Nakrycie, zastawa, obrusy i świece</li><li>Ustawienie sali pod Waszą liczbę gości</li><li>Ustalenie menu i degustacja przy większych wydarzeniach</li><li>Miejsce na własny tort - bez opłaty za wniesienie</li></ul></div>
-      <div class="pr-tbox no"><h4>Czego nie doliczamy</h4><ul><li>Opłaty za rezerwację sali</li><li>Dopłaty za wniesienie własnego tortu</li><li>Dopłaty za dekoracje, które przynosicie sami</li><li>Dopłaty za to, że okazja jest uroczysta</li></ul></div>
-    </div>
-
-    
-    <div class="pr-min rev" data-ev-minimum="chrzciny komunia urodziny firmowka wigilia panienskie wesele">
-      <div class="pr-min-h">
-        <h4>Minimum konsumpcyjne za wyłączność</h4>
-        <p>Kiedy chcecie zamknąć salę tylko dla siebie, obowiązuje minimum konsumpcyjne. To nie opłata za wynajem - to kwota, którą trzeba przejeść i przepić. Sala Onda mieści do 40 osób, cała restauracja z tarasem do 100, a strefa Wellness do 11.</p>
-      </div>
-      <table class="mintab">
-        <tr><td class="w">Poniedziałek - czwartek, wieczór</td><td class="k">9 900 zł</td><td class="l">minimum konsumpcyjne</td></tr>
-        <tr><td class="w">Niedziela, dzień</td><td class="k">12 600 zł</td><td class="l">minimum konsumpcyjne</td></tr>
-        <tr><td class="w">Piątek, wieczór</td><td class="k">18 000 zł</td><td class="l">minimum konsumpcyjne</td></tr>
-        <tr><td class="w">Sobota, wieczór</td><td class="k">20 700 zł</td><td class="l">minimum konsumpcyjne</td></tr>
-      </table>
-      <div class="pr-min-h" style="padding:1.2rem 1.6rem 1.5rem">
-        <p style="font-size:.86rem;color:var(--mute)">Jeśli zależy Wam na niższej kwocie, najprościej przesunąć termin na środek tygodnia. Sobota jest najdroższa, bo rezygnujemy z całego wieczoru normalnej sprzedaży.</p>
-      </div>
     </div>
 
     <p class="pr-foot rev">Prowizję liczymy od pełnej wartości rachunku - z napojami i alkoholem. Pytania: <a href="mailto:kontakt@ponti.restaurant">kontakt@ponti.restaurant</a></p>
@@ -763,7 +745,7 @@
     <div class="pk-head rev">
       <span class="pk-badge" id="pkBadge">Dobrane pod okazję</span>
       <h2>Dodatki, które<br>podnoszą rachunek</h2>
-      <p class="lead" style="max-width:60ch;margin:0 auto">Ceny brutto. Im więcej dodatków w rezerwacji, tym wyższa Wasza prowizja - bo liczymy ją od pełnej wartości rachunku, nie od samego jedzenia.</p>
+      <p class="lead" style="max-width:60ch;margin:0 auto">Ceny netto. Im więcej dodatków w rezerwacji, tym wyższa Wasza prowizja - bo liczymy ją od pełnej wartości rachunku, nie od samego jedzenia.</p>
     </div>
 
     <div class="pk-grid">
@@ -1028,12 +1010,6 @@
       el.style.display = el.getAttribute('data-ev-price') === ev ? '' : 'none';
     });
 
-    /* Minimum konsumpcyjne za wylacznosc ma sens tylko przy grupowych okazjach -
-       przy konferencji i pelnym kompleksie wycena jest indywidualna. */
-    document.querySelectorAll('[data-ev-minimum]').forEach(function(el){
-      var lista = el.getAttribute('data-ev-minimum').split(' ');
-      el.style.display = lista.indexOf(ev) >= 0 ? '' : 'none';
-    });
     window.__PONTI_EV__ = ev;
     document.querySelectorAll('[data-ev-pack]').forEach(function(el){
       el.style.display = el.getAttribute('data-ev-pack').split(' ').indexOf(ev)>=0 ? '' : 'none';

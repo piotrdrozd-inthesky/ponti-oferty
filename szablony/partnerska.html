@@ -272,8 +272,8 @@
       <span class="eyebrow">Ceny i Wasza prowizja</span>
       <h2>Ile kosztuje wydarzenie<br>i ile na nim zarabiacie</h2>
     </div>
-    <p class="pr-lead rev">Poniżej dokładnie to, co zobaczy Wasz klient - te same liczby, bez ukrytych narzutów. Do każdego wydarzenia dopisaliśmy, ile wynosi z niego Wasza prowizja.</p>
-    
+    <p class="pr-lead rev">Poniżej dokładnie to, co zobaczy Wasz klient - te same liczby, bez ukrytych narzutów. Do każdego wydarzenia dopisaliśmy, ile wynosi z niego Wasza prowizja. Wszystkie kwoty podajemy netto.</p>
+
 {{CENY_OKAZJE}}
 
     <div class="shead center rev" style="margin-top:3.4rem">
@@ -285,9 +285,6 @@
 
 {{CENY_ZAUFANIE}}
 
-    
-{{CENY_MINIMUM}}
-
     <p class="pr-foot rev">Prowizję liczymy od pełnej wartości rachunku - z napojami i alkoholem. Pytania: <a href="mailto:{{MAIL}}">{{MAIL}}</a></p>
   </div>
 </section>
@@ -297,7 +294,7 @@
     <div class="pk-head rev">
       <span class="pk-badge" id="pkBadge">Dobrane pod okazję</span>
       <h2>Dodatki, które<br>podnoszą rachunek</h2>
-      <p class="lead" style="max-width:60ch;margin:0 auto">Ceny brutto. Im więcej dodatków w rezerwacji, tym wyższa Wasza prowizja - bo liczymy ją od pełnej wartości rachunku, nie od samego jedzenia.</p>
+      <p class="lead" style="max-width:60ch;margin:0 auto">Ceny netto. Im więcej dodatków w rezerwacji, tym wyższa Wasza prowizja - bo liczymy ją od pełnej wartości rachunku, nie od samego jedzenia.</p>
     </div>
 
 {{PAKIETY}}
@@ -469,12 +466,6 @@
       el.style.display = el.getAttribute('data-ev-price') === ev ? '' : 'none';
     });
 
-    /* Minimum konsumpcyjne za wylacznosc ma sens tylko przy grupowych okazjach -
-       przy konferencji i pelnym kompleksie wycena jest indywidualna. */
-    document.querySelectorAll('[data-ev-minimum]').forEach(function(el){
-      var lista = el.getAttribute('data-ev-minimum').split(' ');
-      el.style.display = lista.indexOf(ev) >= 0 ? '' : 'none';
-    });
     window.__PONTI_EV__ = ev;
     document.querySelectorAll('[data-ev-pack]').forEach(function(el){
       el.style.display = el.getAttribute('data-ev-pack').split(' ').indexOf(ev)>=0 ? '' : 'none';

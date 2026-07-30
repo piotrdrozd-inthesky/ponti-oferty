@@ -41,9 +41,6 @@ def wyd_agencyjne(baza):
     return [w for w in baza["wydarzenia"] if w.get("kategoria", "wydarzenie") == "wydarzenie"]
 
 
-MINIMUM_DOTYCZY = ["chrzciny", "komunia", "urodziny", "firmowka", "wigilia", "panienskie", "wesele"]
-
-
 # ══════════════════════════════════════════════════════════════════
 #  Generatory sekcji
 # ══════════════════════════════════════════════════════════════════
@@ -210,11 +207,6 @@ def gen_ceny_progi(progi):
 
 
 def gen_ceny_zaufanie():
-    """Kolumna "czego nie doliczamy" - bez pozycji o oplacie serwisowej.
-
-    Strona ponti.restaurant podaje w FAQ oplate serwisowa 10% dla grup powyzej
-    6 osob. Dopoki to nie jest wyjasnione, oferta nie moze obiecywac jej braku.
-    """
     w_cenie = [
         "Obsługa kelnerska przez cały czas trwania wydarzenia",
         "Nakrycie, zastawa, obrusy i świece",
@@ -222,46 +214,11 @@ def gen_ceny_zaufanie():
         "Ustalenie menu i degustacja przy większych wydarzeniach",
         "Miejsce na własny tort - bez opłaty za wniesienie",
     ]
-    nie = [
-        "Opłaty za rezerwację sali",
-        "Dopłaty za wniesienie własnego tortu",
-        "Dopłaty za dekoracje, które przynosicie sami",
-        "Dopłaty za to, że okazja jest uroczysta",
-    ]
     return (
         '    <div class="pr-trust rev">\n'
         '      <div class="pr-tbox yes"><h4>W cenie, bez dopłat</h4><ul>%s</ul></div>\n'
-        '      <div class="pr-tbox no"><h4>Czego nie doliczamy</h4><ul>%s</ul></div>\n'
         '    </div>'
-        % ("".join("<li>%s</li>" % x for x in w_cenie),
-           "".join("<li>%s</li>" % x for x in nie)))
-
-
-def gen_ceny_minimum(mini, poj):
-    """Sekcja minimum konsumpcyjnego - widoczna tylko dla okazji, przy ktorych
-    wykupienie calej restauracji na wylacznosc ma sens (MINIMUM_DOTYCZY).
-    Konferencja i pelny kompleks maja wlasna, indywidualna wycene - pokazanie
-    tu gotowej tabeli za wylacznosc myliloby, sugerujac sztywny cennik tam,
-    gdzie go celowo nie ma.
-    """
-    wiersze = "\n".join(
-        '        <tr><td class="w">%s</td><td class="k">%s</td>'
-        '<td class="l">minimum konsumpcyjne</td></tr>' % (k, v)
-        for k, v in mini["pozycje"])
-    return (
-        '    <div class="pr-min rev" data-ev-minimum="%s">\n'
-        '      <div class="pr-min-h">\n'
-        '        <h4>%s</h4>\n'
-        '        <p>%s Sala Onda mieści do %d osób, cała restauracja z tarasem do %d, '
-        'a strefa Wellness do %d.</p>\n'
-        '      </div>\n'
-        '      <table class="mintab">\n%s\n      </table>\n'
-        '      <div class="pr-min-h" style="padding:1.2rem 1.6rem 1.5rem">\n'
-        '        <p style="font-size:.86rem;color:var(--mute)">%s</p>\n'
-        '      </div>\n'
-        '    </div>'
-        % (" ".join(MINIMUM_DOTYCZY), mini["naglowek"], mini["opis"], poj["onda"],
-           poj["restauracja"], poj["wellness_wylacznosc"], wiersze, mini["rada"]))
+        % "".join("<li>%s</li>" % x for x in w_cenie))
 
 
 def gen_pakiety(dodatki):
@@ -681,7 +638,6 @@ def zbuduj_goscie(baza, asy):
         "CENY_OKAZJE": gen_ceny_okazje(wyd),
         "CENY_PROGI": gen_ceny_progi(baza["menu_progi"]),
         "CENY_ZAUFANIE": gen_ceny_zaufanie(),
-        "CENY_MINIMUM": gen_ceny_minimum(baza["minimum"], poj),
         "PAKIETY": gen_pakiety(baza["dodatki"]),
         "FAKTY": gen_fakty(poj),
         "SALE": gen_sale(baza["sale"]),
@@ -724,7 +680,6 @@ def zbuduj_b2b(baza, asy, ids, nazwa):
         "CENY_OKAZJE": gen_ceny_okazje(wyd),
         "CENY_PROGI": gen_ceny_progi(baza["menu_progi"]),
         "CENY_ZAUFANIE": gen_ceny_zaufanie(),
-        "CENY_MINIMUM": gen_ceny_minimum(baza["minimum"], poj),
         "PAKIETY": gen_pakiety(baza["dodatki"]),
         "FAKTY": gen_fakty(poj),
         "SALE": gen_sale(baza["sale"]),
@@ -808,7 +763,6 @@ def zbuduj_partnerska(baza):
         "CENY_OKAZJE": gen_ceny_okazje_partner(wyd, stawka),
         "CENY_PROGI": gen_ceny_progi(baza["menu_progi"]),
         "CENY_ZAUFANIE": gen_ceny_zaufanie(),
-        "CENY_MINIMUM": gen_ceny_minimum(baza["minimum"], poj),
         "PAKIETY": gen_pakiety_partner(baza["dodatki"]),
         "CALC_CHIPY": gen_calc_chipy(wyd),
         "EV_CFG": gen_ev_label(wyd),
