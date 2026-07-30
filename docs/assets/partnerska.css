@@ -321,6 +321,9 @@ footer{background:var(--forest);color:rgba(247,244,236,.5);padding:3rem 0;text-a
 .f-mark{font-family:var(--serif);font-size:1.8rem;letter-spacing:.3em;color:var(--cream);
   padding-left:.3em;margin-bottom:.85rem}
 footer p{font-size:.78rem;line-height:1.8}
+.f-kontakt{margin-top:.6rem}
+.f-kontakt a{color:var(--brass)}
+.f-kontakt a:hover{text-decoration:underline}
 .prog{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--brass),var(--terra));
   z-index:950;width:0;transition:width .1s linear}
 

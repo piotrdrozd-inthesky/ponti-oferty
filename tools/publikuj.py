@@ -111,6 +111,8 @@ body{font-family:'Poppins',sans-serif;background:var(--paper);color:var(--ink);
   clamp(1.6rem,4vw,2.2rem);width:100%%;box-sizing:border-box}
 h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(2rem,5vw,3rem);
   line-height:1.1;margin-bottom:.7rem;color:#fff}
+.wm{font-family:'Instrument Serif',serif;font-size:1.3rem;letter-spacing:.34em;
+  padding-left:.34em;color:#fff;margin-bottom:1.4rem;opacity:.9}
 .kick{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:#D98A63;
   margin-bottom:1.1rem}
 main{padding-bottom:clamp(2rem,7vw,5rem)}
@@ -134,8 +136,9 @@ footer{padding-top:1.4rem;border-top:1px solid var(--line);
 
 <div class="hero">
   <div class="hero-in">
+    <div class="wm">PONTI</div>
     <div class="kick">Do uzytku wewnetrznego</div>
-    <h1>Linki do ofert PONTI</h1>
+    <h1>Linki do ofert</h1>
   </div>
 </div>
 

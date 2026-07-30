@@ -266,6 +266,9 @@ nav.solid{background:rgba(251,248,242,.94);backdrop-filter:blur(18px) saturate(1
 footer{background:var(--paper);padding:2.8rem 0;text-align:center;border-top:1px solid var(--line)}
 .fm{font-family:var(--serif);font-size:1.5rem;letter-spacing:.32em;padding-left:.32em;margin-bottom:.7rem}
 footer p{font-size:.76rem;color:var(--mute);line-height:1.8}
+.f-kontakt{margin-top:.6rem}
+.f-kontakt a{color:var(--terra)}
+.f-kontakt a:hover{text-decoration:underline}
 
 /* ── Responsive ── */
 @media(max-width:980px){
